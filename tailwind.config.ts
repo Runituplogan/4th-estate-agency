@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        background: "#FBF0E5",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        baskerville: ["Baskerville", "serif"], 
       },
     },
   },

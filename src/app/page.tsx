@@ -1,101 +1,62 @@
+"use client"
 import Image from "next/image";
+import HeroLayout from "./components/hero_section";
+import { ArrowUpRight } from "lucide-react";
+import Card from "./components/card";
+import DigitalBrandExpertise from "./components/digital_expertise";
+import OurPartners from "./components/our_partner";
+import BlogPosts from "./components/blog_post";
+import BrandBoost from "./components/brand_boost";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+    <HeroLayout backgroundImage="/images/bg_hero1.png">
+      <h1 className="text-3xl md:text-6xl  font-baskerville">An Agency That Gets Your Brand What it Deserves</h1>
+      <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0">
+        <div className="flex space-x-2">
+       <span>Book a Free Consultation</span> 
+      <ArrowUpRight size={20} />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </button>
+      <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] ml-3">
+       <div className="flex items-center space-x-3">
+        <Image src="/images/google-logo.png" alt="google logo" width={40} height={30}/>
+        <Image src="/images/rate.png" alt="google logo" width={40} height={30}/>
+        <span className="text-xs"> Read Our 22 Review</span>
+        <ArrowUpRight size={20} />
+       </div>
+        </button>
+    </HeroLayout>
+    <div className="flex flex-col md:flex-row gap-4 lg:gap-6 p-6 md:p-10 bg-[#F8F1E8] justify-center">
+    <Card 
+        title="Bridging The Gap"
+        description="It is said that you can bury a body on the second page of Google. 4E Agency helps clients take center stage by establishing their presence so that your audience can FIND YOU."
+        bgColor="bg-[#174A43]"
+        textColor={'white'}
+      />
+      <Card 
+        title="What is Performance Press"
+        description="Leveraging our network of top-tier journalists, Performance Press increases your website’s domain authority, builds your brand awareness and optimizes your search rankings through our Digital PR strategy."
+        bgColor="bg-[#E0E0E0]"
+        textColor={'black'}
+      />
+      <Card 
+        title="What Makes Us Different"
+        description="4E agency gives the utmost attention to every client, regardless of the price of their campaign. Our dedicated team of experts offer fastidious and methodical approaches that amplify and differentiate your brand – ultimately increasing your online value."
+        bgColor="bg-[#385065]"
+        textColor={'white'}
+      />
     </div>
-  );
+   
+      <DigitalBrandExpertise/>
+      <OurPartners/>
+      <BlogPosts/>
+      <BrandBoost/>
+      <Footer/>
+    </div>
+
+
+      );
 }
