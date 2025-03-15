@@ -27,7 +27,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ icon, title, description 
 
 export default function DigitalBrandExpertise() {
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 animate-fade-up  ">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-5xl font-serif ">Digital Brand Expertise</h2>
         <p className="text-gray-600 mt-4 max-w-3xl mx-auto text-md">
@@ -38,7 +38,7 @@ export default function DigitalBrandExpertise() {
       </div>
 
       <div className="">
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5">
+        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5 animate-fade-right">
         <ExpertiseCard 
           icon={<Briefcase size={24}/>}
           title="Branding"
@@ -55,7 +55,7 @@ export default function DigitalBrandExpertise() {
           description="Help with the entire process, including budget, keyword analysis, and retargeting your Google, Meta & Amazon Ads."
         />
         </div>
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 animate-fade-left">
         <ExpertiseCard 
           icon={<Globe size={24} />}
           title="Press"

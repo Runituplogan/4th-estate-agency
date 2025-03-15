@@ -29,7 +29,7 @@ export default function Home() {
        </div>
         </button>
     </HeroLayout>
-    <div className="flex flex-col md:flex-row gap-4 lg:gap-6 p-6 md:p-10 bg-[#F8F1E8] justify-center">
+    <div className="flex flex-col md:flex-row gap-4 lg:gap-6 p-6 md:p-10 bg-[#F8F1E8] justify-center animate-fade-down  ">
     <Card 
         title="Bridging The Gap"
         description="It is said that you can bury a body on the second page of Google. 4E Agency helps clients take center stage by establishing their presence so that your audience can FIND YOU."
@@ -56,7 +56,5 @@ export default function Home() {
       <BrandBoost/>
       <Footer/>
     </div>
-
-
       );
 }

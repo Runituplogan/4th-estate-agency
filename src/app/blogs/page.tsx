@@ -50,7 +50,7 @@ export default function BlogPage(){
         </div>
         </HeroLayout>
 
-        <div className="m-16">
+        <div className="m-16 animate-fade-up">
             <div className="flex flex-wrap gap-6 justify-center">
             {blogPosts.map((post, index) => (
             <BlogCard imageUrl={post.image} link={post.link} title={post.title} key={index}/>

@@ -1,11 +1,11 @@
 import { ArrowUpRight, BadgeDollarSign, FileArchiveIcon,Speaker,BadgeCheckIcon,CreditCardIcon,Heart, SearchCheckIcon, TargetIcon } from "lucide-react";
-import HeroLayout from "../components/hero_section";
-import ServiceCard from "../components/service_card";
+import HeroLayout from "../../components/hero_section";
+import ServiceCard from "../../components/service_card";
 import Image from "next/image";
-import Faq from "../components/faq";
-import SectionCard from "../components/card_section";
-import BrandBoost from "../components/brand_boost";
-import Footer from "../components/footer";
+import Faq from "../../components/faq";
+import SectionCard from "../../components/card_section";
+import BrandBoost from "../../components/brand_boost";
+import Footer from "../../components/footer";
 
 export default function PaidMediaPage(){
     const whyPaidMedia = [

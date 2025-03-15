@@ -1,10 +1,10 @@
 import { ArrowUpRight,BadgeDollarSign,ChartColumnIncreasingIcon,BadgeCheckIcon,ChartLineIcon,BrickWallIcon,Home,HospitalIcon,Headphones,Globe2Icon,Building,PlusCircle, MapPlus, Link2,MessageSquareMoreIcon,Star,SearchCheckIcon,Folder,Lightbulb,Search,ChartCandlestickIcon,FolderEdit,FileBarChart,BriefcaseBusiness,FileArchiveIcon,SquareGanttChartIcon,UserRoundIcon} from "lucide-react";
-import HeroLayout from "../components/hero_section";
-import ServiceCard from "../components/service_card";
-import Faq from "../components/faq";
-import SectionCard from "../components/card_section";
-import BrandBoost from "../components/brand_boost";
-import Footer from "../components/footer";
+import HeroLayout from "../../components/hero_section";
+import ServiceCard from "../../components/service_card";
+import Faq from "../../components/faq";
+import SectionCard from "../../components/card_section";
+import BrandBoost from "../../components/brand_boost";
+import Footer from "../../components/footer";
 
 export default function SeoPage(){
     const seoGrowthPlan= [
@@ -192,37 +192,37 @@ export default function SeoPage(){
                 </div>
                 </button>
         </HeroLayout>
-        <div className="items-center text-center md:m-16 m-8">
+        <div className="items-center text-center md:m-16 m-8 animate-fade-up">
             <div className="w-full items-center flex justify-center flex-col">
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[600px] leading-relaxed">Business Growth With SEO</h1>
                     <p className="text-xs max-w-4xl text-[#66717B] my-2 leading-relaxed mt-5">Businesses see significant returns on investment from SEO over time. Here are some rough stats backed by DATA:</p>
             </div>
         </div>
 
-        <div className="md:m-16 mt-5">
+        <div className="md:m-16 mt-5 animate-fade-right">
                 <div className="grid  md:grid-cols-2 gap-4 w-full ">
                    {seoGrowthPlan.map((item,index)=>
                   <ServiceCard key={index} description={item.description} name={item.name} icon={item.icon}/>)}
                 </div>
          </div>
-        <div className="items-center text-center md:m-16 m-8">
+        <div className="items-center text-center md:m-16 m-8 animate-fade-up">
             <div className="w-full items-center flex justify-center flex-col">
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[700px] leading-relaxed">Local Businesses That Absolutely Need local SEO in LA, CA</h1>
                     <p className="text-xs max-w-4xl text-[#66717B] my-2 leading-relaxed mt-5">As a leading SEO agency in LA, we have worked and delivered results for various clients across different industries and neighborhoods in Los Angeles, such as Beverly Hills, Venice Beach, and Downtown LA.</p>
             </div>
         </div>
         <div className="md:m-16 mt-5">
-                <div className="grid  md:grid-cols-2 gap-4 w-full ">
+                <div className="grid  md:grid-cols-2 gap-4 w-full animate-fade-up">
                    {localBusinessSeo.map((item,index)=>
                   <ServiceCard key={index} description={item.description} name={item.name} icon={item.icon} />)}
                 </div>
          </div>
-         <div className="items-center text-center md:m-16 m-8">
+         <div className="items-center text-center md:m-16 m-8 animate-fade-up">
             <div className="w-full items-center flex justify-center flex-col">
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[500px] leading-relaxed">How Our Local SEO Process Work</h1>
             </div>
         </div>
-        <div className="bg-white">
+        <div className="bg-white animate-fade-up">
         <div className="bg-white w-full rounded grid md:grid-cols-2 p-8 gap-8 place-items-center mt-6">
                     {howLocalSeoWorks.map((item,index)=><div className="" key={index}>
                     {item.icon}
@@ -236,7 +236,7 @@ export default function SeoPage(){
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[700px] leading-relaxed">Los Angeles E-commerce SEO Solutions for Your Business</h1>
             </div>
         </div>
-        <div className="md:m-16 ">
+        <div className="md:m-16 animate-fade-up">
         <div className="bg-white  rounded grid md:grid-cols-2 gap-8 p-8 place-items-center mt-6">
                     {seoSolutionForYourBusiness.map((item,index)=><div className="" key={index}>
                     {item.icon}
@@ -245,24 +245,24 @@ export default function SeoPage(){
                     </div>)}
         </div> 
         </div>
-        <div className="items-center text-center md:m-16 m-8">
+        <div className="items-center text-center md:m-16 m-8 animate-fade-up">
             <div className="w-full items-center flex justify-center flex-col">
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[500px] leading-relaxed">4th Estate LA-Based SEO Audit Process</h1>
                     <p className="text-xs max-w-2xl text-[#66717B] my-2 leading-relaxed mt-5">We delegate 2 highly experienced SEO experts for your site who have analyzed thousands of websites in their careers. There are over 50 SEO factors that they make your website go through to audit it and then keep noticing the results.  This is how our  4th Estate SEO audit works.</p>
             </div>
         </div>
-        <div className="md:m-16 mt-5">
+        <div className="md:m-16 mt-5 animate-fade-up">
                 <div className="grid  md:grid-cols-2 gap-4 w-full ">
                    {seoAduitProcess.map((item,index)=>
                   <ServiceCard key={index} description={item.description} name={item.name} icon={item.icon} />)}
                 </div>
          </div>
-         <div className="items-center text-center md:m-16 m-8">
+         <div className="items-center text-center md:m-16 m-8 animate-fade-up">
             <div className="w-full items-center flex justify-center flex-col">
                     <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[700px] leading-relaxed">Benefits of Getting SEO Audit Services For Your Website</h1>
             </div>
         </div>
-        <div className="md:m-16 ">
+        <div className="md:m-16 animate-fade-up">
         <div className="bg-white  rounded grid md:grid-cols-2 gap-8 p-8 place-items-center mt-6">
                     {benefitOfSeo.map((item,index)=><div className="" key={index}>
                     {item.icon}

@@ -9,8 +9,8 @@ interface SectionCardProps {
   }
 const SectionCard: React.FC<SectionCardProps> = ({title = "Take Your Business to the Next Level - Contact 4th Estate!",description="With 4th Estate by your side, you can rest assured that your SEO efforts are in expert hands. Our holistic approach to SEO ensures that every aspect of your online presence is optimized for success, driving more traffic, leads, and conversions to your business.",imageUrl='location.png',showBtn = true,marginStyle='md:m-16 m-5'})=>{
     return(
-        <div className={`${marginStyle} bg-[#0C2F4D] rounded text-white flex flex-col md:flex-row px-8 items-center py-6 justify-between`}>
-        <div>
+        <div className={`${marginStyle} bg-[#0C2F4D] rounded text-white flex flex-col md:flex-row px-8 items-center py-6 justify-between animate-fade-up`}>
+        <div className="animate-fade-right"> 
         <h1 className="font-baskerville text-2xl w-full md:text-4xl md:max-w-[400px] leading-relaxed mb-2">{title}</h1>
         <p className="md:max-w-[500px] leading-relaxed mb-2 md:text-base text-xs">{description}</p>
         {
@@ -25,7 +25,7 @@ const SectionCard: React.FC<SectionCardProps> = ({title = "Take Your Business to
         }
          
         </div>
-    <Image src={`/images/${imageUrl}`} alt="content image" width={500} height={500}/>
+    <Image src={`/images/${imageUrl}`} alt="content image" width={500} height={500} className="animate-fade-left"/>
     </div>
     )
 }

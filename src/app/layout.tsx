@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ReactQueryProvider } from "./request/ReactQueryProvider";
+import { HomePageProvider } from "./context/homePageContext";
+import { ServicePageProvider } from "./context/servicePageContext";
+import { AboutPageProvider } from "./context/aboutPageContext";
+import { ContactPageProvider } from "./context/contactPageContext";
+import { SeoPageProvider } from "./context/seoPageContext";
+import { PPCPageProvider } from "./context/ppcPageContext";
+import { PressPageProvider } from "./context/pressPageContext";
+import { SocialsPageProvider } from "./context/socialPageContext";
+import { WebDevelopmentPageProvider } from "./context/webDevelopmentPage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +37,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ReactQueryProvider>
+          <HomePageProvider>
+            <ServicePageProvider>
+              <AboutPageProvider>
+                <ContactPageProvider>
+                  <SeoPageProvider>
+                    <PPCPageProvider>
+                      <PressPageProvider>
+                        <SocialsPageProvider>
+                          <WebDevelopmentPageProvider>
+                            {children}
+                          </WebDevelopmentPageProvider>
+                        </SocialsPageProvider>
+                      </PressPageProvider>
+                    </PPCPageProvider>
+                  </SeoPageProvider>
+                </ContactPageProvider>   
+              </AboutPageProvider>
+            </ServicePageProvider>
+          </HomePageProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

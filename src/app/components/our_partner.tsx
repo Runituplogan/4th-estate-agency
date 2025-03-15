@@ -16,7 +16,7 @@ const partners = [
 
 export default function OurPartners() {
   return (
-    <section className="py-10 px-6">
+    <section className="py-10 px-6 animate-fade-up">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-5xl font-baskerville text-center md:text-left">Our Partners</h2>
       </div>

@@ -28,11 +28,11 @@ export default function Faq({ items=faqData }: FAQProps){
     };
   
     return (
-        <div className="md:m-16 m-8">
+        <div className="md:m-16 m-8 animate-fade-up" >
             <div className="flex flex-col justify-center items-center">
                     <h1 className="font-baskerville md:text-5xl text-2xl text-center max-w-2xl leading-relaxed">Frequently Asked Question</h1>
                 </div>
-                <div className="bg-[#F7EFE5] p- mx-auto">
+                <div className="p- mx-auto">
                     {items.map((item, index) => (
                         <div key={index} className="border-b border-gray-300">
                         <button

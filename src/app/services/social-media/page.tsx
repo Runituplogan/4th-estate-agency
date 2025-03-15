@@ -1,10 +1,10 @@
 import { ArrowUpRight, Heart } from "lucide-react";
-import HeroLayout from "../components/hero_section";
-import SectionCard from "../components/card_section";
+import HeroLayout from "../../components/hero_section";
+import SectionCard from "../../components/card_section";
 import Image from "next/image";
-import BrandBoost from "../components/brand_boost";
-import Faq from "../components/faq";
-import Footer from "../components/footer";
+import BrandBoost from "../../components/brand_boost";
+import Faq from "../../components/faq";
+import Footer from "../../components/footer";
 export default function SocialMediaPage(){
     const socialMediaServices =[
         {

@@ -1,11 +1,11 @@
 import { ArrowUpRight, ChevronUp, Medal, ShieldCheck, StarHalf,Target , ChartColumn, CheckIcon,Edit,Goal,BriefcaseBusiness,} from "lucide-react";
-import HeroLayout from "../components/hero_section";
+import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
-import BrandBoost from "../components/brand_boost";
-import Footer from "../components/footer";
-import ServiceCard from "../components/service_card";
-import Faq from "../components/faq";
-import SectionCard from "../components/card_section";
+import BrandBoost from "../../components/brand_boost";
+import Footer from "../../components/footer";
+import ServiceCard from "../../components/service_card";
+import Faq from "../../components/faq";
+import SectionCard from "../../components/card_section";
 export default function Branding(){
     const ourApproach = [
         {
@@ -81,13 +81,13 @@ export default function Branding(){
                     </div>
                  </button>
             </HeroLayout>
-            <div className="items-center text-center md:m-16 m-8">
+            <div className="items-center text-center md:m-16 m-8 animate-fade-up">
                 <div className="w-full items-center flex justify-center flex-col">
                  <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[600px] leading-relaxed">Our  Approach</h1>
                  <p className="text-xs max-w-4xl text-[#66717B] my-2 leading-relaxed mt-5">In today’s digital world, attention is currency. Content marketing is creating valuable and informative content that attracts your target audience, establishes your brand as an authority, and ultimately drives sales. Here’s why it’s crucial:</p>
                 </div>
                 <div className="md:m-16 mt-5">
-                <div className="grid  md:grid-cols-2 gap-4 w-full ">
+                <div className="grid  md:grid-cols-2 gap-4 w-full  animate-fade-left">
                    {ourApproach.map((item,index)=>
                   <ServiceCard key={index} description={item.description} name={item.name} icon={item.icon}/>)}
                 </div>
@@ -95,10 +95,10 @@ export default function Branding(){
             </div>
             
             <div className="flex flex-col-reverse  md:flex-row justify-between md:m-32 m-8 items-center gap-6 md:text-base text-xs">
-                <div>
+                <div className="animate-fade-right">
                     <Image src="/images/braining_image.png" alt="Brand Image" width={500} height={500}/>
                 </div>
-                <div>
+                <div className="animate-fade-left">
                     <h1 className="font-baskerville text-2xl w-full md:text-4xl md:max-w-[400px] leading-relaxed">Content Formats & Channels To Reach Consumers</h1>
                     <p className="md:max-w-[500px] text-[#66717B] leading-relaxed mt-3">At 4th Estate, we create content and develop data-driven strategies to reach your target audience in the vibrant los angeles content marketing. Here’s how we leverage various formats and channels to amplify your brand message:</p>
                     <ul className="text-[#66717B] list-disc">
@@ -117,7 +117,7 @@ export default function Branding(){
                     </ul>
                 </div>
             </div>
-            <div className="md:m-32 m-8">
+            <div className="md:m-32 m-8 animate-fade-up">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="font-baskerville md:text-5xl text-2xl text-center max-w-2xl leading-relaxed">Amplify Your Brand in Content Marketing Services</h1>
                 </div>
@@ -129,7 +129,7 @@ export default function Branding(){
                     </div>)}
                 </div>
             </div>
-            <div className="md:m-32 m-8 text-[#66717B] flex gap-4 flex-col md:flex-row justify-between items-center md:text-base text-xs" >
+            <div className="md:m-32 m-8 text-[#66717B] flex gap-4 flex-col md:flex-row justify-between items-center md:text-base text-xs animate-fade-right" >
                 <div className="mb-2">
                     <h1 className="font-baskerville text-2xl w-full md:text-4xl md:max-w-[400px] leading-relaxed text-black">Why Choose 4th Estate for Content Marketing?</h1>
                     <p className="md:max-w-[500px] text-[#66717B] leading-relaxed mt-3">Los Angeles is a unique mix of cultures and trends. Your content marketing strategy must be just as diverse to win in this market. Here’s what makes 4th Estate your perfect partner for conquering LA’s content marketing scene:</p>
@@ -149,7 +149,7 @@ export default function Branding(){
                     </ul>
                     <p className="md:max-w-[500px] text-[#66717B] leading-relaxed">We’ll gladly connect you with testimonials and reviews from local clients who have thrived thanks to our LA-focused content marketing strategies.</p>
                 </div>
-                <Image src="/images/content-image.png" alt="content image" width={500} height={500} />
+                <Image src="/images/content-image.png" alt="content image" width={500} height={500} className="animate-fade-left"/>
             </div>
             <Faq/>
             <SectionCard />

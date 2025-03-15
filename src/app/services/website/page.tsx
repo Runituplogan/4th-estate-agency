@@ -1,10 +1,10 @@
 import { ArrowUpRight, Heart } from "lucide-react";
-import HeroLayout from "../components/hero_section";
+import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
-import Faq from "../components/faq";
-import SectionCard from "../components/card_section";
-import BrandBoost from "../components/brand_boost";
-import Footer from "../components/footer";
+import Faq from "../../components/faq";
+import SectionCard from "../../components/card_section";
+import BrandBoost from "../../components/brand_boost";
+import Footer from "../../components/footer";
 
 export default function WebsiteServicePage(){
     const websiteServices = [

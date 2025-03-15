@@ -1,11 +1,11 @@
 import { ArrowUpRight, ChartCandlestickIcon } from "lucide-react";
-import HeroLayout from "../components/hero_section";
+import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
-import ServiceCard from "../components/service_card";
-import Faq from "../components/faq";
-import SectionCard from "../components/card_section";
-import BrandBoost from "../components/brand_boost";
-import Footer from "../components/footer";
+import ServiceCard from "../../components/service_card";
+import Faq from "../../components/faq";
+import SectionCard from "../../components/card_section";
+import BrandBoost from "../../components/brand_boost";
+import Footer from "../../components/footer";
 
 export default function PressPage(){
     const prTailoredForBusiness = [

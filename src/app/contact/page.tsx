@@ -10,8 +10,8 @@ export default function ContactUs(){
             <HeroLayout backgroundImage="/images/bg_hero1.png">
                 <h1 className="text-3xl md:text-7xl  font-baskerville">Get In Touch</h1>
             </HeroLayout>
-            <div className="flex flex-col md:flex-row md:m-16 m-5 justify-between items-center">
-                <div>
+            <div className="flex flex-col md:flex-row md:m-16 m-5 justify-between items-center animate-fade-up">
+                <div className="animate-fade-right">
                     <div>
                         <h1 className="font-baskerville text-4xl max-w-[350px] pb-7">Let’s Level Up Your Brand Together</h1>
                         <p className="text-sm text-[#66717B] pb-4">Our friendly team would love to hear from you.</p>
@@ -40,7 +40,7 @@ export default function ContactUs(){
                     </div>
                     <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full">Send Message</button>
                 </div>
-                <div>
+                <div className="animate-fade-left">
                     <h3 className="text-sm font-bold">Headquarters</h3>
                     <div className="flex items-center">
                     <MapPin className="w-4 h-4 text-gray-400" />
