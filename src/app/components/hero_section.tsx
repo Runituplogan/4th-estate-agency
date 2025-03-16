@@ -157,7 +157,7 @@ export default function HeroLayout({ backgroundImage, children,height = "half" }
   return (
     <div
       className={`relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center  ${
-        height === "full" ? "h-screen" : "h-[80vh]"
+        height === "full" ? "h-screen" : "h-[70vh]"
       }`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >

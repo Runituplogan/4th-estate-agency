@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex justify-around flex-col md:flex-row gap-2">
         <div>
         <Image src={LogoImage} alt="Logo" width={100} height={100} />
-          <p className="mt-2 text-md leading-relaxed py-4 text-gray-600 max-w-[400px]">
+          <p className="mt-2 text-md leading-relaxed py-4 text-gray-600 max-w-[500px]">
             A marketing agency that gets your brand the attention it deserves. 
             We drive more traffic, leads & sales to your website.
           </p>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="font-semibold text-gray-900">Quick Links</h3>
+          <h3 className="font-medium text-[#192031]">Quick Links</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li><a href="" className="hover:text-gray-900">Home</a></li>
             <li><a href="/about" className="hover:text-gray-900">About</a></li>
@@ -41,14 +41,14 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold text-gray-900">Legal</h3>
+          <h3 className=" font-medium text-[#192031]">Legal</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li><a href="/" className="hover:text-gray-900">Privacy Policies</a></li>
             <li><a href="/" className="hover:text-gray-900">Terms & Conditions</a></li>
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold text-gray-900">Contact</h3>
+          <h3 className="font-medium text-[#192031]">Contact</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li className="flex items-center space-x-2">
               <PhoneIcon />
