@@ -16,9 +16,9 @@ const partners = [
 
 export default function OurPartners() {
   return (
-    <section className="py-10 px-6 animate-fade-up">
+    <section className="py-10 px-6 animate-fade-up md:mx-32">
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-5xl font-baskerville text-center md:text-left">Our Partners</h2>
+        <h2 className="text-3xl md:text-6xl font-baskerville text-center md:text-left">Our Partners</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-6 place-items-center">
         {partners.map((partner) => (

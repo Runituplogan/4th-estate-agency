@@ -4,7 +4,11 @@ import BrandBoost from "../components/brand_boost";
 import Footer from "../components/footer";
 import HeroLayout from "../components/hero_section";
 import Image from "next/image";
+import { useAboutPage } from "../context/aboutPageContext";
+import Preloader from "../components/preloader";
+
 export default function AboutPage(){
+    const {aboutPageData} = useAboutPage()
     const MAX_LENGTH = 100; 
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleDescription = () => setIsExpanded(!isExpanded);
@@ -57,18 +61,26 @@ export default function AboutPage(){
             title:"5-star reviews",
         },
     ]
+
+      if (!aboutPageData || !aboutPageData.content || aboutPageData.content.length == 0){
+        return <Preloader/>
+      }
+
+      console.log("about page",aboutPageData)
+
     return (
         <div>
         <HeroLayout backgroundImage="/images/bg_hero1.png">
             <h1 className="text-3xl md:text-7xl  font-baskerville">About Us</h1>
         </HeroLayout>
-        <div className="flex flex-col md:flex-row md:m-16 m-10 items-left justify-between">
-            <h1 className="text-3xl md:text-5xl font-baskerville md:flex-1 mb-2 animate-fade-right">One Mantra:<br/>Value Over Volume</h1>
-            <p className="max-w-[400px] mx-auto leading-relaxed animate-fade-left">Our mission is to provide competence, exceptional service, and lasting performance that drive measurable results through strategic innovation and client-focused solutions.</p>
+      
+        <div className="flex justify-around flex-col m-10 md:flex-row md:mx-40 my-10">
+            <h1 className="text-3xl md:text-5xl font-baskerville animate-fade-right flex-1">One Mantra:<br/>Value Over Volume</h1>
+            <p className="max-w-[400px] mx-auto leading-relaxed">Our mission is to provide competence, exceptional service, and lasting performance that drive measurable results through strategic innovation and client-focused solutions.</p>
         </div>
         <div className="animate-fade-up">
             <h1 className="text-3xl md:text-5xl font-baskerville text-center">Meet Our Founder</h1>
-            <div className="flex flex-col-reverse md:flex-row justify-between items-center md:m-16 m-10 ">
+            <div className="flex flex-col-reverse md:flex-row justify-around items-center md:m-16 m-10 ">
                 <div>
                 <p className="md:max-w-[500px] mx-auto leading-9 my-2 animate-fade-right">
                     Founded by Jason Aaron Scott, 4th Estate Agency demystifies the technical ins and outs of digital marketing. 
@@ -108,7 +120,7 @@ Coast to coast, our team of experts translate the complexities of marketing into
                 </div>)}
             </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-11 m-16 animate-fade-up">
+        <div className="flex flex-col md:flex-row justify-around items-center gap-11 m-16 animate-fade-up">
             <Image src="/images/team-gang.png" alt="team image" width={500} height={500} className="animate-fade-right"/>
             <div className="animate-fade-left">
                 <div className="mb-8">

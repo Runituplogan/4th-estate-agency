@@ -1,16 +1,25 @@
+"use client"
 import { MapPin } from "lucide-react";
 import HeroLayout from "../components/hero_section";
 import Image from "next/image";
 import InputForm from "../components/input_form";
 import BrandBoost from "../components/brand_boost";
 import Footer from "../components/footer";
+import { useContactPage } from "../context/contactPageContext";
+import Preloader from "../components/preloader";
 export default function ContactUs(){
+    const {contactPageData} = useContactPage()
+       if (!contactPageData || !contactPageData.content || contactPageData.content.length == 0){
+            return <Preloader/>
+          }
+    
+          console.log("contact Page",contactPageData)
     return (
         <div>
             <HeroLayout backgroundImage="/images/bg_hero1.png">
                 <h1 className="text-3xl md:text-7xl  font-baskerville">Get In Touch</h1>
             </HeroLayout>
-            <div className="flex flex-col md:flex-row md:m-16 m-5 justify-between items-center animate-fade-up">
+            <div className="flex flex-col md:flex-row md:m-16 m-5 justify-around items-center animate-fade-up">
                 <div className="animate-fade-right">
                     <div>
                         <h1 className="font-baskerville text-4xl max-w-[350px] pb-7">Let’s Level Up Your Brand Together</h1>

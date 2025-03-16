@@ -50,13 +50,13 @@ export default function ServicePage(){
             </HeroLayout>
             <div className="items-center text-center m-16 animate-fade-up">
                 <div className="w-full items-center flex justify-center flex-col">
-                 <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[600px] leading-relaxed">We Offer Various Services To Fit Your Brand</h1>
+                 <h1 className="text-center text-xl md:text-6xl font-baskerville max-w-[600px] leading-relaxed">We Offer Various Services To Fit Your Brand</h1>
                  <p className="text-xs max-w-xl text-[#66717B] my-2 leading-relaxed">‘Digital branding’ is a comprehensive marketing strategy which involves bespoke organic & paid search, social media, press, and alternative marketing tactics to develop and authenticate a brand across a wide range of avenues.</p>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 m-16  place-items-center gap-8 animate-fade-left">
             {serviceType.map((item,index)=> <div key={index} className="bg-white p-4 items-center">
-                <Image src={item.imageUrl} alt="Service Image" width={300} height={300}/>
+                <Image src={item.imageUrl} alt="Service Image" width={400} height={300}/>
                 <h2 className="text-xl font-baskerville py-2">{item.name}</h2>
                 <div>
                 <p className="max-w-[250px] text-xs leading-relaxed text-[#66717B]">{item.description}</p>

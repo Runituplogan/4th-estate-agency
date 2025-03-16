@@ -26,16 +26,16 @@ export default function BlogPosts() {
   };
 
   return (
-    <section className="py-10 px-6 animate-fade-up">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-baskerville">Read Our Blog Posts</h2>
+    <section className="py-10 px-6 animate-fade-up md:mx-16">
+      <div className="text-center mb-11">
+        <h2 className="text-3xl md:text-6xl font-baskerville">Read Our Blog Posts</h2>
       </div>
-      <div className="flex justify-center space-x-6">
+      <div className="flex justify-center space-x-6 md:space-x-20">
         {visiblePosts.map((post, index) => (
         <BlogCard imageUrl={post.image} link={post.link} title={post.title} key={index}/>
         ))}
       </div>
-      <div className="flex justify-center mt-6 space-x-4">
+      <div className="flex justify-center mt-6 space-x-8">
         <button 
           onClick={prevSlide} 
           className={` p-2 rounded-ful ${

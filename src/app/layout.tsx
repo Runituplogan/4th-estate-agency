@@ -11,6 +11,7 @@ import { PPCPageProvider } from "./context/ppcPageContext";
 import { PressPageProvider } from "./context/pressPageContext";
 import { SocialsPageProvider } from "./context/socialPageContext";
 import { WebDevelopmentPageProvider } from "./context/webDevelopmentPage";
+import { BrandingPageProvider } from "./context/brandingPageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,9 @@ export default function RootLayout({
                       <PressPageProvider>
                         <SocialsPageProvider>
                           <WebDevelopmentPageProvider>
-                            {children}
+                            <BrandingPageProvider>
+                              {children}
+                            </BrandingPageProvider>
                           </WebDevelopmentPageProvider>
                         </SocialsPageProvider>
                       </PressPageProvider>

@@ -2,6 +2,8 @@ import { Search } from "lucide-react";
 import HeroLayout from "../components/hero_section";
 import BlogCard from "../components/blog_card";
 import { blogPosts } from "../data/dummy_blog_data";
+import BrandBoost from "../components/brand_boost";
+import Footer from "../components/footer";
 
 export default function BlogPage(){
   const  searchTerm = [
@@ -31,6 +33,7 @@ export default function BlogPage(){
         },
     ]
     return (
+        <>
         <div>
         <HeroLayout backgroundImage="/images/bg_hero1.png">
         <h1 className="text-3xl md:text-6xl font-baskerville text-center">Blog</h1>
@@ -58,5 +61,8 @@ export default function BlogPage(){
             </div>
         </div>
         </div>
+        <BrandBoost/>
+        <Footer/>
+        </>
     )
 }

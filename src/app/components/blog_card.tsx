@@ -9,7 +9,7 @@ interface BlogCardProps {
   
  const BlogCard:React.FC<BlogCardProps> = ({imageUrl,title,link})=>{
     return (
-        <div  className="w-[300px]  rounded-lg shadow-none overflow-hidden">
+        <div  className="w-[360px]  rounded-lg shadow-none overflow-hidden">
         <Image src={imageUrl} alt={title} width={300} height={180} className="object-cover" />
         <div className="p-4">
           <h3 className="text-md font-baskerville">{title}</h3>

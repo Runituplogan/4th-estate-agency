@@ -1,3 +1,4 @@
+"use client"
 import { ArrowUpRight, Heart } from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import SectionCard from "../../components/card_section";
@@ -5,7 +6,14 @@ import Image from "next/image";
 import BrandBoost from "../../components/brand_boost";
 import Faq from "../../components/faq";
 import Footer from "../../components/footer";
+import {useSocialsPage} from "../../context/socialPageContext"
+import Preloader from "@/app/components/preloader";
 export default function SocialMediaPage(){
+    const {socialsPageData} = useSocialsPage()
+    if (!socialsPageData || !socialsPageData.content || socialsPageData.content.length == 0){
+    return <Preloader/>
+    }
+    console.log("socials",socialsPageData)
     const socialMediaServices =[
         {
             name:"Increased Brand Awareness",

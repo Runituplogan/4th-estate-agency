@@ -9,7 +9,7 @@ interface ExpertiseCardProps {
 
 const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="w-full bg-white p-6 rounded-xl shadow-md flex flex-col justify-between  md:max-w-[300px]">
+    <div className="w-full bg-white p-6 rounded-xl shadow-md flex flex-col justify-between  md:max-w-[355px]">
       <div className="flex items-center gap-3 text-[#2F4858] justify-between">
         {icon}
         <div className=" rounded-full bg-[#FBF0E5] p-2">
@@ -27,9 +27,9 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ icon, title, description 
 
 export default function DigitalBrandExpertise() {
   return (
-    <section className="py-16 px-6 animate-fade-up  ">
+    <section className="py-16 px-6 animate-fade-up my-16">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-5xl font-serif ">Digital Brand Expertise</h2>
+        <h2 className="text-3xl md:text-6xl font-serif ">Digital Brand Expertise</h2>
         <p className="text-gray-600 mt-4 max-w-3xl mx-auto text-md">
           Digital branding is a comprehensive marketing strategy which involves bespoke organic and paid 
           search, social media, press, and alternative marketing tactics to develop and authenticate a 

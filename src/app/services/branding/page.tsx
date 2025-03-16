@@ -1,3 +1,4 @@
+"use client"
 import { ArrowUpRight, ChevronUp, Medal, ShieldCheck, StarHalf,Target , ChartColumn, CheckIcon,Edit,Goal,BriefcaseBusiness,} from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
@@ -6,7 +7,16 @@ import Footer from "../../components/footer";
 import ServiceCard from "../../components/service_card";
 import Faq from "../../components/faq";
 import SectionCard from "../../components/card_section";
+import { useBrandingPage } from "@/app/context/brandingPageContext";
+import Preloader from "@/app/components/preloader";
+import Link from "next/link";
 export default function Branding(){
+    const {brandingPageData} = useBrandingPage()
+          if (!brandingPageData || !brandingPageData.content || brandingPageData.content.length == 0){
+            return <Preloader/>
+          }
+    
+          console.log("Branding page",brandingPageData)
     const ourApproach = [
         {
             name:"Cuts through the noise",
@@ -74,17 +84,19 @@ export default function Branding(){
                         <ArrowUpRight size={20} />
                     </div>
                  </button>
+                 <Link href="/contact">
                 <button className="mt-6 px-6 py-3 bg-white text-[#385065] rounded-lg  text-sm md:ml-2">
                     <div className="flex space-x-2">
                         <span>Book a Strategy Call</span> 
                         <ArrowUpRight size={20} />
                     </div>
                  </button>
+                 </Link>
             </HeroLayout>
             <div className="items-center text-center md:m-16 m-8 animate-fade-up">
                 <div className="w-full items-center flex justify-center flex-col">
-                 <h1 className="text-center text-xl md:text-5xl font-baskerville max-w-[600px] leading-relaxed">Our  Approach</h1>
-                 <p className="text-xs max-w-4xl text-[#66717B] my-2 leading-relaxed mt-5">In today’s digital world, attention is currency. Content marketing is creating valuable and informative content that attracts your target audience, establishes your brand as an authority, and ultimately drives sales. Here’s why it’s crucial:</p>
+                 <h1 className="text-center text-xl md:text-6xl font-baskerville max-w-[600px] leading-relaxed">Our  Approach</h1>
+                 <p className="text-base max-w-4xl text-[#66717B] my-2 leading-relaxed mt-5">In today’s digital world, attention is currency. Content marketing is creating valuable and informative content that attracts your target audience, establishes your brand as an authority, and ultimately drives sales. Here’s why it’s crucial:</p>
                 </div>
                 <div className="md:m-16 mt-5">
                 <div className="grid  md:grid-cols-2 gap-4 w-full  animate-fade-left">

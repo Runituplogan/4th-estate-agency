@@ -1,3 +1,4 @@
+"use client"
 import { ArrowUpRight,BadgeDollarSign,ChartColumnIncreasingIcon,BadgeCheckIcon,ChartLineIcon,BrickWallIcon,Home,HospitalIcon,Headphones,Globe2Icon,Building,PlusCircle, MapPlus, Link2,MessageSquareMoreIcon,Star,SearchCheckIcon,Folder,Lightbulb,Search,ChartCandlestickIcon,FolderEdit,FileBarChart,BriefcaseBusiness,FileArchiveIcon,SquareGanttChartIcon,UserRoundIcon} from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import ServiceCard from "../../components/service_card";
@@ -5,8 +6,14 @@ import Faq from "../../components/faq";
 import SectionCard from "../../components/card_section";
 import BrandBoost from "../../components/brand_boost";
 import Footer from "../../components/footer";
-
+import { useSeoPage } from "@/app/context/seoPageContext";
+import Preloader from "@/app/components/preloader";
 export default function SeoPage(){
+    const {seoPageData} = useSeoPage()
+            if (!seoPageData || !seoPageData.content || seoPageData.content.length == 0){
+            return <Preloader/>
+            }
+    console.log("seo",seoPageData)              
     const seoGrowthPlan= [
         {
             name:"Average ROI",

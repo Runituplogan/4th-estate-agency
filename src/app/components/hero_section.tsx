@@ -51,7 +51,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex items-center space-x-2">
         <Link href="/">
-          <Image src={LogoImage} alt="Logo" width={100} height={100} />
+          <Image src={LogoImage} alt="Logo" width={200} height={100} />
         </Link>
       </div>
       <div className="hidden md:flex space-x-6">
@@ -61,7 +61,7 @@ const Navbar = () => {
         <div
           className="relative"
           onMouseEnter={() => setDropdownOpen(true)}
-          onMouseLeave={() => setDropdownOpen(false)}
+          //onMouseLeave={() => setDropdownOpen(false)}
         >
           <Link href="/services" className="text-white hover:underline flex items-center">
             Services <ChevronDown size={16} className="ml-1" />
@@ -91,9 +91,15 @@ const Navbar = () => {
 
       {/* Social Media Icons (Desktop) */}
       <div className="hidden md:flex space-x-4">
+        <Link href="https://www.bing.com/ck/a?!&&p=b30f4f2092daf5bb4f9405c6ad12213174f92a29d46da000249b03af5097af3cJmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS90aGVmb3VydGhlc3RhdGVtZWRpYS8&ntb=1">
         <Image src={InstaSvg} alt="Instagram" width={24} height={24} />
+        </Link>
+        <Link href="https://www.bing.com/ck/a?!&&p=b881ef0128d1ef8726d1ce7a0881480d4d6b17a7d9e2c20f750a6572599a9896JmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+linkedin&u=a1aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvNHRoLWVzdGF0ZS1hZ2VuY3k&ntb=1">
         <Image src={LinkedInSvg} alt="LinkedIn" width={24} height={24} />
+        </Link>
+        <Link href="info@4thestateagency.com">
         <Image src={MailSvg} alt="Email" width={24} height={24} />
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}

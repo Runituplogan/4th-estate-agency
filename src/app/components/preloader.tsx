@@ -1,6 +1,6 @@
 
 "use client";
-
+import Image from "next/image";
 export default function Preloader() {
   return (
     <div
@@ -17,7 +17,10 @@ export default function Preloader() {
         zIndex: 9999,
       }}
     >
-      <div className="loader"></div> 
+      <div>
+      <Image src="/images/logov2.png" alt="Logo Image" width={100} height={100} />
+      <h1>Loading....</h1>
+      </div>
     </div>
   );
 }
