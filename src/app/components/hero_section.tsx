@@ -10,6 +10,7 @@ import InstaSvg from "../../../public/insta.svg";
 import LinkedInSvg from "../../../public/linkedIn.svg";
 import MailSvg from "../../../public/mail.svg";
 import { motion } from "framer-motion";
+import Wrapper from "./wrapper";
 
 interface HeroLayoutProps {
   backgroundImage: string;
@@ -166,15 +167,17 @@ export default function HeroLayout({
       className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 "
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <Navbar />
-      <motion.div
-        className={`relative z-10 px-[0.8rem] md:px-6, ${className}`}
-        initial={{ opacity: 0, y: 20 }} // Starts invisible & slightly below
-        animate={{ opacity: 1, y: 0 }} // Moves up and becomes visible
-        transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-      >
-        {children}
-      </motion.div>
+      <Wrapper>
+        <Navbar />
+        <motion.div
+          className={`relative z-10 px-[0.8rem] md:px-[4rem] ${className}`}
+          initial={{ opacity: 0, y: 20 }} // Starts invisible & slightly below
+          animate={{ opacity: 1, y: 0 }} // Moves up and becomes visible
+          transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+        >
+          {children}
+        </motion.div>
+      </Wrapper>
     </section>
   );
 }
