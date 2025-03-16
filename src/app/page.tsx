@@ -19,7 +19,7 @@ export default function Home() {
   console.log("homePage",homePageData)
   return (
     <div>
-    <HeroLayout backgroundImage="/images/bg_hero1.png">
+    <HeroLayout backgroundImage="/images/bg_hero1.png" height="full">
       <h1 className="text-3xl md:text-7xl  font-baskerville">An Agency That Gets Your <br/>Brand What it Deserves</h1>
       <Link href={'/contact'}>
       <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0">

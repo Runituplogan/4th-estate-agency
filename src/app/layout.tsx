@@ -12,7 +12,9 @@ import { PressPageProvider } from "./context/pressPageContext";
 import { SocialsPageProvider } from "./context/socialPageContext";
 import { WebDevelopmentPageProvider } from "./context/webDevelopmentPage";
 import { BrandingPageProvider } from "./context/brandingPageContext";
+import { Manrope } from 'next/font/google';
 
+const manrope = Manrope({ subsets: ['latin'], weight: ['400', '700'] });
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -36,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={manrope.className}
       >
         <ReactQueryProvider>
           <HomePageProvider>

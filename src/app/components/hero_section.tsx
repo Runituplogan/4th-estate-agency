@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 interface HeroLayoutProps {
   backgroundImage: string;
   children: ReactNode;
+  height?:'full' | 'half'
 }
 
 const Navbar = () => {
@@ -47,8 +48,7 @@ const Navbar = () => {
     },
   ]
   return (
-    <nav className="absolute top-0 left-0 w-full flex items-center justify-between p-6 bg-transparent z-20">
-      {/* Logo */}
+    <nav className="absolute top-0 left-0 w-full flex items-center md:justify-around justify-between p-6 bg-transparent z-20">
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image src={LogoImage} alt="Logo" width={150} height={100} />
@@ -153,10 +153,12 @@ const Navbar = () => {
   );
 };
 
-export default function HeroLayout({ backgroundImage, children }: HeroLayoutProps) {
+export default function HeroLayout({ backgroundImage, children,height = "half" }: HeroLayoutProps) {
   return (
     <div
-      className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center"
+      className={`relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center  ${
+        height === "full" ? "h-screen" : "h-[80vh]"
+      }`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>

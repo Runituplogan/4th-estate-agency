@@ -14,6 +14,7 @@ export default {
       },
       fontFamily: {
         baskerville: ["Baskerville", "serif"], 
+        Manrope:["Manrope"]
       },
     },
   },

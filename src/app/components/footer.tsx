@@ -6,21 +6,19 @@ import MailSvg from "../../../public/mail.svg";
 import Image from "next/image";
 import LogoImage from "../../../public/images/logov2.png";
 import Link from "next/link";
+import { LocationIcon, MailIcon, PhoneIcon } from "./icons/contact";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F7EFE5] text-gray-800 py-20 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {/* Logo & Description */}
+    <footer className="bg-[#F7EFE5] text-gray-800 py-20 px-6 md:px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto flex justify-around flex-col md:flex-row gap-2">
         <div>
         <Image src={LogoImage} alt="Logo" width={100} height={100} />
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-md leading-relaxed py-4 text-gray-600 max-w-[400px]">
             A marketing agency that gets your brand the attention it deserves. 
             We drive more traffic, leads & sales to your website.
           </p>
-          
-          {/* Social Icons */}
-          <div className="flex items-center space-x-3 mt-4">
+          <div className="flex items-center space-x-3 mt-4 my-3">
           <Link href="https://www.bing.com/ck/a?!&&p=b30f4f2092daf5bb4f9405c6ad12213174f92a29d46da000249b03af5097af3cJmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS90aGVmb3VydGhlc3RhdGVtZWRpYS8&ntb=1">
         <Image src={InstaSvg} alt="Instagram" width={24} height={24} />
         </Link>
@@ -32,8 +30,6 @@ export default function Footer() {
         </Link>
           </div>
         </div>
-
-        {/* Quick Links */}
         <div>
           <h3 className="font-semibold text-gray-900">Quick Links</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
@@ -44,8 +40,6 @@ export default function Footer() {
             <li><a href="/contact" className="hover:text-gray-900">Contact Us</a></li>
           </ul>
         </div>
-
-        {/* Legal */}
         <div>
           <h3 className="font-semibold text-gray-900">Legal</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
@@ -53,21 +47,19 @@ export default function Footer() {
             <li><a href="/" className="hover:text-gray-900">Terms & Conditions</a></li>
           </ul>
         </div>
-
-        {/* Contact */}
         <div>
           <h3 className="font-semibold text-gray-900">Contact</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 text-gray-700" />
+              <PhoneIcon />
               <span>213-216-4416</span>
             </li>
             <li className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-gray-700" />
+              <MailIcon/>
               <span>info@4thestateagency.com</span>
             </li>
             <li className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-gray-700" />
+              <LocationIcon />
               <span>218 S Tower Dr #207, Beverly Hills, CA 90211</span>
             </li>
           </ul>
