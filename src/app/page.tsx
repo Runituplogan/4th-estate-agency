@@ -63,7 +63,9 @@ export default function Home() {
     </div>
    
       <DigitalBrandExpertise/>
+      <div>
       <OurPartners/>
+      </div>
       <BlogPosts/>
       <BrandBoost/>
       <Footer/>

@@ -13,19 +13,26 @@ const partners = [
   { name: "Recharge", src: "/images/paterner9.png" },
   { name: "Stripe", src: "/images/paterner10.png" },
 ];
-
 export default function OurPartners() {
   return (
-    <section className="py-10 px-6 animate-fade-up md:mx-32">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-6xl font-baskerville text-center md:text-left">Our Partners</h2>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6 place-items-center">
-        {partners.map((partner) => (
-          <div key={partner.name} className="w-32">
-            <Image src={partner.src} alt={partner.name} width={120} height={50} className="object-contain" />
+    <section className="py-10 animate-fade-up">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col">
+          <h2 className="text-3xl md:text-6xl font-baskerville mb-3">Our Partners</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mt-4">
+            {partners.map((partner) => (
+              <div key={partner.name} className="w-32">
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  width={120}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
