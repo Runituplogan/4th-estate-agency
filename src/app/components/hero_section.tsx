@@ -48,8 +48,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <nav className="absolute top-0 left-0 w-full flex items-center justify-between p-6 bg-transparent z-20">
-      {/* Logo */}
+    <nav className="absolute top-0 left-0 w-full flex items-center md:justify-around justify-between p-6 bg-transparent z-20">
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image src={LogoImage} alt="Logo" width={150} height={100} />
