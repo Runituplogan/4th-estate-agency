@@ -84,7 +84,7 @@ export default function WebsiteServicePage() {
         backgroundImage="/images/social_media.png"
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  ">
+        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  capitalize ">
           Professional Web Design Services in LA
         </h1>
 
@@ -112,24 +112,26 @@ export default function WebsiteServicePage() {
         </p>
       </Wrapper>
 
-      <Wrapper
-        as="ul"
-        className="bg-white mb-[1rem] md:mb-[2rem] lg:mb-[4rem] xl:mb-[6rem] w-full  grid md:grid-cols-2 gap-[1.375rem]  py-[1.875rem] lg:py-[4rem] animate-fade-up  rounded-[8px] "
-      >
-        {websiteServices.map((item, index) => (
-          <article className="flex flex-col gap-[0.5rem] " key={index}>
-            <i className="size-[2.5rem] lg:size-[4.25rem] overflow-hidden flex items-center justify-center ">
-              {item.icon}
-            </i>
-            <h4 className=" text-[1.5rem] lg:text-[2.25rem] leading-[120%] tracking-[-0.3%] align-middle  font-baskerville text-[#1B1B1B] ">
-              {item.name}
-            </h4>
+      <Wrapper>
+        <Wrapper
+          as="ul"
+          className="bg-white mb-[1rem] md:mb-[2rem] lg:mb-[4rem] xl:mb-[6rem] w-full  grid md:grid-cols-2 gap-[1.375rem]  py-[1.875rem] lg:py-[2.8rem] animate-fade-up  rounded-[8px] lg:px-[2.5rem] "
+        >
+          {websiteServices.map((item, index) => (
+            <article className="flex flex-col gap-[0.5rem] " key={index}>
+              <i className="size-[2.5rem] lg:size-[4.25rem] overflow-hidden flex items-center justify-center ">
+                {item.icon}
+              </i>
+              <h4 className=" text-[1.5rem] lg:text-[2.25rem] leading-[120%] tracking-[-0.3%] align-middle  font-baskerville text-[#1B1B1B] ">
+                {item.name}
+              </h4>
 
-            <p className=" text-[0.875rem] leading-[1.5rem]  md:text-[1.125rem] lg:leading-[2.25rem] tracking-[-0.3%] align-middle font-manrope lg:font-geist text-[#66717B] ">
-              {item.description}
-            </p>
-          </article>
-        ))}
+              <p className=" text-[0.875rem] leading-[1.5rem]  md:text-[1.125rem] lg:leading-[2.25rem] tracking-[-0.3%] align-middle font-manrope lg:font-geist text-[#66717B] ">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </Wrapper>
       </Wrapper>
 
       <section className="bg-white py-[2rem] lg:py-[4rem]">
