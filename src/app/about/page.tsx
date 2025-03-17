@@ -48,14 +48,14 @@ export default function AboutPage() {
         </h1>
         <div className="flex gap-x-[14rem] flex-col-reverse md:flex-row justify-around items-center ">
           <div className="w-full md:w-1/2">
-            <div className=" leading-9 my-2 font-geist animate-fade-right">
-              <div className="!pb-6">Founded by Jason Aaron Scott, 4th Estate Agency demystifies the
-              technical ins and outs of digital marketing. </div> Having so many
+            <p className=" leading-[3rem] font-geist my-2 animate-fade-right">
+              Founded by Jason Aaron Scott, 4th Estate Agency demystifies the
+              technical ins and outs of digital marketing. Having so many
               agencies to choose from, we decided to act as the conduit between
               Google's complex engine and your upstart brand. Coast to coast,
               our team of experts translate the complexities of marketing into
               clear and simple terms for sustainable cost-effective growth.
-            </div>
+            </p>
           </div>
           <div className="h-fit w-full animate-fade-left md:w-1/2">
             <Image
