@@ -257,7 +257,7 @@ export default function SeoPage() {
         backgroundImage="/images/services_bg.png"
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] ">
+        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize ">
           Drive more traffic, leads, and sales to your website
         </h1>
         <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
@@ -312,8 +312,8 @@ export default function SeoPage() {
         ))}
       </Wrapper>
 
-      <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[4.25rem] text-center pt-[2.43rem] lg:pt-[4rem] animate-fade-up ">
-        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[4.275rem]  ">
+      <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[4.25rem] text-center pt-[2.43rem] lg:pt-[4rem] animate-fade-up  ">
+        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[10.275rem]  ">
           How Our Local SEO Process Work
         </h2>
       </Wrapper>
@@ -354,7 +354,7 @@ export default function SeoPage() {
       </Wrapper>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up ">
-        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
+        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[11.275rem] ">
           4th Estate LA-Based SEO Audit Process
         </h2>
         <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] ">
@@ -383,8 +383,8 @@ export default function SeoPage() {
         </h2>
       </Wrapper>
 
-      <section className="bg-white py-[1.875rem] lg:py-[4rem] animate-fade-up ">
-        <Wrapper className="bg-white w-full rounded grid md:grid-cols-2 gap-8 place-items-center">
+      <Wrapper className="">
+        <Wrapper className="bg-white w-full rounded grid py-[1.875rem] lg:py-[4rem]  md:grid-cols-2 gap-8 place-items-center animate-fade-up lg:px-[2.5rem] ">
           {benefitOfSeo.map((item, index) => (
             <article className="flex flex-col gap-[0.5rem]" key={index}>
               <i className="size-[2.5rem] lg:size-[4.25rem] overflow-hidden flex items-center justify-center ">
@@ -399,7 +399,7 @@ export default function SeoPage() {
             </article>
           ))}
         </Wrapper>
-      </section>
+      </Wrapper>
 
       <Faq />
       <SectionCard />

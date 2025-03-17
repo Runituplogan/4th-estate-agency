@@ -52,7 +52,7 @@ export default function ServicePage() {
   ];
   return (
     <div className="space-y-[5.5rem]">
-      <HeroLayout backgroundImage="/images/services_bg.png">
+      <HeroLayout full={true} backgroundImage="/images/services_bg.png">
         <h1 className="text-3xl md:text-7xl  font-baskerville">Our Services</h1>
       </HeroLayout>
       <Wrapper>

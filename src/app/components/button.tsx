@@ -18,7 +18,7 @@ export default function Button({
   return (
     <button
       className={`px-6 py-[1rem]  rounded-[0.75rem]  text-[1rem] font-manrope font-semibold flex gap-[0.5rem] ${className}`}
-      onClick={() => !!path && router.push(path)}
+      onClick={() => router.push(path ? path : "/contact")}
     >
       {children}
       <ArrowUpRight size={20} />

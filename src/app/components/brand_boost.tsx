@@ -23,7 +23,7 @@ export default function BrandBoost() {
           Ready For a Brand Boost?
         </h2>
 
-        <Button className="bg-white text-black">Book a consultation</Button>
+        <Button  className="bg-white text-black">Book a consultation</Button>
       </Wrapper>
     </section>
   );

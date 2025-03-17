@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WhyUs() {
   return (
     <div className="text-[#66717B] flex gap-4 flex-col md:flex-row justify-between items-center md:text-base text-sm animate-fade-right">
-      <div className="mb-2 w-1/2">
+      <div className="mb-2 w-full md:w-1/2">
         <h1 className="font-baskerville text-2xl w-full md:text-6xl md:max-w-[400px] leading-relaxed text-black">
           Why Choose 4th Estate for Content Marketing?
         </h1>
