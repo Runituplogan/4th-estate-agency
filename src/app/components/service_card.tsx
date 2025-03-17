@@ -1,23 +1,32 @@
-
 import { JSX } from "react";
 
 interface ServicesCardProps {
-    icon: JSX.Element;
-    name: string;
-    description: string;
-    bgColor?:string;
-  }
-
-
-  
-const ServiceCard:React.FC<ServicesCardProps>=({icon,name,description,bgColor = "bg-white"})=>{
-    return(
-        <div   className={`${bgColor} text-left px-8 py-4 w-full rounded`}>
-            {icon}
-            <h2 className="text-xl md:text-2xl max-w-sm font-baskerville pb-2">{name}</h2>
-            <p className="text-xs md:max-w-sm text-[#66717B]">{description}</p>
-        </div>
-    )
+  icon: JSX.Element;
+  name: string;
+  description: string;
+  bgColor?: string;
 }
+
+const ServiceCard: React.FC<ServicesCardProps> = ({
+  icon,
+  name,
+  description,
+  bgColor = "bg-white",
+}) => {
+  return (
+    <div
+      className={`${bgColor} text-left px-[2.5rem] py-[1.5rem] w-full  flex flex-col gap-[8px]  rounded-[8px] `}
+    >
+      {icon}
+      <h2 className=" text-[1.5rem] md:text-[2.25rem] leading-[2.25rem] tracking-[-0.3%]  align-middle font-baskerville ">
+        {name}
+      </h2>
+
+      <p className=" text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.5rem] align-middle tracking-[-0.3%] text-[#66717B] font-manrope ">
+        {description}
+      </p>
+    </div>
+  );
+};
 
 export default ServiceCard;
