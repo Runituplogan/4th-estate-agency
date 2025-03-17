@@ -81,7 +81,7 @@ export default function WebsiteServicePage() {
   return (
     <Fragment>
       <HeroLayout
-        backgroundImage="/images/social_media.png"
+        backgroundImage="/images/website-bg.png"
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
         full={true}
       >
