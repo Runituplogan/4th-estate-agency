@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -22,6 +22,15 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); 
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const servicesNav = [
     {
       title: "Branding",
@@ -114,30 +123,24 @@ const Navbar = () => {
         {menuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 p-6 flex flex-col items-center space-y-4">
-          <Link href="/about" className="text-white hover:underline">
+        <div className="fixed top-16  left-0 w-full z-50 transition-all duration-300  mt-4  bg-white justify-end p-6 py-8 flex flex-col items-left  space-y-6">
+          <Link href="/about" className="text-black hover:underline text-left ">
             About
           </Link>
-          <div className="w-full flex flex-col items-center">
-            <button
-              className="text-white hover:underline flex items-center"
+          <div className="w-full flex flex-col items-left justify-start">
+            <button 
+              className="text-black hover:underline flex items-center justify-start"
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
             >
               Services <ChevronDown size={16} className="ml-1" />
             </button>
             {mobileDropdownOpen && (
-              <div className="mt-2 w-48 bg-white text-black shadow-lg md:hidden">
-                <Link
-                  href="/services"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Services
-                </Link>
+              <div className="mt-2  text-black md:hidden flex flex-col justify-start items-left">
                 {servicesNav.map((item, index) => (
                 <Link
                   key={index}
                   href={item.route}
-                  className="block px-4 py-2 hover:bg-gray-200"
+                  className="block px-4 py-2 hover:bg-gray-200 text-[#66717B] text-left"
                 >
                   {item.title}
                 </Link>
@@ -146,18 +149,12 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link href="/blogs" className="text-white hover:underline">
+          <Link href="/blogs" className="text-black hover:underline text-left">
             Blog
           </Link>
-          <Link href="/contact" className="text-white hover:underline">
+          <Link href="/contact" className="text-black hover:underline text-left">
             Contact Us
           </Link>
-
-          <div className="flex space-x-4 mt-4">
-            <Image src={InstaSvg} alt="Instagram" width={24} height={24} />
-            <Image src={LinkedInSvg} alt="LinkedIn" width={24} height={24} />
-            <Image src={MailSvg} alt="Email" width={24} height={24} />
-          </div>
         </div>
       )}
     </nav>
