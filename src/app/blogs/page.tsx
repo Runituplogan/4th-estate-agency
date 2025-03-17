@@ -61,7 +61,7 @@ export default function BlogPage() {
           <Wrapper>
             <div className="flex flex-wrap gap-6 justify-center">
               {blogPosts.map((post, index) => (
-                <div className="w-1/3">
+                <div className="w-1/3" key={index}>
                   <BlogCard
                     imageUrl={post.image}
                     link={post.link}
