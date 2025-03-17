@@ -50,10 +50,10 @@ export default function ContactUs(){
                     <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full">Send Message</button>
                 </div>
                 <div className="animate-fade-left">
-                    <h3 className="text-sm font-bold">Headquarters</h3>
+                    <h3 className="text-base font-bold">Headquarters</h3>
                     <div className="flex items-center">
                     <MapPin className="w-4 h-4 text-gray-400" />
-                    <p className="text-xs text-[#66717B] my-2">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
+                    <p className="text-base text-[#66717B] my-2">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
                     </div>
                  <Image src="/images/location.png" alt="Location Image" height={500} width={600}/>
                 </div>
