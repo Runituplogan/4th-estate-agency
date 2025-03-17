@@ -1,4 +1,3 @@
-import { ArrowUpRight, ChartCandlestickIcon } from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
 import ServiceCard from "../../components/service_card";
