@@ -41,6 +41,7 @@ import {
   VerifiedIcon,
   WorkHistoryIcon,
 } from "@/icons";
+import { Fragment } from "react";
 
 export const metadata: Metadata = {
   title: "SEO",
@@ -251,7 +252,7 @@ export default function SeoPage() {
   //   }
 
   return (
-    <section>
+    <Fragment>
       <HeroLayout
         backgroundImage="/images/services_bg.png"
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
@@ -404,6 +405,6 @@ export default function SeoPage() {
       <SectionCard />
       <BrandBoost />
       <Footer />
-    </section>
+    </Fragment>
   );
 }
