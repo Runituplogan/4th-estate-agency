@@ -15,9 +15,11 @@ const ServiceCard: React.FC<ServicesCardProps> = ({
 }) => {
   return (
     <div
-      className={`${bgColor} text-left px-[2.5rem] py-[1.5rem] w-full  flex flex-col gap-[8px]  rounded-[8px] `}
+      className={`${bgColor} text-left px-[2.5rem] py-[1.5rem] w-full  flex flex-col gap-[8px]  rounded-[8px]  `}
     >
-      {icon}
+      <i className="flex justify-center items-center size-[2.5rem] lg:size-[4.25rem] ">
+        {icon}
+      </i>
       <h2 className=" text-[1.5rem] md:text-[2.25rem] leading-[2.25rem] tracking-[-0.3%]  align-middle font-baskerville ">
         {name}
       </h2>
