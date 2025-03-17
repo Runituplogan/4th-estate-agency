@@ -19,7 +19,7 @@ export default function Preloader() {
     >
       <div>
       <Image src="/images/logov2.png" alt="Logo Image" width={100} height={100} />
-      <h1>Loading....</h1>
+      {/* <h1>Loading....</h1> */}
       </div>
     </div>
   );
