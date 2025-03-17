@@ -5,6 +5,7 @@ import { blogPosts } from "../data/dummy_blog_data";
 import BrandBoost from "../components/brand_boost";
 import Footer from "../components/footer";
 import Wrapper from "../components/wrapper";
+import SideChevron from "../icons/side-chevron";
 
 export default function BlogPage() {
   const searchTerm = [
@@ -33,9 +34,9 @@ export default function BlogPage() {
       name: "Management",
     },
   ];
-
+  const pages = [1, 2, 3, "...", 8, 9, 10];
   return (
-    <div>
+    <div className="space-y-[5rem]">
       <div>
         <HeroLayout backgroundImage="/images/bg_hero1.png">
           <h1 className="text-3xl md:text-6xl font-baskerville text-center">
@@ -50,18 +51,18 @@ export default function BlogPage() {
           </div>
           <div className="grid md:grid-cols-8 grid-cols-2 mt-8 text-xs md:text-sm gap-3 text-left">
             {searchTerm.map((item, index) => (
-              <p key={index} className="px-3 py-1 cursor-pointer">
+              <p key={index} className="px-3 py-1 cursor-pointer font-geist">
                 {item.name}
               </p>
             ))}
           </div>
         </HeroLayout>
 
-        <div className="m-16 animate-fade-up">
+        <div className="my-14 animate-fade-up">
           <Wrapper>
-            <div className="flex flex-wrap gap-6 justify-center">
+            <div className="flex flex-wrap gap-6 justify-between">
               {blogPosts.map((post, index) => (
-                <div className="w-1/3" key={index}>
+                <div className="md:w-[30%] w-full" key={index}>
                   <BlogCard
                     imageUrl={post.image}
                     link={post.link}
@@ -70,6 +71,31 @@ export default function BlogPage() {
                   />
                 </div>
               ))}
+            </div>
+            {/* dummy pagination */}
+            <div className="hidden md:flex w-full">
+              <div className="p-4 w-full">
+                <hr className="border-gray-500 border-t-3 mb-4" />
+                <div className="flex items-center justify-between font-g">
+                  <div>
+                    <p className="cursor-pointer font-geist flex items-center gap-x-2">
+                      <SideChevron /> Previous
+                    </p>
+                  </div>
+                  <div className="flex space-x-2 font-geist">
+                    {pages.map((page, index) => (
+                      <span key={index} className="px-3 py-1">
+                        {page}
+                      </span>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="cursor-pointer font-geist flex items-center gap-x-2">
+                      Next <SideChevron variation="right"/>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Wrapper>
         </div>
