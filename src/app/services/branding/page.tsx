@@ -45,7 +45,7 @@ export default function Branding() {
 
   return (
     <div className="space-y-[5rem]">
-      <HeroLayout backgroundImage="/images/braning_service.png">
+      <HeroLayout backgroundImage="/images/braning_service.png" full={true}>
         <h1 className="text-2xl md:text-7xl  font-baskerville">
           {" "}
           Elevate Your Business Through Cohesive Branding

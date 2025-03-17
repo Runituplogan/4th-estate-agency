@@ -83,6 +83,7 @@ export default function WebsiteServicePage() {
       <HeroLayout
         backgroundImage="/images/social_media.png"
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
+        full={true}
       >
         <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  capitalize ">
           Professional Web Design Services in LA
