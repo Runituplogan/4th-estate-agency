@@ -161,6 +161,7 @@ const Navbar = () => {
           </Link>
         </div>
       )}
+    </Wrapper>
     </nav>
   );
 };
@@ -174,7 +175,7 @@ export default function HeroLayout({ backgroundImage, children }: HeroLayoutProp
       <Wrapper>
         <Navbar />
         <motion.div
-          className={`relative z-10 px-[0.8rem] md:px-[4rem] ${className}`}
+          className={`relative z-10 px-[0.8rem] md:px-[4rem]`}
           initial={{ opacity: 0, y: 20 }} // Starts invisible & slightly below
           animate={{ opacity: 1, y: 0 }} // Moves up and becomes visible
           transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
