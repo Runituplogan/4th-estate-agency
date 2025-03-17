@@ -15,6 +15,7 @@ import { Logo } from "./icons/navbar/logo";
 interface HeroLayoutProps {
   backgroundImage: string;
   children: ReactNode;
+  full?: boolean
   className?: string;
 }
 
@@ -166,10 +167,10 @@ const Navbar = () => {
   );
 };
 
-export default function HeroLayout({ backgroundImage, children }: HeroLayoutProps) {
+export default function HeroLayout({ backgroundImage, full,children }: HeroLayoutProps) {
   return (
     <section
-      className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 "
+      className={`relative ${full ? "!h-screen" : "!h-[75vh]"} w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Wrapper>

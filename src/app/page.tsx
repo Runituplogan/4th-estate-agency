@@ -22,7 +22,7 @@ export default function Home() {
   console.log("homePage", homePageData);
   return (
     <div className="flex flex-col gap-y-[5.5rem]">
-      <HeroLayout backgroundImage="/images/bg_hero1.png">
+      <HeroLayout full={true} backgroundImage="/images/bg_hero1.png">
         <Wrapper>
           <h1 className="text-3xl md:text-7xl  font-baskerville">
             An Agency That Gets Your <br />
@@ -91,4 +91,3 @@ export default function Home() {
     </div>
   );
 }
-
