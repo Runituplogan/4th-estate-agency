@@ -91,7 +91,7 @@ const Team = () => {
                   {item.description.length > MAX_LENGTH && (
                     <button
                       onClick={() => toggleDescription(index)}
-                      className="text-blue-500 transition-all duration-300 ease-in-out"
+                      className="text-blue-500 transition-all text-xs duration-300 ease-in-out"
                     >
                       {expandedIndex === index ? "See less" : "See more"}
                     </button>

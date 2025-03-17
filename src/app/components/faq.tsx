@@ -44,7 +44,7 @@ export default function Faq({ items = faqData }: FAQProps) {
         Frequently Asked Question
       </h2>
 
-      <div className="p-">
+      <div className="p- w-full">
         {items.map((item, index) => (
           <div key={index} className="border-b border-gray-300">
             <button
@@ -59,7 +59,7 @@ export default function Faq({ items = faqData }: FAQProps) {
               />
             </button>
             {openIndex === index && (
-              <p className="text-[#393b3b] pb-4 text-[1rem] md:text-[1.5rem] font-baskerville ">
+              <p className="text-[#393b3b] pb-4 font-geist text-md">
                 {item.answer}
               </p>
             )}

@@ -52,6 +52,7 @@ const Navbar = () => {
   ];
   return (
     <nav className="absolute top-0 left-0 w-full flex items-center md:justify-around justify-between p-6 bg-transparent z-20">
+     <Wrapper className="flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image src={LogoImage} alt="Logo" width={150} height={100} />
@@ -161,17 +162,12 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
       </Wrapper>
     </nav>
   );
 };
 
-export default function HeroLayout({
-  backgroundImage,
-  children,
-  className,
-}: HeroLayoutProps) {
+export default function HeroLayout({ backgroundImage, children }: HeroLayoutProps) {
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 "
@@ -179,9 +175,9 @@ export default function HeroLayout({
     >
       <Navbar />
       <motion.div
-        className={`relative z-10 px-[0.8rem] md:px-6, ${className}`}
-        initial={{ opacity: 0, y: 20 }} // Starts invisible & slightly below
-        animate={{ opacity: 1, y: 0 }} // Moves up and becomes visible
+        className="relative z-10 max-w-5xl px-6"
+        initial={{ opacity: 0, y: 20 }}  // Starts invisible & slightly below
+        animate={{ opacity: 1, y: 0 }}  // Moves up and becomes visible
         transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
       >
         {children}

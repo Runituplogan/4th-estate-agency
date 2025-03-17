@@ -15,7 +15,6 @@ import Link from "next/link";
 import Wrapper from "./components/wrapper";
 export default function Home() {
   const { homePageData } = useHomePage();
-  const { homePageData } = useHomePage();
   // if (!homePageData || !homePageData.content || homePageData.content.length == 0){
   //   return <Preloader/>
   // }
@@ -90,7 +89,6 @@ export default function Home() {
       <BrandBoost />
       <Footer />
     </div>
-  );
   );
 }
 
