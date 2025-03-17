@@ -19,6 +19,14 @@ export default {
       },
       fontFamily: {
         baskerville: ["Baskerville", "serif"],
+        geist: '"Geist", sans-serif',
+        manrope: ' "Manrope", sans-serif',
+      },
+      backgroundImage: {
+        bg1: "linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.51) 100%)",
+      },
+      screens: {
+        sm: "375px",
       },
       maxWidth: {
         default: "192rem",

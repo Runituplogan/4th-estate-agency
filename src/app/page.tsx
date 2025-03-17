@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import Image from "next/image";
 import HeroLayout from "./components/hero_section";
 import { ArrowUpRight } from "lucide-react";
@@ -14,9 +15,11 @@ import Link from "next/link";
 import Wrapper from "./components/wrapper";
 export default function Home() {
   const { homePageData } = useHomePage();
+  const { homePageData } = useHomePage();
   // if (!homePageData || !homePageData.content || homePageData.content.length == 0){
   //   return <Preloader/>
   // }
+  console.log("homePage", homePageData);
   console.log("homePage", homePageData);
   return (
     <div className="flex flex-col gap-y-[5.5rem]">
@@ -88,4 +91,6 @@ export default function Home() {
       <Footer />
     </div>
   );
+  );
 }
+

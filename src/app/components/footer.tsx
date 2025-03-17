@@ -46,10 +46,8 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
-        {/* Quick Links */}
         <div>
-          <h3 className="font-semibold text-gray-900">Quick Links</h3>
+          <h3 className="font-medium text-[#192031]">Quick Links</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li>
               <a href="" className="hover:text-gray-900">
@@ -78,10 +76,8 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
-        {/* Legal */}
         <div>
-          <h3 className="font-semibold text-gray-900">Legal</h3>
+          <h3 className=" font-medium text-[#192031]">Legal</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li>
               <a href="/" className="hover:text-gray-900">
@@ -95,12 +91,11 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
-        {/* Contact */}
         <div>
-          <h3 className="font-semibold text-gray-900">Contact</h3>
+          <h3 className="font-medium text-[#192031]">Contact</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li className="flex items-center space-x-2">
+              <PhoneIcon />
               <PhoneIcon />
               <span>213-216-4416</span>
             </li>
