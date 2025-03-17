@@ -13,7 +13,6 @@ import Achievements from "./_components/achievements";
 export default function AboutPage() {
   const { aboutPageData } = useAboutPage();
 
-
   if (
     !aboutPageData ||
     !aboutPageData.content ||
@@ -48,14 +47,21 @@ export default function AboutPage() {
         </h1>
         <div className="flex gap-x-[14rem] flex-col-reverse md:flex-row justify-around items-center ">
           <div className="w-full md:w-1/2">
-            <p className=" leading-[3rem] font-geist my-2 animate-fade-right">
-              Founded by Jason Aaron Scott, 4th Estate Agency demystifies the
-              technical ins and outs of digital marketing. Having so many
-              agencies to choose from, we decided to act as the conduit between
-              Google's complex engine and your upstart brand. Coast to coast,
-              our team of experts translate the complexities of marketing into
-              clear and simple terms for sustainable cost-effective growth.
-            </p>
+            <div className=" leading-9 font-geist my-2 animate-fade-right">
+              <div className="mb-[1rem]">
+                {" "}
+                Founded by Jason Aaron Scott, 4th Estate Agency demystifies the
+                technical ins and outs of digital marketing.{" "}
+              </div>{" "}
+              <div className="mb-[1rem]">
+                Having so many agencies to choose from, we decided to act as the
+                conduit between Google's complex engine and your upstart
+                brand.{" "}
+              </div>{" "}
+              Coast to coast, our team of experts translate the complexities of
+              marketing into clear and simple terms for sustainable
+              cost-effective growth.
+            </div>
           </div>
           <div className="h-fit w-full animate-fade-left md:w-1/2">
             <Image
@@ -68,8 +74,8 @@ export default function AboutPage() {
           </div>
         </div>
       </Wrapper>
-       <Team />
-       <Achievements />
+      <Team />
+      <Achievements />
       <BrandBoost />
       <Footer />
     </div>
