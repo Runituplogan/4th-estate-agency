@@ -88,8 +88,6 @@ const Navbar = () => {
           Contact Us
         </Link>
       </div>
-
-      {/* Social Media Icons (Desktop) */}
       <div className="hidden md:flex space-x-4">
         <Link href="https://www.instagram.com/4thestateagency?igsh=MXg5bWp1OWRmMHNkMQ==">
         <Image src={InstaSvg} alt="Instagram" width={24} height={24} />
@@ -101,8 +99,6 @@ const Navbar = () => {
         <Image src={MailSvg} alt="Email" width={24} height={24} />
         </Link>
       </div>
-
-      {/* Mobile Menu Button */}
       <button
         className="md:hidden text-white"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -157,7 +153,7 @@ export default function HeroLayout({ backgroundImage, children,height = "half" }
   return (
     <div
       className={`relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center  ${
-        height === "full" ? "h-screen" : "h-[70vh]"
+        height === "full" ? "h-screen" : "h-[50vh]"
       }`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
