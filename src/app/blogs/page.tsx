@@ -36,8 +36,8 @@ export default function BlogPage() {
   ];
   const pages = [1, 2, 3, "...", 8, 9, 10];
   return (
-    <div className="space-y-[5rem]">
-      <div>
+    <div >
+      <div className="space-y-[5rem]">
         <HeroLayout backgroundImage="/images/bg_hero1.png">
           <h1 className="text-3xl md:text-6xl font-baskerville text-center">
             Blog

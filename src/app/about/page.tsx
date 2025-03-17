@@ -25,7 +25,8 @@ export default function AboutPage() {
   console.log("about page", aboutPageData);
 
   return (
-    <div className="flex flex-col gap-y-[5.5rem]">
+    <div >
+      <div className="flex flex-col gap-y-[5.5rem]">
       <HeroLayout backgroundImage="/images/bg_hero1.png">
         <h1 className="text-3xl md:text-7xl  font-baskerville">About Us</h1>
       </HeroLayout>
@@ -70,6 +71,7 @@ export default function AboutPage() {
       </Wrapper>
        <Team />
        <Achievements />
+      </div>
       <BrandBoost />
       <Footer />
     </div>
