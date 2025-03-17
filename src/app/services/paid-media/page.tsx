@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Wrapper from "@/app/components/wrapper";
-import { ArrowUpRight } from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import ServiceCard from "../../components/service_card";
 import Faq from "../../components/faq";
@@ -98,8 +97,7 @@ export default function PaidMediaPage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
       >
         <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  ">
-          Expert PPC Management: <br className="hidden md:block " /> Drive
-          Sales, Not Just Clicks
+          Expert PPC Management: Drive Sales, Not Just Clicks
         </h1>
 
         <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
@@ -112,7 +110,7 @@ export default function PaidMediaPage() {
         </section>
       </HeroLayout>
 
-      <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[10.875rem] ">
+      <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[10.875rem] animate-fade-up ">
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
           What’s Paid Media? and Why Is It Important To Take Paid Media
           Management?
@@ -133,7 +131,7 @@ export default function PaidMediaPage() {
         </p>
       </Wrapper>
 
-      <Wrapper className="grid  md:grid-cols-2 gap-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] ">
+      <Wrapper className="grid  md:grid-cols-2 gap-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
         {whyPaidMedia.map((item, index) => (
           <ServiceCard
             key={index}
@@ -178,7 +176,8 @@ export default function PaidMediaPage() {
           </div>
         </figure>
       </Wrapper>
-      <section className="bg-white py-[1.875rem] lg:py-[4rem] ">
+
+      <section className="bg-white py-[1.875rem] lg:py-[4rem] animate-fade-up ">
         <Wrapper className="flex flex-col  gap-[1.5rem]">
           <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
             Our Paid Media Management Services Include
@@ -187,7 +186,7 @@ export default function PaidMediaPage() {
           <div className="bg-white w-full rounded grid md:grid-cols-2 gap-[1.375rem]  ">
             {paidMediaManagementServices.map((item, index) => (
               <article className="flex flex-col gap-[0.5rem]" key={index}>
-                <i className="size-[2rem] lg:size-fit overflow-hidden flex items-center justify-center ">
+                <i className="size-[2.5rem] lg:size-[4.25rem] overflow-hidden flex items-center justify-center ">
                   {item.icon}
                 </i>
                 <h4 className=" text-[1.5rem] lg:text-[2.25rem] leading-[120%] tracking-[-0.3%] align-middle  font-baskerville text-[#1B1B1B] ">
