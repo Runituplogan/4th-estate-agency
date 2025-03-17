@@ -1,27 +1,3 @@
-import {
-  BrickWallIcon,
-  Home,
-  HospitalIcon,
-  Headphones,
-  Globe2Icon,
-  Building,
-  PlusCircle,
-  MapPlus,
-  Link2,
-  MessageSquareMoreIcon,
-  Star,
-  SearchCheckIcon,
-  Folder,
-  Lightbulb,
-  Search,
-  ChartCandlestickIcon,
-  FolderEdit,
-  FileBarChart,
-  BriefcaseBusiness,
-  FileArchiveIcon,
-  SquareGanttChartIcon,
-  UserRoundIcon,
-} from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import ServiceCard from "../../components/service_card";
 import Faq from "../../components/faq";
