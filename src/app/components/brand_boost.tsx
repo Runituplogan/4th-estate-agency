@@ -4,9 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function BrandBoost() {
   return (
-    <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[400px] -mb-[5.5rem] -mt-[2rem] md:h-[500px] lg:h-[600px] overflow-hidden">
       <Image 
-        src="/images/ocean.png" // Replace with your actual image path
+        src="/images/ocean.png"
         alt="Ocean waves"
         layout="fill"
         objectFit="cover"
@@ -20,7 +20,7 @@ export default function BrandBoost() {
         
         <a 
           href="#" 
-          className="mt-6 bg-white text-black font-medium px-6 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-gray-100 transition"
+          className="mt-8 bg-white text-black font-medium px-6 py-3 rounded-lg flex items-center space-x-2 shadow-md z-10 hover:bg-gray-100 transition"
         >
           <span>Book a consultation</span>
           <ArrowUpRight className="w-5 h-5" />
