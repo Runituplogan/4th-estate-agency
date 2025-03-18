@@ -33,7 +33,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({
   route,
 }) => {
   return (
-    <div className="w-full bg-white p-6 rounded-xl shadow-md flex flex-col justify-between md:w-1/3">
+    <div className="w-full bg-[#E0E0E0] p-6 rounded-xl shadow-md flex flex-col justify-between md:w-1/3">
       <div className="flex items-center gap-3 text-[#2F4858] justify-between">
         <div className="mb-3 w-[4px]">{icon}</div>
         <div className="rounded-full bg-[#FBF0E5] p-2">

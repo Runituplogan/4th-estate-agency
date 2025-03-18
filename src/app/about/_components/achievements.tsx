@@ -24,7 +24,7 @@ export default function Achievements() {
   return (
     <Wrapper className="flex flex-col w-full md:flex-row justify-around items-center gap-11 animate-fade-up">
       <Image
-        src="/images/team-gang.png"
+        src="/images/founder_banner.jpeg"
         alt="team image"
         width={500}
         height={500}

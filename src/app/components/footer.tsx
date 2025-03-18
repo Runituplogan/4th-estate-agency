@@ -75,7 +75,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-2">
               <MailIcon/>
-              <span>jason@4thestateagency.com</span>
+              <span>info@4thestateagency.com</span>
             </li>
             <li className="flex items-center space-x-2">
               <LocationIcon />

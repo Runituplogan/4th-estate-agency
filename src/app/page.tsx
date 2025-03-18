@@ -13,6 +13,8 @@ import { useHomePage } from "./context/homePageContext";
 import Preloader from "./components/preloader";
 import Link from "next/link";
 import Wrapper from "./components/wrapper";
+import { GoogleIcon } from "./icons/googleIcon";
+import { OneStar } from "./icons/oneStart";
 export default function Home() {
   const { homePageData } = useHomePage();
   // if (!homePageData || !homePageData.content || homePageData.content.length == 0){
@@ -25,10 +27,10 @@ export default function Home() {
       <div className="flex flex-col gap-y-[5.5rem]">
       <HeroLayout full={true} backgroundImage="/images/bg_hero1.png">
         <Wrapper>
-          <h1 className="text-3xl md:text-7xl  font-baskerville">
-            An Agency That Gets Your <br />
-            Brand What it Deserves
-          </h1>
+          <h1 className="text-[43px] md:text-7xl leading-[1.2] font-baskerville">
+          An Agency That Gets <br className="hidden md:inline" />
+          Your Brand What it Deserves
+        </h1>
           <Link href={"/contact"}>
             <button className="mt-6 px-6 py-3 max-w-[253px] bg-[#385065] text-white rounded-lg mb-3 md:mb-0">
               <div className="flex text-sm space-x-2">
@@ -43,7 +45,7 @@ export default function Home() {
             }
           >
             <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] ml-3">
-              <div className="flex items-center space-x-3">
+              <div className="md:flex items-center space-x-3 hidden">
                 <Image
                   src="/images/google-logo.png"
                   alt="google logo"
@@ -57,6 +59,13 @@ export default function Home() {
                   height={30}
                 />
                 <span className="text-xs"> Read Our 22 Review</span>
+                <ArrowUpRight size={20} />
+              </div>
+              <div className="flex items-center gap-2 md:hidden">
+                <GoogleIcon/>
+                <span>5</span>
+                <OneStar/>
+                <span className="text-sm"> Read Our 22 Review</span>
                 <ArrowUpRight size={20} />
               </div>
             </button>
