@@ -170,7 +170,7 @@ const Navbar = () => {
 export default function HeroLayout({ backgroundImage, full,children }: HeroLayoutProps) {
   return (
     <section
-      className={`relative ${full ? "!h-screen" : "!h-[75vh]"} w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0`}
+      className={`relative ${full ? "md:!h-screen" : "md:!h-[75vh]"} w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 !h-[60vh]`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Wrapper>
