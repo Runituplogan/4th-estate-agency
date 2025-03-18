@@ -24,11 +24,11 @@ export default function Home() {
   console.log("homePage", homePageData);
   return (
     <div >
-      <div className="flex flex-col gap-y-[5.5rem]">
+      <div className="flex flex-col md:gap-y-[5.5rem] gap-10">
       <HeroLayout full={true} backgroundImage="/images/bg_hero1.png">
         <Wrapper>
           <h1 className="text-[43px] md:text-7xl leading-[1.2] font-baskerville">
-          An Agency That Gets <br className="hidden md:inline" />
+          An Agency That Gets
           Your Brand What it Deserves
         </h1>
           <Link href={"/contact"}>

@@ -19,10 +19,10 @@ export default function OurPartners() {
     <Wrapper className="animate-fade-up">
       <div>
         <div className="flex flex-col">
-          <h2 className="text-3xl md:text-6xl font-baskerville mb-[2.2rem]">
+          <h2 className="text-3xl md:text-6xl font-baskerville mb-[2.2rem] text-center md:text-left">
             Our Partners
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-[2.4rem] mt-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-[2.4rem]">
             {partners.map((partner) => (
               <div key={partner.name} className="w-full max-w-[165px] flex justify-center">
                 <Image

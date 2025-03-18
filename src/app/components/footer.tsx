@@ -4,6 +4,7 @@ import InstaSvg from "../../../public/insta.svg";
 import LinkedInSvg from "../../../public/linkedIn.svg";
 import MailSvg from "../../../public/mail.svg";
 import Image from "next/image";
+import { InstagramIcon,MailIcon as MailIcon2,LinkedIn } from "./icons/socials";
 import LogoImage from "../../../public/images/logov2.png";
 import Link from "next/link";
 import { LocationIcon, MailIcon, PhoneIcon } from "./icons/contact";
@@ -20,13 +21,13 @@ export default function Footer() {
           </p>
           <div className="flex items-center space-x-3 mt-4 my-3">
           <Link href="jason@4thestateagency.com">
-        <Image src={MailSvg} alt="Email" width={24} height={24} />
+            <MailIcon2/>
         </Link>
         <Link href="https://www.bing.com/ck/a?!&&p=b881ef0128d1ef8726d1ce7a0881480d4d6b17a7d9e2c20f750a6572599a9896JmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+linkedin&u=a1aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvNHRoLWVzdGF0ZS1hZ2VuY3k&ntb=1">
-        <Image src={LinkedInSvg} alt="LinkedIn" width={24} height={24} />
+          <LinkedIn/>
         </Link>
         <Link href="https://www.instagram.com/4thestateagency?igsh=MXg5bWp1OWRmMHNkMQ==">
-        <Image src={InstaSvg} alt="Instagram" width={24} height={24} />
+        <InstagramIcon/>
         </Link>
           </div>
         </div>

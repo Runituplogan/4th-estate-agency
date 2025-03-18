@@ -31,7 +31,7 @@ export default function BlogPosts() {
     <Wrapper className="animate-fade-up">
       <div className="text-center mb-6">
         <h2 className="text-3xl md:text-5xl font-baskerville">
-          Read Our Blog Posts
+          Read Our Blog <br className="md:hidden inline"/> Posts
         </h2>
       </div>
 
@@ -55,7 +55,7 @@ export default function BlogPosts() {
           ))}
         </Swiper>
 
-        <div className="flex justify-center mt-6 space-x-6 md:justify-end">
+        <div className="flex justify-center mt-6 mb-9 space-x-6 md:justify-end">
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"

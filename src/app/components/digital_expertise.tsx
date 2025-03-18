@@ -54,18 +54,17 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({
 export default function DigitalBrandExpertise() {
   return (
     <section className=" animate-fade-up">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-7xl font-serif mb-2">
-          Digital Brand Expertise
-        </h2>
-        <p className="text-gray-600 mt-4 leading-loose max-w-3xl mx-auto text-md">
-          Digital branding is a comprehensive marketing strategy which involves
-          bespoke organic and paid search, social media, press, and alternative
-          marketing tactics to develop and authenticate a brand across a wide
-          range of avenues.
-        </p>
-      </div>
-
+      <div className="text-center mb-10 px-4">
+      <h2 className="text-[32px] leading-[1.2] md:text-7xl font-serif mb-3">
+        Digital Brand <br className="md:hidden inline"/> Expertise
+      </h2>
+      <p className="text-gray-700 mt-4 leading-[1.6] md:max-w-3xl mx-auto text-base md:text-md max-w-[414px]">
+        Digital branding is a comprehensive marketing strategy which involves
+        bespoke organic and paid search, social media, press, and alternative
+        marketing tactics to develop and authenticate a brand across a wide
+        range of avenues.
+      </p>
+    </div>
       <Wrapper>
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5 animate-fade-right">
           <ExpertiseCard
