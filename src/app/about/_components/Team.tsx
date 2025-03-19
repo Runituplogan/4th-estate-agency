@@ -57,7 +57,7 @@ const Team = () => {
       <div className="relative w-full">
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 50000 }}
           spaceBetween={20}
           loop={true}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -71,7 +71,7 @@ const Team = () => {
           {teamMembers.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="w-full">
-                <div className="w-full h-[350px] overflow-hidden">
+                <div className="w-full h-[400px] overflow-hidden">
                   <Image
                     src={item.imagePath}
                     alt={item.name}

@@ -31,6 +31,7 @@ import Approach from "./_component/Approach";
 import ContentFormat from "./_component/content-format";
 import ContentMarketing from "./_component/content-marketing";
 import WhyUs from "./_component/why-us";
+import BookACallBtn from "@/app/components/BookACallBtn";
 export default function Branding() {
   const { brandingPageData } = useBrandingPage();
   if (
@@ -51,20 +52,7 @@ export default function Branding() {
           {" "}
           Elevate Your Business Through Cohesive Branding
         </h1>
-        <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 text-sm">
-          <div className="flex space-x-2">
-            <span>Book a Free Content Audition</span>
-            <ArrowUpRight size={20} />
-          </div>
-        </button>
-        <Link href="/contact">
-          <button className=" px-6 py-3 bg-white text-[#385065] rounded-lg  text-sm md:ml-2">
-            <div className="flex space-x-2">
-              <span>Book a Strategy Call</span>
-              <ArrowUpRight size={20} />
-            </div>
-          </button>
-        </Link>
+        <BookACallBtn/>
       </HeroLayout>
       <Wrapper className="space-y-[5rem]">
         <Approach />

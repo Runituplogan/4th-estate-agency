@@ -19,6 +19,8 @@ import {
   VerifiedIcon,
 } from "@/icons";
 import Button from "@/app/components/button";
+import Link from "next/link";
+import BookACallBtn from "@/app/components/BookACallBtn";
 
 const whyPaidMedia = [
   {
@@ -100,15 +102,7 @@ export default function PaidMediaPage() {
         <h1 className="text-2xl text-[35px] pt-20 md:pt-0 md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize  ">
           Expert PPC Management: Drive Sales, Not Just Clicks
         </h1>
-
-        <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
-          <Button className="bg-[#385065] text-white md:justify-self-end ">
-            Book a Free PPC Audit
-          </Button>
-          <Button className="bg-white text-[#4C5862]  md:justify-self-start">
-            Book a Strategy Call
-          </Button>
-        </section>
+      <BookACallBtn/>
       </HeroLayout>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[9.875rem] animate-fade-up ">

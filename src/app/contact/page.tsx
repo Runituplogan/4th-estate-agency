@@ -141,7 +141,7 @@ export default function ContactUs(){
                     <h3 className="text-base font-bold">Headquarters</h3>
                     <div className="flex items-center gap-3 md:gap-0">
                     <MapPin className="md:w-4 md:h-4 text-gray-400 w-8 h-8" />
-                    <p className="text-base text-[#66717B] my-2 md:mb-0">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
+                    <p className="text-base text-[#66717B] my-2 md:mb-0 ">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
                     </div>
                  <Image src="/images/location.png" alt="Location Image" height={500} width={600} className="md:my-0 my-6"/>
                 </div>

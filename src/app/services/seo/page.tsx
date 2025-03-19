@@ -42,6 +42,8 @@ import {
   WorkHistoryIcon,
 } from "@/icons";
 import { Fragment } from "react";
+import Link from "next/link";
+import BookACallBtn from "@/app/components/BookACallBtn";
 
 export const metadata: Metadata = {
   title: "SEO",
@@ -261,15 +263,8 @@ export default function SeoPage() {
         <h1 className="text-2xl md:text-7xl xl:text-[6rem] text-[40px] font-baskerville pt-32 md:pt-0	 md:leading-relaxed leading-[1.2] capitalize ">
           Drive more traffic, leads, and sales to your website
         </h1>
-        <section className="sm:py-[2.4rem] md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
-          <Button className="bg-[#385065] text-white md:justify-self-end ">
-            Book a Free SEO Audit
-          </Button>
-          <Button className="bg-white text-[#4C5862]  md:justify-self-start">
-            Book a Strategy Call
-          </Button>
-        </section>
-      </HeroLayout>
+        <BookACallBtn/>    
+       </HeroLayout>
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] py-[1.5rem]  text-center lg:py-[4rem] animate-fade-up ">
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
           Business Growth With SEO

@@ -32,15 +32,15 @@ export default function Achievements() {
       />
       <div className="animate-fade-left w-full md:w-1/2">
         <div className="mb-8">
-          <p className="font-baskerville md:text-6xl text-4xl">
+          <p className="font-baskerville md:text-6xl text-4xl text-center md:text-left">
             We're only just <br className=""/> getting started on <br className=""/> our journey
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6  text-left">
           {achievements.map((achievement, index) => (
             <div key={index}>
-              <h1 className="md:text-5xl text-3xl font-semibold font-geist mb-3 md:mb-0">{achievement.amount}</h1>
-              <p className="text-[#66717B] text-sm font-geist">{achievement.title}</p>
+              <h1 className="md:text-5xl text-3xl font-semibold font-geist mb-3 md:mb-0 text-center md:text-left">{achievement.amount}</h1>
+              <p className="text-[#66717B] text-sm font-geist text-center md:text-left">{achievement.title}</p>
             </div>
           ))}
         </div>

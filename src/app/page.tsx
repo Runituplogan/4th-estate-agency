@@ -63,8 +63,6 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 md:hidden">
                 <GoogleIcon/>
-                <span>5</span>
-                <OneStar/>
                 <span className="text-sm"> Read Our 22 Review</span>
                 <ArrowUpRight size={20} />
               </div>

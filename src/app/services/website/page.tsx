@@ -18,6 +18,8 @@ import {
   WebIcon,
 } from "@/icons";
 import { LocalIcon } from "@/icons/local";
+import Link from "next/link";
+import BookACallBtn from "@/app/components/BookACallBtn";
 
 export const metadata: Metadata = {
   title: "Web Development",
@@ -89,14 +91,7 @@ export default function WebsiteServicePage() {
           Professional Web Design Services in LA
         </h1>
 
-        <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
-          <Button className="bg-[#385065] text-white md:justify-self-end ">
-            Book a Free Website Audit
-          </Button>
-          <Button className="bg-white text-[#4C5862]  md:justify-self-start">
-            Book a Strategy Call
-          </Button>
-        </section>
+         <BookACallBtn/>
       </HeroLayout>
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[12rem] text-center ">

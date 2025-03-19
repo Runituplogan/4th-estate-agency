@@ -22,6 +22,8 @@ import {
   TrayGrowthChartIcon,
   VideoIcon,
 } from "@/icons";
+import Link from "next/link";
+import BookACallBtn from "@/app/components/BookACallBtn";
 
 export const metadata: Metadata = {
   title: "Press",
@@ -115,14 +117,7 @@ export default function PressPage() {
         <h1 className="text-2xl text-[40px] md:pt-0 pt-20 md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize ">
           Performance Focused Digital PR Agency
         </h1>
-        <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
-          <Button className="bg-[#385065] text-white md:justify-self-end ">
-            Get a Free PR Audit
-          </Button>
-          <Button className="bg-white text-[#4C5862]  md:justify-self-start">
-            Book a Strategy Call
-          </Button>
-        </section>
+        <BookACallBtn/>
       </HeroLayout>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] py-[1.5rem]  text-center lg:py-[4rem] animate-fade-up ">

@@ -18,6 +18,8 @@ import {
   SpeakerIcon,
   TiktokIcon,
 } from "@/icons";
+import Link from "next/link";
+import BookACallBtn from "@/app/components/BookACallBtn";
 // import { useSocialsPage } from "../../context/socialPageContext";
 // import Preloader from "@/app/components/preloader";
 
@@ -96,18 +98,10 @@ export default function SocialMediaPage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
         full={true}
       >
-        <h1 className="text-xl text-[40px] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize md:pt-0 pt-32">
+        <h1 className="text-2xl text-[40px] md:text-6xl xl:text-[5rem] font-baskerville leading-[1.2em] capitalize md:pt-0 pt-32">
           Los Angeles's Most Result-Oriented Social Media Agency
         </h1>
-
-        <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
-          <Button className="bg-[#385065] text-white md:justify-self-end ">
-            Book a Free Social Media Audit
-          </Button>
-          <Button className="bg-white text-[#4C5862]  md:justify-self-start">
-            Book a Strategy Call
-          </Button>
-        </section>
+       <BookACallBtn/>
       </HeroLayout>
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[7rem] text-center ">
@@ -126,7 +120,7 @@ export default function SocialMediaPage() {
 
       <Wrapper
         as="ul"
-        className="bg-white mb-[1rem] md:mb-[2rem] lg:mb-[4rem] xl:mb-[6rem] w-full  grid md:grid-cols-2 gap-[1.375rem]  py-[1.875rem] lg:py-[4rem] animate-fade-up  rounded-[8px] "
+        className="bg-white md:mb-[2rem] lg:mb-[4rem] xl:mb-[6rem] w-full  grid md:grid-cols-2 gap-[1.375rem]  py-[1.875rem] lg:py-[4rem] animate-fade-up  rounded-[8px] "
       >
         {socialMediaServices.map((item, index) => (
           <article className="flex flex-col gap-[0.5rem] " key={index}>

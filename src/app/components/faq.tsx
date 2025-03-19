@@ -59,7 +59,7 @@ export default function Faq({ items = faqData }: FAQProps) {
               />
             </button>
             {openIndex === index && (
-              <p className="text-[#393b3b] pb-4 font-geist text-md">
+              <p className="text-[#393b3b] pb-4 font-baskerville text-md">
                 {item.answer}
               </p>
             )}
