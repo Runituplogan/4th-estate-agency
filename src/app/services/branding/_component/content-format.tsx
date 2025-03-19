@@ -13,16 +13,16 @@ export default function ContentFormat() {
         />
       </div>
       <div className="animate-fade-left w-full md:w-1/2">
-        <h1 className="font-baskerville text-2xl w-full md:text-4xl md:max-w-[400px] leading-relaxed">
+        <h1 className="font-baskerville text-2xl w-full text-[43px] md:text-4xl md:max-w-[400px] md:leading-relaxed leading-[1.0]">
           Content Formats & Channels To Reach Consumers
         </h1>
-        <p className="md:max-w-[500px] text-[#66717B] font-geist leading-loose mt-3">
+        <p className="md:max-w-[500px] text-[#66717B] font-geist leading-loose mt-3 md:mb-0 mb-3">
           At 4th Estate, we create content and develop data-driven strategies to
           reach your target audience in the vibrant los angeles content
           marketing. Here's how we leverage various formats and channels to
           amplify your brand message:
         </p>
-        <ul className="text-[#66717B] list-disc font-geist leading-loose">
+        <ul className="text-[#66717B] list-disc font-geist leading-loose pl-7">
           <li>
             <span>Written Content</span>
           </li>

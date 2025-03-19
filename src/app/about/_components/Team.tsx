@@ -50,7 +50,7 @@ const Team = () => {
 
   return (
     <Wrapper className="animate-fade-up">
-      <h1 className="text-3xl mb-[3rem] md:text-5xl font-baskerville text-center">
+      <h1 className="text-4xl mb-2 md:mb-[3rem] md:text-5xl font-baskerville text-center">
         Meet Our Team
       </h1>
 

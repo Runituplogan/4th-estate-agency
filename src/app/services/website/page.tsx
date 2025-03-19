@@ -85,7 +85,7 @@ export default function WebsiteServicePage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
         full={true}
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  capitalize ">
+        <h1 className="text-[2.5rem] md:text-7xl pt-20 md:pt-0 xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  capitalize ">
           Professional Web Design Services in LA
         </h1>
 
@@ -100,7 +100,7 @@ export default function WebsiteServicePage() {
       </HeroLayout>
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[12rem] text-center ">
-        <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
+        <h3 className="text-center text-2xl text-[45px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
           An Elite Web Design Service in LA
         </h3>
         <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
@@ -178,7 +178,7 @@ export default function WebsiteServicePage() {
               <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
                 Professional Web Design Services in Los Angeles
               </h3>
-              <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] flex flex-col gap-[1rem]">
+              <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] flex flex-col gap-[1rem] md:mb-0 mb-5">
                 we’re LA’s Best Social Web Design Services. It’s not what we say
                 but what our customers say about our services. Over the years,
                 we’ve created hundreds of web designs and helped our customers

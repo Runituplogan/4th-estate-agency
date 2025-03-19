@@ -30,7 +30,7 @@ const SectionCard: React.FC<SectionCardProps> = ({
             {description}
           </p>
           {showBtn && (
-            <Button className="text-[#385065] mr-auto bg-white self-center ">
+            <Button className="text-[#385065] mr-auto bg-white self-center  items-center justify-center w-full md:w-auto">
               Book a Strategy Call
             </Button>
           )}

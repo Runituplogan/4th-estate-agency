@@ -138,6 +138,7 @@ const Navbar = () => {
             </button>
             {mobileDropdownOpen && (
               <div className="mt-2  text-black md:hidden flex flex-col justify-start items-left">
+                <Link href="/services"   className="block px-4 py-2 hover:bg-gray-200 text-[#66717B] text-left">Services</Link>
                 {servicesNav.map((item, index) => (
                   <Link
                     key={index}
@@ -170,7 +171,7 @@ const Navbar = () => {
 export default function HeroLayout({ backgroundImage, full,children }: HeroLayoutProps) {
   return (
     <section
-      className={`relative ${full ? "md:!h-screen" : "md:!h-[75vh]"} w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 !h-[60vh]`}
+      className={`relative ${full ? "md:!h-screen" : "md:!h-[75vh]"} w-full bg-cover bg-center flex flex-col items-center justify-center text-white text-center before:absolute before:bg-bg1 before:inset-0 !h-[55vh]`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Wrapper>

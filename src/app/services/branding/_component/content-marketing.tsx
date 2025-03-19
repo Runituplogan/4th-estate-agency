@@ -62,7 +62,7 @@ export default function ContentMarketing() {
   return (
     <div className="animate-fade-up">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-baskerville mb-3 md:text-6xl text-2xl text-center leading-relaxed">
+        <h1 className="font-baskerville mb-3 md:text-6xl text-2xl text-center md:leading-relaxed text-[43px] leading-[1.0]">
           Amplify Your Brand in Content <br className="hidden md:flex" />{" "}
           Marketing Services
         </h1>

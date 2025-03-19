@@ -73,13 +73,13 @@ export default function BlogPage() {
               ))}
             </div>
             {/* dummy pagination */}
-            <div className="hidden md:flex w-full">
+            <div className=" w-full">
               <div className="p-4 w-full">
                 <hr className="border-gray-500 border-t-3 mb-4" />
                 <div className="flex items-center justify-between font-g">
                   <div>
                     <p className="cursor-pointer font-geist flex items-center gap-x-2">
-                      <SideChevron /> Previous
+                      <SideChevron /> <span className="md:inline hidden">Previous</span> 
                     </p>
                   </div>
                   <div className="flex space-x-2 font-geist">
@@ -91,7 +91,7 @@ export default function BlogPage() {
                   </div>
                   <div>
                     <p className="cursor-pointer font-geist flex items-center gap-x-2">
-                      Next <SideChevron variation="right"/>{" "}
+                    <span className="md:inline hidden">Next</span>   <SideChevron variation="right"/>{" "}
                     </p>
                   </div>
                 </div>

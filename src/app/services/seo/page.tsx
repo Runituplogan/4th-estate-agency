@@ -258,10 +258,10 @@ export default function SeoPage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
         full={true}
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize ">
+        <h1 className="text-2xl md:text-7xl xl:text-[6rem] text-[40px] font-baskerville pt-32 md:pt-0	 md:leading-relaxed leading-[1.2] capitalize ">
           Drive more traffic, leads, and sales to your website
         </h1>
-        <section className="py-[2rem] sm:py-[2.4rem]  md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
+        <section className="sm:py-[2.4rem] md:py-[2.5rem] grid place-content-center gap-[0.5rem] md:grid-cols-2   ">
           <Button className="bg-[#385065] text-white md:justify-self-end ">
             Book a Free SEO Audit
           </Button>
@@ -292,7 +292,7 @@ export default function SeoPage() {
       </Wrapper>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up ">
-        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
+        <h2 className="text-center text-2xl text-[40px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
           Local Businesses That Absolutely Need local SEO in LA, CA
         </h2>
         <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] ">
@@ -355,10 +355,10 @@ export default function SeoPage() {
       </Wrapper>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up ">
-        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[11.275rem] ">
+        <h2 className="md:text-center text-left text-2xl text-[35px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[11.275rem] ">
           4th Estate LA-Based SEO Audit Process
         </h2>
-        <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] ">
+        <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] text-left md:text-center">
           We delegate 2 highly experienced SEO experts for your site who have
           analyzed thousands of websites in their careers. There are over 50 SEO
           factors that they make your website go through to audit it and then
@@ -379,7 +379,7 @@ export default function SeoPage() {
       </Wrapper>
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[4.25rem] text-center pt-[2.43rem] lg:pt-[4rem] animate-fade-up ">
-        <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[4.275rem]  ">
+        <h2 className="text-center text-2xl text-[40px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[4.275rem]  ">
           Benefits of Getting SEO Audit Services For Your Website
         </h2>
       </Wrapper>

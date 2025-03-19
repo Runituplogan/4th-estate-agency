@@ -107,10 +107,11 @@ export default function ContactUs(){
                 <h1 className="text-3xl md:text-8xl  font-baskerville">Get In Touch</h1>
             </HeroLayout>
             <div className="flex flex-col md:flex-row md:m-16 m-5 justify-center md:space-x-20 items-center animate-fade-up">
-                <div className="animate-fade-right">
+                <div className="animate-fade-right md:mb-0 mb-10">
                     <div>
-                        <h1 className="font-baskerville text-5xl max-w-[400px] pb-7">Let’s Level Up Your Brand Together</h1>
+                        <h1 className="font-baskerville md:text-5xl text-4xl md:mt-0 mt-3  max-w-[400px] pb-7">Let’s Level Up Your Brand Together</h1>
                         <p className="text-base text-[#66717B] pb-4">Our friendly team would love to hear from you.</p>
+                        
                     </div>
                     <div className="flex flex-col md:flex-row gap-6 my-2  w-full">
                         <div>
@@ -138,11 +139,11 @@ export default function ContactUs(){
                 </div>
                 <div className="animate-fade-left">
                     <h3 className="text-base font-bold">Headquarters</h3>
-                    <div className="flex items-center">
-                    <MapPin className="w-4 h-4 text-gray-400" />
-                    <p className="text-base text-[#66717B] my-2">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
+                    <div className="flex items-center gap-3 md:gap-0">
+                    <MapPin className="md:w-4 md:h-4 text-gray-400 w-8 h-8" />
+                    <p className="text-base text-[#66717B] my-2 md:mb-0">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
                     </div>
-                 <Image src="/images/location.png" alt="Location Image" height={500} width={600}/>
+                 <Image src="/images/location.png" alt="Location Image" height={500} width={600} className="md:my-0 my-6"/>
                 </div>
             </div>
              <BrandBoost/>

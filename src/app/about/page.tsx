@@ -25,7 +25,7 @@ export default function AboutPage() {
 
   return (
     <div>
-      <div className="flex flex-col gap-y-[5.5rem]">
+      <div className="flex flex-col gap-y-10 md:gap-y-[5.5rem]">
       <HeroLayout backgroundImage="/images/bg_hero1.png">
         <h1 className="text-3xl md:text-7xl  font-baskerville">About Us</h1>
       </HeroLayout>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </p>
       </Wrapper>
       <Wrapper className="animate-fade-up">
-        <h1 className="text-3xl mb-[3rem] md:text-5xl font-baskerville text-center">
+        <h1 className="text-4xl mb-2 md:mb-[3rem] md:text-5xl font-baskerville text-center">
           Meet Our Founder
         </h1>
         <div className="flex gap-x-[14rem] flex-col-reverse md:flex-row justify-around items-center ">
@@ -78,8 +78,8 @@ export default function AboutPage() {
       <Team />
       <Achievements />
       <BrandBoost />
-      <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

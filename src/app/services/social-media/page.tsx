@@ -96,7 +96,7 @@ export default function SocialMediaPage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
         full={true}
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize ">
+        <h1 className="text-xl text-[40px] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize md:pt-0 pt-32">
           Los Angeles's Most Result-Oriented Social Media Agency
         </h1>
 
@@ -144,7 +144,7 @@ export default function SocialMediaPage() {
         ))}
       </Wrapper>
 
-      <section className="bg-[#0C2F4D]  px-8">
+      <section className="bg-[#0C2F4D]  md:px-8">
         <SectionCard
           title="Social Media Management"
           imageUrl="social_groups.png"
@@ -190,10 +190,10 @@ export default function SocialMediaPage() {
 
       <Wrapper className="grid grid-cols-1 xl:grid-cols-[1fr_37rem] justify-between  items-center gap-[1.5rem] xl:gap-[1.875rem] xl:pt-[5.875rem] py-[2.1rem] ">
         <figcaption>
-          <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
+          <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-2xl text-[45px] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
             LA's Top-Tier Social Media Marketing Agency 4th Estate
           </h3>
-          <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
+          <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] md:mb-0 mb-2 ">
             There are hundreds of social media agencies in Los Angeles. What
             makes us stand out?
           </p>

@@ -97,7 +97,7 @@ export default function PaidMediaPage() {
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
         full={true}
       >
-        <h1 className="text-[2.5rem] md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize  ">
+        <h1 className="text-2xl text-[35px] pt-20 md:pt-0 md:text-7xl xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em] capitalize  ">
           Expert PPC Management: Drive Sales, Not Just Clicks
         </h1>
 
@@ -144,20 +144,21 @@ export default function PaidMediaPage() {
       </Wrapper>
 
       <Wrapper className="items-center flex flex-col lg:py-[4rem] text-center gap-[2.1rem]  ">
-        <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]  lg:px-[3.125rem] tracking-[-0.3%] capitalize text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
+        <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]  lg:px-[3.125rem] tracking-[-0.3%] capitalize text-center text-2xl text-[35px] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
           Let 4th Estate Be Your Paid Media Manager and Ensure Success At Your
           Paid Visits
         </h3>
-
+        <p className="text-left text-[#66717B] md:hidden block">PPC strategies vary based on business stage and needs, especially in Los Angeles.</p>
         <figure className="grid lg:grid-cols-[1fr_40rem] justify-between  items-center gap-[3.875rem] ">
           <ul className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px] lg:gap-[8px] pb-[2rem]  ">
             {[
-              "PPC strategies vary based on business stage and needs, especially in Los Angeles.",
+              
               "Continuous adoption of effective advertising techniques is crucial for success.",
               " Our experienced PPC management team analyzes your business to identify areas for improvement.",
               "We collaborate with you to understand your goals and tailor strategies accordingly.",
               "Thousands of satisfied customers have benefited from our PPC management services.",
               " Serving clients in Los Angeles, Chicago, Burbank, California, and New York. Hire us for profitable PPC outcomes.",
+              "PPC strategies vary based on business stage and needs, especially in Los Angeles."
             ].map((item, index) => (
               <li
                 key={index}
@@ -207,7 +208,7 @@ export default function PaidMediaPage() {
           <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
             Other Services that we provide
           </h3>
-          <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
+          <p className="font-geist text-[0.875rem] md:mb-0 mb-3 md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
             These are other services we provide at 4thEstate that could benefit
             you.
           </p>

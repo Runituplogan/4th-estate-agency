@@ -52,17 +52,17 @@ export default function ServicePage() {
   ];
   return (
     <div >
-      <div className="space-y-[5.5rem]">
+      <div className="md:space-y-[5.5rem] gap-y-10">
       <HeroLayout full={true} backgroundImage="/images/services_bg.png">
         <h1 className="text-3xl md:text-7xl  font-baskerville">Our Services</h1>
       </HeroLayout>
       <Wrapper>
         <div className="items-center text-center animate-fade-up">
           <div className="w-full items-center flex justify-center flex-col">
-            <h1 className="text-center text-xl md:text-6xl font-baskerville max-w-[900px] leading-relaxed">
+            <h1 className="md:text-center md:mt-0 mt-10 text-left text-4xl md:text-6xl font-baskerville max-w-[900px] md:leading-relaxed">
               We Offer Various Services To Fit Your Brand
             </h1>
-            <p className="text-sm max-w-xl font-geist text-[#66717B] mt-6 mb-[3rem] leading-relaxed">
+            <p className="text-sm max-w-xl font-geist text-[#66717B] mt-6 mb-[3rem] leading-loose md:leading-relaxed md:text-center text-left">
               'Digital branding' is a comprehensive marketing strategy which
               involves bespoke organic & paid search, social media, press, and
               alternative marketing tactics to develop and authenticate a brand
@@ -70,7 +70,7 @@ export default function ServicePage() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-9 animate-fade-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-9 animate-fade-left md:mb-0 mb-10">
           {serviceType.map((item, index) => (
             <div key={index} className="bg-white w-full h-full p-4 items-center">
               <Image
@@ -96,8 +96,8 @@ export default function ServicePage() {
           ))}
         </div>
       </Wrapper>
-      </div>
       <BrandBoost />
+      </div>
       <Footer />
     </div>
   );

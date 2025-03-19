@@ -35,10 +35,10 @@ export default function Approach() {
   return (
     <div className="items-center text-center animate-fade-up">
       <div className="w-full items-center flex justify-center flex-col">
-        <h1 className="text-center text-3xl md:text-6xl font-baskerville max-w-[900px] leading-relaxed">
+        <h1 className="text-center text-4xl md:text-6xl font-baskerville max-w-[900px] leading-relaxed">
           Our Approach
         </h1>
-        <p className="text-base max-w-4xl font-geist text-[#66717B] mb-4 leading-relaxed mt-5">
+        <p className="text-base max-w-4xl font-geist text-[#66717B] mb-4 md:leading-relaxed mt-5 leading-loose">
           In today’s digital world, attention is currency. Content marketing is
           creating valuable and informative content that attracts your target
           audience, establishes your brand as an authority, and ultimately

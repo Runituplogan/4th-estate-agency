@@ -44,9 +44,10 @@ export default function Branding() {
   console.log("Branding page", brandingPageData);
 
   return (
-    <div className="space-y-[5rem]">
+    <div>
+      <div className="md:space-y-[5rem] space-y-9">
       <HeroLayout backgroundImage="/images/braning_service.png" full={true}>
-        <h1 className="text-2xl md:text-7xl  font-baskerville">
+        <h1 className="text-2xl md:text-7xl  font-baskerville text-[43px] leading-[1.2] md:mt-0 mt-10">
           {" "}
           Elevate Your Business Through Cohesive Branding
         </h1>
@@ -57,7 +58,7 @@ export default function Branding() {
           </div>
         </button>
         <Link href="/contact">
-          <button className="mt-6 px-6 py-3 bg-white text-[#385065] rounded-lg  text-sm md:ml-2">
+          <button className=" px-6 py-3 bg-white text-[#385065] rounded-lg  text-sm md:ml-2">
             <div className="flex space-x-2">
               <span>Book a Strategy Call</span>
               <ArrowUpRight size={20} />
@@ -72,9 +73,8 @@ export default function Branding() {
         <WhyUs />
       </Wrapper>
       <Faq />
-      <Wrapper>
         <SectionCard />
-      </Wrapper>
+      </div>
       <BrandBoost />
       <Footer />
     </div>

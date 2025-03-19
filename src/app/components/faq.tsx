@@ -39,12 +39,12 @@ export default function Faq({ items = faqData }: FAQProps) {
   };
 
   return (
-    <Wrapper className="md:py-16 py-8 animate-fade-up flex flex-col gap-[2.75rem] ">
-      <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
+    <Wrapper className="md:py-16 py-8 animate-fade-up flex flex-col gap-2 ">
+      <h2 className="md:text-center text-left text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal ">
         Frequently Asked Question
       </h2>
 
-      <div className="p- w-full">
+      <div className=" w-full">
         {items.map((item, index) => (
           <div key={index} className="border-b border-gray-300">
             <button
