@@ -48,7 +48,7 @@ export default function Footer() {
             <li><a href="/" className="hover:text-gray-900">Terms & Conditions</a></li>
           </ul>
         </div>
-        <div className="md:hidden flex gap-12">
+        <div className="md:hidden flex justify-between">
         <div>
           <h3 className="font-medium text-[#192031]">Quick Links</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
@@ -60,14 +60,31 @@ export default function Footer() {
           </ul>
         </div>
         <div>
+          <h3 className="font-medium text-[#192031]">Contact</h3>
+          <ul className="mt-2 space-y-5 text-sm text-gray-600">
+            <li className="flex items-center space-x-2">
+              <PhoneIcon />
+              <span>213-216-4416</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <MailIcon/>
+              <span>info@4thestateagency.com</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <LocationIcon />
+              <span>218 S Tower Dr #207,<br/> Beverly Hills, CA 90211</span>
+            </li>
+          </ul>
+        </div>
+        </div>
+        <div className="md:hidden block">
           <h3 className=" font-medium text-[#192031]">Legal</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li><a href="/" className="hover:text-gray-900">Privacy Policies</a></li>
             <li><a href="/" className="hover:text-gray-900">Terms & Conditions</a></li>
           </ul>
         </div>
-        </div>
-        <div>
+        <div className="hidden md:block">
           <h3 className="font-medium text-[#192031]">Contact</h3>
           <ul className="mt-2 space-y-5 text-sm text-gray-600">
             <li className="flex items-center space-x-2">
