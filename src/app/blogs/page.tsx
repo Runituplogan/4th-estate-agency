@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import HeroLayout from "../components/hero_section";
 import BlogCard from "../components/blog_card";
 import { blogPosts } from "../data/dummy_blog_data";
@@ -81,7 +81,7 @@ export default function BlogPage() {
                     onClick={handlePrev}
                     disabled={currentPage === 1}
                   >
-                    <SideChevron /> <span className="md:inline hidden">Previous</span>
+                    <ArrowLeft/> <span className="md:inline hidden">Previous</span>
                   </button>
                   <span className="font-geist">Page {currentPage} of {totalPages}</span>
                   <button
@@ -89,7 +89,7 @@ export default function BlogPage() {
                     onClick={handleNext}
                     disabled={currentPage === totalPages}
                   >
-                    <span className="md:inline hidden">Next</span> <SideChevron variation="right" />
+                    <span className="md:inline hidden">Next</span> <ArrowRight/>
                   </button>
                 </div>
               </div>

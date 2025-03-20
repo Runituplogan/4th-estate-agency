@@ -44,8 +44,8 @@ export default function Home() {
               "https://www.bing.com/ck/a?!&&p=96bcfb1aaf2f5e881e83c9a2208129613e371e454821c198bd6c5e324adc51baJmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+google+reviews&u=a1aHR0cHM6Ly9yZXZpZXdzLmJpcmRleWUuY29tLzR0aC1lc3RhdGUtMTcwOTAzMjg2MzY5NjA4&ntb=1"
             }
           >
-            <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] ml-3">
-              <div className="md:flex items-center space-x-3 hidden">
+            <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] ml-3 hidden md:inline">
+              <div className="md:flex items-center space-x-3">
                 <Image
                   src="/images/google-logo.png"
                   alt="google logo"
@@ -61,12 +61,20 @@ export default function Home() {
                 <span className="text-xs"> Read Our 22 Review</span>
                 <ArrowUpRight size={20} />
               </div>
-              <div className="flex items-center gap-2 md:hidden">
+            </button>
+          </Link>
+          <Link href={
+              "https://www.bing.com/ck/a?!&&p=96bcfb1aaf2f5e881e83c9a2208129613e371e454821c198bd6c5e324adc51baJmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+google+reviews&u=a1aHR0cHM6Ly9yZXZpZXdzLmJpcmRleWUuY29tLzR0aC1lc3RhdGUtMTcwOTAzMjg2MzY5NjA4&ntb=1"
+            }
+            className="md:hidden block"
+            >
+          <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] max-w-[253px]">
+          <div className="flex items-center text-center gap-2">
                 <GoogleIcon/>
-                <span className="text-sm"> Read Our 22 Review</span>
+                <span className="text-xs"> Read Our 22 Review</span>
                 <ArrowUpRight size={20} />
               </div>
-            </button>
+          </button>
           </Link>
         </Wrapper>
       </HeroLayout>
