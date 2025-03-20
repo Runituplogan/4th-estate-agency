@@ -17,6 +17,7 @@ const InputForm: React.FC<InputProps> = ({ label, name, placeholder, value, onCh
                 value={value} 
                 onChange={onChange} 
                 className="py-2 px-2 rounded-md w-full"
+                required={true}
             />
         </div>
     );
