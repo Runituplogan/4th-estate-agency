@@ -108,7 +108,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="hidden md:flex space-x-4">
-        <Link href="mailto:jason@4thestateagency.com">
+        <Link href="mailto:info@4thestateagency.com">
           <Image src={MailSvg} alt="Email" width={24} height={24} />
         </Link>
         <Link href="https://www.bing.com/ck/a?!&&p=b881ef0128d1ef8726d1ce7a0881480d4d6b17a7d9e2c20f750a6572599a9896JmltdHM9MTc0MjA4MzIwMA&ptn=3&ver=2&hsh=4&fclid=20eb0161-86f2-62e2-1dd5-14cd874b63c2&psq=4th+estate+agency+linkedin&u=a1aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvNHRoLWVzdGF0ZS1hZ2VuY3k&ntb=1">
