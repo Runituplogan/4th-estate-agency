@@ -58,7 +58,7 @@ export default function Home() {
                   width={60}
                   height={30}
                 />
-                <span className="text-xs"> Read Our 22 Review</span>
+                <span className="text-xs"> Read Our 22 Reviews</span>
                 <ArrowUpRight size={20} />
               </div>
             </button>
@@ -71,7 +71,7 @@ export default function Home() {
           <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] max-w-[253px]">
           <div className="flex items-center text-center gap-2">
                 <GoogleIcon/>
-                <span className="text-xs"> Read Our 22 Review</span>
+                <span className="text-xs"> Read Our 22 Reviews</span>
                 <ArrowUpRight size={20} />
               </div>
           </button>
