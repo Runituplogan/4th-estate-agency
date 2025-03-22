@@ -103,7 +103,7 @@ export default function DigitalBrandExpertise() {
             route="/services/website"
             icon={<WebDevelopment />}
             title="Web Development"
-            description="Take your E-commerce strategy to the next level with expert campaign management and optimization."
+            description="Craft unique, high-performing websites that elevate your digital presence and engage your audience."
           />
         </div>
       </Wrapper>

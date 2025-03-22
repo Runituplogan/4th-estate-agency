@@ -93,7 +93,7 @@ export default function Home() {
         />
         <Card
           title="What Makes Us Different"
-          description="4E agency gives the utmost attention to every client, regardless of the price of their campaign. Our dedicated team of experts offer fastidious and methodical approaches that amplify and differentiate your brand – ultimately increasing your online value."
+          description="4E agency gives the utmost attention to every client, regardless of the price of their campaign. Our dedicated team of experts offer a fastidious and methodical approach to amplify and differentiate your brand – increasing your value online."
           bgColor="bg-[#385065]"
           textColor={"white"}
         />
