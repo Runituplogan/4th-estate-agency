@@ -24,7 +24,6 @@ import BookACallBtn from "@/app/components/BookACallBtn";
 import { useSocialsPage } from "@/app/context/socialPageContext";
 import Preloader from "@/app/components/preloader";
 import { BannerSection, FaqData } from "@/app/types";
-import { transformFaqData } from "../helper_fn";
 // import { useSocialsPage } from "../../context/socialPageContext";
 // import Preloader from "@/app/components/preloader";
 

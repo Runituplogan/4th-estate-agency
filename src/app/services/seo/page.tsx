@@ -48,7 +48,7 @@ import BookACallBtn from "@/app/components/BookACallBtn";
 import Preloader from "@/app/components/preloader";
 import { useSeoPage } from "@/app/context/seoPageContext";
 import { BannerSection, FaqData } from "@/app/types";
-import { transformFaqData } from "../helper_fn";
+
 
 export default function SeoPage() {
   const { seoPageData } = useSeoPage();

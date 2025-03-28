@@ -33,7 +33,6 @@ import ContentMarketing from "./_component/content-marketing";
 import WhyUs from "./_component/why-us";
 import BookACallBtn from "@/app/components/BookACallBtn";
 import { BannerSection, FaqData } from "@/app/types";
-import { transformFaqData } from "../helper_fn";
 export default function Branding() {
   const { brandingPageData } = useBrandingPage();
   if (

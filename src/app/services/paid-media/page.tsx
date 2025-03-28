@@ -25,7 +25,7 @@ import BookACallBtn from "@/app/components/BookACallBtn";
 import { usePPCPage } from "@/app/context/ppcPageContext";
 import Preloader from "@/app/components/preloader";
 import { BannerSection, FaqData } from "@/app/types";
-import { transformFaqData } from "../helper_fn";
+
 
 
 // export const metadata: Metadata = {
