@@ -18,43 +18,46 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-export default function ContentMarketing() {
+interface ContentMarketingProps{
+  data:BrandingSection3,
+}
+const ContentMarketing:React.FC<ContentMarketingProps>=({data})=> {
   const contentAndMarketingService = [
     {
-      name: "Understand Your Customers",
+      name: `${data?.content.subContent[0].title}`,
       description:
-        "We don't use a one-size-fits-all approach. We take the time to understand your brand and target audience. Whether you're selling fitness apparel to health-conscious millennials or sustainable products to eco-friendly families, we'll develop content that speaks directly to their interests.",
+      `${data?.content.subContent[0].description}`,
       icon: <UserStar />,
     },
     {
-      name: "Content with a Goal",
+      name: `${data?.content.subContent[1].title}`,
       description:
-        "We don't create generic content. We develop data-driven content plans based on your specific goals. Need to drive traffic to your website showcasing locally-made activewear? We'll create engaging blog posts highlighting the latest fitness trends and featuring your products. We'll craft informative articles with tips for achieving a glowing complexion using your products.",
+      `${data?.content.subContent[1].description}`,
       icon: <CopyIcon />,
     },
     {
-      name: "Go Beyond the Blog",
+      name: `${data?.content.subContent[2].title}`,
       description:
-        "We create high-quality content in various formats. It may include social media posts featuring your products in iconic locations, clear website copy that converts visitors into customers. Moreover, our interactive quizzes provide a fun and engaging way to connect with the vibrant LA community, ensuring your brand stays an integral part of their daily experience.",
+      `${data?.content.subContent[2].description}`,
       icon: <JotIcon />,
     },
     {
-      name: "Targeted Distribution",
+      name: `${data?.content.subContent[3].title}`,
       description:
-        "Your content won't just sit on your website. We strategically distribute it across relevant channels to reach your ideal customers. This might involve local online publications popular with your target audience, social media platforms where they're active, and even partnerships with local influencers.",
+      `${data?.content.subContent[3].description}`,
       icon: <TargetDevice />,
     },
     {
-      name: "Track Your Success",
+      name: `${data?.content.subContent[4].title}`,
       description:
-        "We don't just create content – we track its performance with precise analytics and reporting. This lets us see what's working and what's not so that we can refine your strategy for maximum impact. We'll show you how your content attracts new customers, generates leads, and boosts your business growth in the competitive LA market.",
+      `${data?.content.subContent[4].description}`,
       icon: <TargetIcon />,
     },
 
     {
-      name: "Long-term growth",
+      name: `${data?.content.subContent[5].title}`,
       description:
-        "Effective content marketing is a long-term investment that keeps your brand relevant and fosters ongoing customer relationships. Consistently offering valuable and relevant content, you not only maintain your brand's relevance but also foster ongoing connections with your audience.",
+      `${data?.content.subContent[5].description}`,
       icon: <GrowthIcon />,
     },
   ];
@@ -63,8 +66,9 @@ export default function ContentMarketing() {
     <div className="animate-fade-up">
       <div className="flex flex-col justify-center items-center">
         <h1 className="font-baskerville mb-3 md:text-6xl text-2xl text-center md:leading-relaxed text-[43px] leading-[1.0]">
-          Amplify Your Brand in Content <br className="hidden md:flex" />{" "}
-          Marketing Services
+          {/* Amplify Your Brand in Content <br className="hidden md:flex" />{" "}
+          Marketing Services */}
+          {data?.content.title}
         </h1>
       </div>
       <div className="bg-white w-full rounded grid md:grid-cols-2 p-8 gap-12 place-items-center mt-6">
@@ -83,3 +87,5 @@ export default function ContentMarketing() {
     </div>
   );
 }
+
+export default ContentMarketing

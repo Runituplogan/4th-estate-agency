@@ -5,13 +5,6 @@ export interface BannerSection {
   title:string
  }[]
 }
-export interface BannerSection2 {
- content:{
-  background_image:{url:string},
-  title:string
- }[]
-}
-
 export interface Section1{
   content:{
     title:string,
@@ -38,3 +31,48 @@ export interface Section3 {
         }
     }
 }
+
+export interface FaqData {
+  type: string;
+  content: {
+    title: string;
+    faq: {
+      answer:string,
+      question:string,
+    }[];
+  };
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface FooterBannerSection {
+  content:{
+   background_image:{url:string},
+   cta_buttons:{text:string},
+   title:string
+  }[]
+ }
+ 
+
+ export interface FooterSection1{
+  content:{
+    title:string,
+    description:string,
+    socials:{
+      type:string,
+      url:string,
+    }[]
+  }[]
+ }
+ export interface FooterSection2{
+  content:{
+    title:string,
+    description:{
+      name:string,
+      link:string,
+    }[]
+  }
+ }

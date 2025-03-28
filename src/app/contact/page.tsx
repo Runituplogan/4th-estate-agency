@@ -10,7 +10,19 @@ import Preloader from "../components/preloader";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { BannerSection } from "../types";
 export default function ContactUs(){
+
+  const {contactPageData} = useContactPage()
+  if (!contactPageData || !contactPageData.content || contactPageData.content.length == 0){
+      return <Preloader/>
+  }
+  const banner: BannerSection | undefined = contactPageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );
+  const section1: ContactSection1 | undefined = contactPageData?.content?.find(
+    (item: any) => item.type === "section1"
+  );
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -65,70 +77,66 @@ export default function ContactUs(){
             }
           );
       };
-    // const {contactPageData} = useContactPage()
-    //    if (!contactPageData || !contactPageData.content || contactPageData.content.length == 0){
-    //         return <Preloader/>
-    //       }
+ 
     
     //       console.log("contact Page",contactPageData)
     return (
         <div>
-            <HeroLayout backgroundImage="/images/bg_hero1.png">
-                <h1 className="text-3xl md:text-8xl  font-baskerville">Get In Touch</h1>
+            <HeroLayout backgroundImage={`${banner?.content[0].background_image.url}`}>
+                <h1 className="text-3xl md:text-8xl  font-baskerville">{banner?.content[0].title}</h1>
             </HeroLayout>
             <div className="flex flex-col md:flex-row md:m-16 m-5 justify-center md:space-x-20 items-center animate-fade-up">
                 <div className="animate-fade-right md:mb-0 mb-10">
                     <div>
-                        <h1 className="font-baskerville md:text-5xl text-4xl md:mt-0 mt-3  max-w-[400px] pb-7">Let’s Level Up Your Brand Together</h1>
-                        <p className="text-base text-[#66717B] pb-4">Our friendly team would love to hear from you.</p>
+                        <h1 className="font-baskerville md:text-5xl text-4xl md:mt-0 mt-3  max-w-[400px] pb-7">{section1?.content.title}</h1>
+                        <p className="text-base text-[#66717B] pb-4">{section1?.content.description}</p>
                         
                     </div>
                     <form onSubmit={sendEstimationRequest}>
                     <div className="flex flex-col md:flex-row gap-6 my-2  w-full">
                         <div>
                         <InputForm 
-                            label="First Name" 
+                            label={`${section1?.content.form[0].label}`}
                             name="firstName"  // Pass correct name
-                            placeholder="First Name" 
+                            placeholder={`${section1?.content.form[0].placeholder}`}
                             value={formData.firstName} 
                             onChange={handleChange} 
                         />
                         </div>
                         <div>
-                       <InputForm label="Last Name" placeholder="Last Name" value={formData.lastName} onChange={handleChange} name="lastName"/> 
+                       <InputForm  label={`${section1?.content.form[1].label}`} placeholder={`${section1?.content.form[1].placeholder}`} value={formData.lastName} onChange={handleChange} name="lastName"/> 
                         </div>
                     </div>
                     <div className="">
-                    <InputForm label="Email" placeholder="you@company.com" value={formData.email} onChange={handleChange} name="email"/>
+                    <InputForm  label={`${section1?.content.form[2].label}`} placeholder={`${section1?.content.form[2].placeholder}`} value={formData.email} onChange={handleChange} name="email"/>
                     </div>
                     <div className="my-2">
-                        <InputForm label="Phone Number" placeholder="+1 (555) 000-0000"  value={formData.phoneNumber} onChange={handleChange} name="phoneNumber"/>
+                        <InputForm  label={`${section1?.content.form[3].label}`} placeholder={`${section1?.content.form[3].placeholder}`}  value={formData.phoneNumber} onChange={handleChange} name="phoneNumber"/>
                     </div>
                     <div>
-                        <h3 className="text-sm text-[#66717B]">Message</h3>
-                        <textarea placeholder="Leave us a message" className="w-full rounded p-2" value={formData.message} onChange={handleChange} name="message"/>
+                        <h3 className="text-sm text-[#66717B]">{section1?.content.form[4].label}</h3>
+                        <textarea placeholder={`${section1?.content.form[4].placeholder}`} className="w-full rounded p-2" value={formData.message} onChange={handleChange} name="message"/>
                     </div>
                     <div className="flex my-2 gap-2">
                         <input type="radio" className="grey"/>
-                        <p className="text-md">You agree to our friendly <span className="underline">privacy policy.</span></p>
+                        <p className="text-md">{section1?.content.form[5].label}</p>
                     </div>
-                    <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full " type="submit" >{loading ? "Loading...":"Send Message"}</button>
+                    <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full " type="submit" >{loading ? "Loading...":`${section1?.content.form[6].label}`}</button>
                     </form>
                 </div>
                 <div className="animate-fade-left">
-                    <h3 className="text-base font-bold">Headquarters</h3>
+                    <h3 className="text-base font-bold">{section1?.content.map.title}</h3>
                     <div className="md:flex items-center gap-3 md:gap-0 hidden">
                     <MapPin className="md:w-4 md:h-4 text-gray-400 w-8 h-8" />
-                    <p className="text-base text-[#66717B] my-2 md:mb-0 ">218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</p>
+                    <p className="text-base text-[#66717B] my-2 md:mb-0 ">{section1?.content.map.address} - {section1?.content.map.timezone}</p>
                     </div>
-                    <p>
+                    <p className="md:hidden block text-[#66717B]">
                       <MapPin className="w-4 h-4 text-gray-400 inline" />
-                      <span>218 S Tower Dr #207, Beverly Hills, CA 90211 - (Sun to Fri 8:00AM - 5:00PM PST)</span>
+                      <span>{section1?.content.map.address} - {section1?.content.map.timezone}</span>
                     </p>
-                 <Image src="/images/location.png" alt="Location Image" height={500} width={600} className="md:my-0 my-6"/>
+                 <Image src={`${section1?.content.map.image}`} alt="Location Image" height={500} width={600} className="md:my-0 my-6"/>
                 </div>
             </div>
-             <BrandBoost/>
             <Footer/>
         </div>
     )

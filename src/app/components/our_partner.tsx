@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Wrapper from "./wrapper";
+import { Section3 } from "../types";
 
 const partners = [
   { name: "Google", src: "/images/paterner3.png" },
@@ -14,20 +15,23 @@ const partners = [
   { name: "Recharge", src: "/images/paterner8.png" },
   { name: "Stripe", src: "/images/paterner10.png" },
 ];
-export default function OurPartners() {
+interface OurPartnersProps{
+  data:Section3,
+}
+const OurPartners:React.FC<OurPartnersProps>=({data})=> {
   return (
     <Wrapper className="animate-fade-up">
       <div>
         <div className="flex flex-col">
           <h2 className="text-3xl md:text-6xl font-baskerville mb-[2.2rem] text-center md:text-left">
-            Our Partners
+          {data?.content.title}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-[2.4rem]">
-            {partners.map((partner) => (
-              <div key={partner.name} className="w-full max-w-[165px] flex justify-center">
+            {data?.content.content.images.map((partner,index) => (
+              <div key={index} className="w-full max-w-[165px] flex justify-center">
                 <Image
-                  src={partner.src}
-                  alt={partner.name}
+                  src={partner}
+                  alt={`partner Image-${index}`}
                   width={200} 
                   height={80}
                   className="object-contain w-full"
@@ -40,3 +44,4 @@ export default function OurPartners() {
     </Wrapper>
   );
 }
+export default OurPartners

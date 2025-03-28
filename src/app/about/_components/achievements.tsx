@@ -1,23 +1,26 @@
 import Wrapper from "@/app/components/wrapper";
 import Image from "next/image";
 
-export default function Achievements() {
+interface AchievementsProps{
+  data:AboutSection3
+}
+const Achievements:React.FC<AchievementsProps>=({data})=> {
   const achievements = [
     {
-      amount: "200+",
-      title: "Projects completed",
+      amount: `${data?.content?.subContent[0].title}`,
+      title: `${data?.content?.subContent[0].description}`,
     },
     {
-      amount: "500%",
-      title: "Return on investment",
+      amount: `${data?.content?.subContent[1].title}`,
+      title: `${data?.content?.subContent[1].description}`,
     },
     {
-      amount: "30",
-      title: "Countries served",
+      amount: `${data?.content?.subContent[2].title}`,
+      title: `${data?.content?.subContent[2].description}`,
     },
     {
-      amount: "100%",
-      title: "5-star reviews",
+      amount: `${data?.content?.subContent[3].title}`,
+      title: `${data?.content?.subContent[3].description}`,
     },
   ];
 
@@ -33,7 +36,8 @@ export default function Achievements() {
       <div className="animate-fade-left w-full md:w-1/2">
         <div className="mb-8">
           <p className="font-baskerville md:text-6xl text-4xl text-center md:text-left">
-            We're only just <br className=""/> getting started on <br className=""/> our journey
+            {/* We're only just <br className=""/> getting started on <br className=""/> our journey */}
+            {data?.content.title}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6  text-left">
@@ -48,3 +52,4 @@ export default function Achievements() {
     </Wrapper>
   );
 }
+export default Achievements

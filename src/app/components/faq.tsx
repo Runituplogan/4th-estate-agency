@@ -2,36 +2,14 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Wrapper from "./wrapper";
+import { FAQItem } from "../types";
 
-const faqData = [
-  {
-    question: "How much do local SEO services cost?",
-    answer: "SEO pricing varies based on scope and location.",
-  },
-  {
-    question: "How do I find the best content marketing agency?",
-    answer: "Look for agencies with a proven track record.",
-  },
-  {
-    question: "What is the concept of content marketing?",
-    answer: "Content marketing focuses on valuable, relevant content.",
-  },
-  {
-    question: "What is the content strategy in digital marketing?",
-    answer: "It involves planning, creating, and distributing content.",
-  },
-];
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
 
 interface FAQProps {
   items?: FAQItem[];
 }
 
-export default function Faq({ items = faqData }: FAQProps) {
+export default function Faq({ items = [] }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -39,17 +17,17 @@ export default function Faq({ items = faqData }: FAQProps) {
   };
 
   return (
-    <Wrapper className="md:py-16 py-8 animate-fade-up flex flex-col gap-2 ">
-      <h2 className="md:text-center text-left text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal ">
+    <Wrapper className="md:py-16 py-8 animate-fade-up flex flex-col gap-2">
+      <h2 className="md:text-center text-left text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal">
         Frequently Asked Question
       </h2>
 
-      <div className=" w-full">
+      <div className="w-full">
         {items.map((item, index) => (
           <div key={index} className="border-b border-gray-300">
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center py-4 text-left text-gray-900 font-medium  text-[1rem] md:text-[1.5rem] font-baskerville "
+              className="w-full flex justify-between items-center py-4 text-left text-gray-900 font-medium text-[1rem] md:text-[1.5rem] font-baskerville"
             >
               {item.question}
               <ChevronDown

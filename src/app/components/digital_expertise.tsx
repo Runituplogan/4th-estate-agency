@@ -18,6 +18,7 @@ import {
 } from "./icons/homePage";
 import Link from "next/link";
 import Wrapper from "./wrapper";
+import { Section1, Section2 } from "../types";
 
 interface ExpertiseCardProps {
   icon: JSX.Element;
@@ -51,62 +52,64 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({
   );
 };
 
-export default function DigitalBrandExpertise() {
+interface DigitalBrandExpertiseProps{
+  data:Section2;
+}
+const DigitalBrandExpertise:React.FC<DigitalBrandExpertiseProps>=({data}) =>{
   return (
     <section className=" animate-fade-up">
       <div className="text-center mb-10 px-4">
       <h2 className="text-[32px] leading-[1.2] md:text-7xl font-serif mb-3">
-        Digital Brand <br className="md:hidden inline"/> Expertise
+        {/* Digital Brand <br className="md:hidden inline"/> Expertise */}
+        {data?.content[0].title}
       </h2>
       <p className="text-gray-700 mt-4 leading-[1.6] md:max-w-3xl mx-auto text-base md:text-md max-w-[414px]">
-        Digital branding is a comprehensive marketing strategy which involves
-        bespoke organic and paid search, social media, press, and alternative
-        marketing tactics to develop and authenticate a brand across a wide
-        range of avenues.
+         {data?.content[0].description}
       </p>
     </div>
       <Wrapper>
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5 animate-fade-right">
           <ExpertiseCard
             icon={<BrandIcon />}
-            title="Branding"
-            description="From logo and web design to brand ethos, expert guidance on how to reach your audience and convert them into customers."
+            title={`${data?.content[0].subContent[0].title}`}
+            description={`${data?.content[0].subContent[0].description}`}
             route="/services/branding"
           />
           <ExpertiseCard
             icon={<SeoIcon />}
-            title="SEO"
-            description="Tailored to your site's structure for better crawling and indexing. Beat the competition."
+            title={`${data?.content[0].subContent[1].title}`}
+            description={`${data?.content[0].subContent[1].description}`}
             route="/services/seo"
           />
           <ExpertiseCard
             icon={<PaidMediaIcon />}
-            title="Paid Media"
-            description="Help with the entire process, including budget, keyword analysis, and retargeting your Google, Meta & Amazon Ads."
+            title={`${data?.content[0].subContent[2].title}`}
+            description={`${data?.content[0].subContent[2].description}`}
             route="/services/paid-media"
           />
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 animate-fade-left">
           <ExpertiseCard
             icon={<PressIcon />}
-            title="Press"
+            title={`${data?.content[0].subContent[3].title}`}
+            description={`${data?.content[0].subContent[3].description}`}
             route="/services/press"
-            description="Top-tier press features through our direct-to-publisher relationships."
           />
           <ExpertiseCard
             route="/services/social-media"
             icon={<SocialIcon />}
-            title="Social"
-            description="Maintenance and growth of a social presence, along with team development."
+            title={`${data?.content[0].subContent[4].title}`}
+            description={`${data?.content[0].subContent[4].description}`}
           />
           <ExpertiseCard
             route="/services/website"
             icon={<WebDevelopment />}
-            title="Web Development"
-            description="Craft unique, high-performing websites that elevate your digital presence and engage your audience."
+            title={`${data?.content[0].subContent[5].title}`}
+            description={`${data?.content[0].subContent[5].description}`}
           />
         </div>
       </Wrapper>
     </section>
   );
 }
+export default DigitalBrandExpertise;

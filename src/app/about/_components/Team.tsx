@@ -8,7 +8,10 @@ import { Swiper as SwiperClass } from "swiper/types";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import "swiper/css";
 
-const Team = () => {
+interface TeamProps{
+  data:AboutSection2
+}
+const Team:React.FC<TeamProps> = ({data}) => {
   const MAX_LENGTH = 100;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -17,41 +20,46 @@ const Team = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  const team1DescriptionSplit = data?.content.subContent[0].subTitle.split(';');
+  const team2DescriptionSplit = data?.content.subContent[1].subTitle.split(';');
+  const team3DescriptionSplit = data?.content.subContent[2].subTitle.split(';');
+  const team4DescriptionSplit = data?.content.subContent[3].subTitle.split(';');
+
   const teamMembers = [
     {
-      name: "Emma Lombardi",
-      imagePath: "/images/teams/team-member4.JPG",
-      role: "Senior Project Manager",
+      name: `${data?.content.subContent[0].title}`,
+      imagePath: `${data?.content.subContent[0].image}`,
+      role: `${team1DescriptionSplit[0]}`,
       description:
-        "Emma strategically plans and executes digital marketing projects, leading teams to deliver innovative campaigns that exceed client expectations and drive measurable results.",
+       `${team1DescriptionSplit[1]}`,
     },
     {
-      name: "Logan Maurer",
-      imagePath: "/images/teams/team-member3.JPG",
-      role: "Head of Web Development",
+      name: `${data?.content.subContent[1].title}`,
+      imagePath: `${data?.content.subContent[1].image}`,
+      role: `${team2DescriptionSplit[0]}`,
       description:
-        "Logan leads a team of talented developers in crafting innovative, high-performance websites and web applications that are strategically optimized to drive our clients' marketing goals and deliver exceptional user experiences.",
+       `${team2DescriptionSplit[1]}`,
     },
     {
-      name: "Adi Attias",
-      imagePath: "/images/teams/team-member2.JPG",
-      role: "UGC Manager",
+      name: `${data?.content.subContent[2].title}`,
+      imagePath: `${data?.content.subContent[2].image}`,
+      role: `${team3DescriptionSplit[0]}`,
       description:
-        "Adi strategizes and oversees the integration of user-generated content into our clients' campaigns, collaborating with creative and social media teams to amplify brand authenticity and foster deeper audience engagement across digital platforms.",
+       `${team3DescriptionSplit[1]}`,
     },
     {
-      name: "Adel Fares",
-      imagePath: "/images/teams/team-member1.JPG",
-      role: "Brand Manager",
+      name: `${data?.content.subContent[3].title}`,
+      imagePath: `${data?.content.subContent[3].image}`,
+      role: `${team4DescriptionSplit[0]}`,
       description:
-        "Adel strategically shapes and amplifies our clients' brands across digital platforms, collaborating with creative teams to deliver cohesive and impactful campaigns that resonate with audiences.",
+       `${team4DescriptionSplit[1]}`,
     },
   ];
 
   return (
     <Wrapper className="animate-fade-up">
       <h1 className="text-4xl mb-2 md:mb-[3rem] md:text-5xl font-baskerville text-center">
-        Meet Our Team
+      {data?.content.title}
       </h1>
 
       <div className="relative w-full">

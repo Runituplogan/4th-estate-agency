@@ -1,3 +1,4 @@
+"use client"
 import { ArrowUpRight, Heart } from "lucide-react";
 import HeroLayout from "../../components/hero_section";
 import Image from "next/image";
@@ -20,75 +21,105 @@ import {
 import { LocalIcon } from "@/icons/local";
 import Link from "next/link";
 import BookACallBtn from "@/app/components/BookACallBtn";
+import { useWebDevelopmentPage } from "@/app/context/webDevelopmentPage";
+import Preloader from "@/app/components/preloader";
+import { BannerSection, FaqData } from "@/app/types";
+import { transformFaqData } from "../helper_fn";
+// export const metadata: Metadata = {
+//   title: "Web Development",
+// };
 
-export const metadata: Metadata = {
-  title: "Web Development",
-};
-
-const websiteServices = [
-  {
-    name: "Bespoke Design",
-    description:
-      "Customers see your web design before they get to your product. If a poor color scheme is used in it, it's not appealing or not convenient to use; then customers won't feel like making a purchase. However, a beautiful website that is easy to use and pleasing to the eyes will surely add to your ROI and convert most visitors.",
-    icon: <MagicpenIcon />,
-  },
-  {
-    name: "Responsive Web Designs",
-    description:
-      "Many of Los Angeles's population use and shop from phones. If your website isn't mobile responsive, it won't look good on mobile and phones. It won’t be able to keep the visitors longer on your website.",
-    icon: <LayerIcon />,
-  },
-  {
-    name: "Showcasing Brand Identity",
-    description:
-      "In LA, businesses can use web design to show off their vibe and stand out. A website is like a virtual shop window, where locals can get a feel for a business. It's a great way to connect with customers and show what makes a brand special.",
-    icon: <VerifiedIcon />,
-  },
-  {
-    name: "Local Expertise",
-    description:
-      "LA market is a separate world with such a huge population where people have their own trends, design preferences and interests. When you create a web design for your business according to the interests, design preferences and cultural nuances of LA",
-    icon: <LocalIcon />,
-  },
-];
-
-const ourServiceInLA = [
-  {
-    name: "UX/ UX Design",
-    description:
-      "Not only do we just make the page look good, but we also make it convenient for the users to use. We create a clear layout, intuitive navigation bar and buttons on the website that are easy for the users to use. This improves the user's overall UX and helps them easily use your business website.",
-    icon: <DesignServicesIcon />,
-  },
-  {
-    name: "E-commerce Web Design",
-    description:
-      "We also design the best Ecommerce websites for you that help you outrank your competitors and get more sales. If you want us to design your existing website or you want us to create a new one for you from scratch, we can do both for you.",
-    icon: <WebIcon />,
-  },
-  {
-    name: "WordPress Web Design",
-    description:
-      "If your website is on WordPress and you want it to be designed professionally and beautifully, then 4th Estate will help you. Our team can create a WordPress website for you from scratch and make it SEO-optimized, attractively designed and user-friendly.",
-    icon: <LayerIcon />,
-  },
-  {
-    name: "Website Maintenance",
-    description:
-      "After creating the web design, we also matina our website to keep them fresh. We keep checking the code and also solve if any issues arise in the future. We keep in touch with our clients, and whenever they have any issues, they can easily resolve them by contacting us.",
-    icon: <LicenceMaintenanceDraftIcon />,
-  },
-];
 
 export default function WebsiteServicePage() {
+  const {webDevelopmentPageData} = useWebDevelopmentPage()
+  if (
+      !webDevelopmentPageData ||
+      !webDevelopmentPageData.content ||
+      webDevelopmentPageData.content.length == 0
+    ) {
+      return <Preloader />;
+    }
+  const banner: BannerSection | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );  
+  const section1: WebSiteDevelopmentService1  | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "section1"
+  );  
+  const section2: WebSiteDevelopmentService2  | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "section2"
+  );  
+  const section3: WebSiteDevelopmentService3  | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "section3"
+  );  
+  const section4: WebSiteDevelopmentService4  | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "section4"
+  );  
+  const section5: FaqData  | undefined = webDevelopmentPageData?.content?.find(
+    (item: any) => item.type === "section5"
+  );  
+  const websiteServices = [
+    {
+      name: `${section1?.content[0].subContent[0].title}`,
+      description:
+       `${section1?.content[0].subContent[0].description}`,
+      icon: <MagicpenIcon />,
+    },
+    {
+      name: `${section1?.content[0].subContent[1].title}`,
+      description:
+       `${section1?.content[0].subContent[1].description}`,
+      icon: <LayerIcon />,
+    },
+    {
+      name: `${section1?.content[0].subContent[2].title}`,
+      description:
+       `${section1?.content[0].subContent[2].description}`,
+      icon: <VerifiedIcon />,
+    },
+    {
+      name: `${section1?.content[0].subContent[3].title}`,
+      description:
+       `${section1?.content[0].subContent[3].description}`,
+      icon: <LocalIcon />,
+    },
+  ];
+  
+  const ourServiceInLA = [
+    {
+      name: `${section4?.content.subContent[0].title}`,
+      description:
+      `${section4?.content.subContent[0].description}`,
+      icon: <DesignServicesIcon />,
+    },
+    {
+      name: `${section4?.content.subContent[1].title}`,
+      description:
+      `${section4?.content.subContent[1].description}`,
+      icon: <WebIcon />,
+    },
+    {
+      name: `${section4?.content.subContent[2].title}`,
+      description:
+      `${section4?.content.subContent[2].description}`,
+      icon: <LayerIcon />,
+    },
+    {
+      name: `${section4?.content.subContent[3].title}`,
+      description:
+      `${section4?.content.subContent[3].description}`,
+      icon: <LicenceMaintenanceDraftIcon />,
+    },
+  ];
+  
   return (
     <Fragment>
       <HeroLayout
-        backgroundImage="/images/website-bg.png"
+        backgroundImage={`${banner?.content[0].background_image.url}`}
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 md:px-[2rem] "
         full={true}
       >
         <h1 className="text-[2.5rem] md:text-7xl pt-20 md:pt-0 xl:text-[6rem]  font-baskerville tracking-[-0.0002em] leading-[1.2em]  capitalize ">
-          Professional Web Design Services in LA
+          {banner?.content[0].title}
         </h1>
 
          <BookACallBtn/>
@@ -96,15 +127,10 @@ export default function WebsiteServicePage() {
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[12rem] text-center ">
         <h3 className="text-center text-2xl text-[45px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          An Elite Web Design Service in LA
+         {section1?.content[0].title}
         </h3>
         <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
-          Most LA-based businesses invest heavily into building their online
-          presence and website and making their products useful. However, the
-          thing that most of them overlook is the web design. Web design is what
-          your potential customers will be interacting with. If it’s not
-          professionally created, the customers are more likely not to consider
-          you an authority and may fall off to another website. 
+        {section1?.content[0].description}
         </p>
       </Wrapper>
 
@@ -135,25 +161,20 @@ export default function WebsiteServicePage() {
           <figure className="grid grid-cols-1 xl:grid-cols-[1fr_37rem] justify-between  items-center gap-[1.5rem] xl:gap-[4.2rem] ">
             <figcaption>
               <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
-                Top Notch Web Design in LA
+                {section2?.content.title}
               </h3>
               <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] flex flex-col gap-[1rem]">
                 <span>
-                  At 4th Estate, we have a team of experienced full-stack
-                  developers who can design and build websites. They create the
-                  best websites considering the local trends, cultural
-                  preferences and interests of Los Angeles people in their mind.
+                  {section2?.content.description.split(';')[0]}
                 </span>
                 <span>
-                  They can also develop the best websites for you that load
-                  faster, look attractive and also created specifically for your
-                  business, meeting all of its requirements. 
+                {section2?.content.description.split(';')[1]}
                 </span>
               </p>
             </figcaption>
             <div className="relative w-full h-[17.75rem] lg:h-[32rem]  xl:h-full overflow-hidden rounded-[0.75rem] ">
               <Image
-                src="/images/website1.png"
+                src={`${section2?.content.image}`}
                 alt="Paid Media"
                 fill
                 className="object-cover object-center"
@@ -163,7 +184,7 @@ export default function WebsiteServicePage() {
           <figure className="flex flex-col-reverse xl:grid xl:grid-cols-[37rem_1fr] justify-between  items-center gap-[1.5rem] xl:gap-[4.2rem] ">
             <div className="relative w-full h-[21.4375rem] lg:h-[32rem]  xl:h-full overflow-hidden rounded-[0.75rem] ">
               <Image
-                src="/images/website2.png"
+                src={`${section3?.content.image}`}
                 alt="Paid Media"
                 fill
                 className="object-cover object-center"
@@ -171,22 +192,18 @@ export default function WebsiteServicePage() {
             </div>
             <figcaption>
               <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
-                Professional Web Design Services in Los Angeles
+                {section3?.content.title}
               </h3>
               <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] flex flex-col gap-[1rem] md:mb-0 mb-5">
-                we’re LA’s Best Social Web Design Services. It’s not what we say
-                but what our customers say about our services. Over the years,
-                we’ve created hundreds of web designs and helped our customers
-                to improve their CTR(Click Through Rate) and, ultimately, their
-                ROI. 
+              {section3?.content.description.split(';')[0]}
               </p>
               <ul className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px]  ">
                 {[
-                  "We Create Unique Design",
-                  "Best Programmers",
-                  "We’re Transparent",
-                  "Punctual",
-                  "Performance-driven Agency",
+                  `${section3?.content.description.split(';')[1]}`,
+                  `${section3?.content.description.split(';')[2]}`,
+                  `${section3?.content.description.split(';')[3]}`,
+                  `${section3?.content.description.split(';')[4]}`,
+                  `${section3?.content.description.split(';')[5]}`,
                 ].map((item, index) => (
                   <li
                     key={index}
@@ -203,7 +220,7 @@ export default function WebsiteServicePage() {
 
       <Wrapper className="w-full items-center flex justify-center flex-col pt-[1.875rem] lg:pt-[4rem] animate-fade-up lg:px-[12rem] text-center ">
         <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal ">
-          Our Web Design Services in Los Angeles
+          {section4?.content.title}
         </h3>
       </Wrapper>
       <Wrapper
@@ -225,9 +242,8 @@ export default function WebsiteServicePage() {
           </article>
         ))}
       </Wrapper>
-      <Faq />
+      <Faq items={section5!.content.faq}/>
       <SectionCard />
-      <BrandBoost />
       <Footer />
     </Fragment>
   );

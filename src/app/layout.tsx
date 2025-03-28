@@ -13,6 +13,7 @@ import { SocialsPageProvider } from "./context/socialPageContext";
 import { WebDevelopmentPageProvider } from "./context/webDevelopmentPage";
 import { BrandingPageProvider } from "./context/brandingPageContext";
 import { ToastContainer } from "react-toastify";
+import { FooterPageProvider } from "./context/footerPageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,7 +61,9 @@ export default function RootLayout({
                         <SocialsPageProvider>
                           <WebDevelopmentPageProvider>
                             <BrandingPageProvider>
+                              <FooterPageProvider>
                               {children}
+                              </FooterPageProvider>
                               <ToastContainer autoClose={2000} hideProgressBar theme="colored" />
                             </BrandingPageProvider>
                           </WebDevelopmentPageProvider>

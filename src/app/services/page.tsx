@@ -1,3 +1,4 @@
+"use client"
 import { ArrowUpRight } from "lucide-react";
 import HeroLayout from "../components/hero_section";
 import Image from "next/image";
@@ -5,47 +6,61 @@ import BrandBoost from "../components/brand_boost";
 import Footer from "../components/footer";
 import Link from "next/link";
 import Wrapper from "../components/wrapper";
+import { useServicePage } from "../context/servicePageContext";
+import Preloader from "../components/preloader";
+import { BannerSection } from "../types";
+import { Section1 } from "./types";
 export default function ServicePage() {
+  const {servicePageData} = useServicePage()
+  if (!servicePageData || !servicePageData.content || servicePageData.content.length == 0){
+    return <Preloader/>
+  }
+  const banner: BannerSection | undefined = servicePageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );
+  const section1: Section1 | undefined = servicePageData?.content?.find(
+    (item: any) => item.type === "section1"
+  );
   const serviceType = [
     {
-      name: "Branding",
+      name: `${section1?.content[0].subContent[0].title}`,
       description:
-        "From logo and web design to brand ethos, expert guidance on how to reach your audience and convert them into clients",
+       `${section1?.content[0].subContent[0].description}`,
       link: "/services/branding",
       imageUrl: "/images/service1.png",
     },
     {
-      name: "SEO",
+      name: `${section1?.content[0].subContent[1].title}`,
       description:
-        "Tailored to your site's structure for better crawling and indexing. Beat the competition.​",
+       `${section1?.content[0].subContent[1].description}`,
       link: "/services/seo",
       imageUrl: "/images/service2.png",
     },
     {
-      name: "Paid Media",
+      name: `${section1?.content[0].subContent[2].title}`,
       description:
-        "Help with the entire process, including budget, keyword analysis, and retargeting your Google, Meta & Amazon Ads.​",
+       `${section1?.content[0].subContent[2].description}`,
       link: "/services/paid-media",
       imageUrl: "/images/service3.png",
     },
     {
-      name: "Press",
+      name: `${section1?.content[0].subContent[3].title}`,
       description:
-        "Top-tier press features through our direct to publisher relationships.",
+       `${section1?.content[0].subContent[3].description}`,
       link: "/services/press",
       imageUrl: "/images/service5.png",
     },
     {
-      name: "Social",
+      name: `${section1?.content[0].subContent[4].title}`,
       description:
-        "Maintenance and growth of a social presence, along with team development.​",
+       `${section1?.content[0].subContent[4].description}`,
       link: "/services/social-media",
       imageUrl: "/images/service6.png",
     },
     {
-      name: "Web Development",
+      name: `${section1?.content[0].subContent[5].title}`,
       description:
-        "Top-tier press features through our direct to publisher relationships.​",
+       `${section1?.content[0].subContent[5].description}`,
       link: "/services/website",
       imageUrl: "/images/service4.png",
     },
@@ -53,20 +68,17 @@ export default function ServicePage() {
   return (
     <div >
       <div className="md:space-y-[5.5rem] gap-y-10">
-      <HeroLayout full={true} backgroundImage="/images/services_bg.png">
-        <h1 className="text-3xl md:text-7xl  font-baskerville">Our Services</h1>
+      <HeroLayout full={true} backgroundImage={`${banner?.content[0].background_image.url}`}>
+        <h1 className="text-3xl md:text-7xl  font-baskerville">{banner?.content[0].title}</h1>
       </HeroLayout>
       <Wrapper>
         <div className="items-center text-center animate-fade-up">
           <div className="w-full items-center flex justify-center flex-col">
             <h1 className="md:text-center md:mt-0 mt-10 text-left text-4xl md:text-6xl font-baskerville max-w-[900px] md:leading-relaxed">
-              We Offer Various Services To Fit Your Brand
+              {section1?.content[0].title}
             </h1>
             <p className="text-sm max-w-xl font-geist text-[#66717B] mt-6 mb-[3rem] leading-loose md:leading-relaxed md:text-center text-left">
-              'Digital branding' is a comprehensive marketing strategy which
-              involves bespoke organic & paid search, social media, press, and
-              alternative marketing tactics to develop and authenticate a brand
-              across a wide range of avenues.
+             {section1?.content[0].description}
             </p>
           </div>
         </div>
@@ -96,7 +108,6 @@ export default function ServicePage() {
           ))}
         </div>
       </Wrapper>
-      <BrandBoost />
       </div>
       <Footer />
     </div>

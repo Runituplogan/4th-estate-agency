@@ -13,7 +13,7 @@ interface SectionCardProps {
 const SectionCard: React.FC<SectionCardProps> = ({
   title = "Take Your Business to the Next Level - Contact 4th Estate!",
   description = "With 4th Estate by your side, you can rest assured that your SEO efforts are in expert hands. Our holistic approach to SEO ensures that every aspect of your online presence is optimized for success, driving more traffic, leads, and conversions to your business.",
-  imageUrl = "location.png",
+  imageUrl = "/images/location.png",
   showBtn = true,
   marginStyle = "mb-[3.375rem] ",
 }) => {
@@ -37,7 +37,7 @@ const SectionCard: React.FC<SectionCardProps> = ({
         </figcaption>
         <div className="relative w-full h-[20.24rem] lg:h-[27.125rem] md:w-1/2">
           <Image
-            src={`/images/${imageUrl}`}
+            src={`${imageUrl}`}
             alt="content image"
             fill
             className="animate-fade-left object-cover object-center "

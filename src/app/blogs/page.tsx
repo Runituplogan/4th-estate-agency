@@ -97,7 +97,7 @@ export default function BlogPage() {
           </Wrapper>
         </div>
       </div>
-      <BrandBoost />
+
       <Footer />
     </div>
   );

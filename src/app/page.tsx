@@ -15,26 +15,40 @@ import Link from "next/link";
 import Wrapper from "./components/wrapper";
 import { GoogleIcon } from "./icons/googleIcon";
 import { OneStar } from "./icons/oneStart";
+import { BannerSection, Section1, Section2, Section3 } from "./types";
 export default function Home() {
   const { homePageData } = useHomePage();
-  // if (!homePageData || !homePageData.content || homePageData.content.length == 0){
-  //   return <Preloader/>
-  // }
-  console.log("homePage", homePageData);
+  if (!homePageData || !homePageData.content || homePageData.content.length == 0){
+    return <Preloader/>
+  }
+  const banner: BannerSection | undefined = homePageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );
+  const section1: Section1 | undefined = homePageData?.content?.find(
+    (item: any) => item.type === "section1"
+  );
+  const section2: Section2 | undefined = homePageData?.content?.find(
+    (item: any) => item.type === "section2"
+  );
+  const section3: Section3 | undefined = homePageData?.content?.find(
+    (item: any) => item.type === "section3"
+  );
+  
+  console.log("banner", banner);
   console.log("homePage", homePageData);
   return (
     <div >
       <div className="flex flex-col md:gap-y-[5.5rem] gap-10">
-      <HeroLayout full={true} backgroundImage="/images/bg_hero1.png">
+      <HeroLayout full={true} backgroundImage={`${banner?.content[0].background_image.url}`}>
         <Wrapper>
           <h1 className="text-[43px] md:text-7xl leading-[1.2] font-baskerville">
-          An Agency That Gets
-          Your Brand What it Deserves
+          {banner?.content[0].title}
         </h1>
+          
           <Link href={"/contact"}>
             <button className="mt-6 px-6 py-3 max-w-[253px] bg-[#385065] text-white rounded-lg mb-3 md:mb-0">
               <div className="flex text-sm space-x-2">
-                <span>Book a Free Consultation</span>
+                <span>{banner?.content[0].cta_buttons[0].text}</span>
                 <ArrowUpRight size={20} />
               </div>
             </button>
@@ -58,7 +72,7 @@ export default function Home() {
                   width={60}
                   height={30}
                 />
-                <span className="text-xs"> Read Our 22 Reviews</span>
+                <span className="text-xs"> {banner?.content[0].cta_buttons[1].text}</span>
                 <ArrowUpRight size={20} />
               </div>
             </button>
@@ -71,7 +85,7 @@ export default function Home() {
           <button className="bg-white px-6 py-3 rounded-lg text-[#4C5862] max-w-[253px]">
           <div className="flex items-center text-center gap-2">
                 <GoogleIcon/>
-                <span className="text-xs"> Read Our 22 Reviews</span>
+                <span className="text-xs"> {banner?.content[0].cta_buttons[1].text}</span>
                 <ArrowUpRight size={20} />
               </div>
           </button>
@@ -80,31 +94,29 @@ export default function Home() {
       </HeroLayout>
       <Wrapper className="flex flex-col w-full justify-between md:flex-row gap-4 lg:gap-6 bg-[#F8F1E8] animate-fade-down">
         <Card
-          title="Bridging The Gap"
-          description="It is said that you can bury a body on the second page of Google. 4E Agency helps clients take center stage by establishing their presence so that your audience can FIND YOU."
+          title={`${section1?.content[0].title}`}
+          description={`${section1?.content[0].description}`}
           bgColor="bg-[#174A43]"
           textColor={"white"}
         />
         <Card
-          title="What is Performance Press"
-          description="Leveraging our network of top-tier journalists, Performance Press increases your website’s domain authority, builds your brand awareness and optimizes your search rankings through our Digital PR strategy."
+          title={`${section1?.content[1].title}`}
+          description={`${section1?.content[1].description}`}
           bgColor="bg-[#E0E0E0]"
           textColor={"black"}
         />
         <Card
-          title="What Makes Us Different"
-          description="4E agency gives the utmost attention to every client, regardless of the price of their campaign. Our dedicated team of experts offer a fastidious and methodical approach to amplify and differentiate your brand – increasing your value online."
+          title={`${section1?.content[2].title}`}
+          description={`${section1?.content[2].description}`}
           bgColor="bg-[#385065]"
           textColor={"white"}
         />
       </Wrapper>
 
-      <DigitalBrandExpertise />
-      <OurPartners />
+      <DigitalBrandExpertise data={section2!}/>
+      <OurPartners data={section3!} />
       <BlogPosts />
       </div>
-      
-      <BrandBoost />
       <Footer />
     </div>
   );

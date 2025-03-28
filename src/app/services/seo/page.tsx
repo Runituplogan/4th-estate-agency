@@ -1,3 +1,4 @@
+"use client"
 import HeroLayout from "../../components/hero_section";
 import ServiceCard from "../../components/service_card";
 import Faq from "../../components/faq";
@@ -44,234 +45,262 @@ import {
 import { Fragment } from "react";
 import Link from "next/link";
 import BookACallBtn from "@/app/components/BookACallBtn";
+import Preloader from "@/app/components/preloader";
+import { useSeoPage } from "@/app/context/seoPageContext";
+import { BannerSection, FaqData } from "@/app/types";
+import { transformFaqData } from "../helper_fn";
 
-export const metadata: Metadata = {
-  title: "SEO",
-};
+export default function SeoPage() {
+  const { seoPageData } = useSeoPage();
+  if (!seoPageData || !seoPageData.content || seoPageData.content.length == 0) {
+    return <Preloader />;
+  }
+  const banner: BannerSection | undefined = seoPageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );  
+  const section1: SeoSection1 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section1"
+    );
+  const section2: SeoSection2 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section2"
+    );
+  const section3: SeoSection3 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section3"
+    );
+  const section5: SeoSection5 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section5"
+    );
+  const section4: SeoSection4 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section4"
+    );
+  const section6: SeoSection6 | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section6"
+    );
+  const section7: FaqData | undefined = seoPageData?.content?.find(
+      (item: any) => item.type === "section7"
+    );
+
+// export const metadata: Metadata = {
+//   title: "SEO",
+// };
 
 const seoGrowthPlan = [
   {
-    name: "Average ROI",
+    name:`${section1?.content[0].subContent[0].title}`,
     description:
-      "Studies have shown that businesses can expect an average ROI ranging from 5:1 to 20:1 from SEO efforts. The ROI of SEO tends to increase over time as SEO efforts compound and the website's authority and visibility grow in search engines. However, these numbers can vary depending on the factors mentioned earlier.",
+    `${section1?.content[0].subContent[0].description}`,
     icon: <MoneyBagIcon />,
   },
   {
-    name: "Percentage Increase in Traffic",
+    name:`${section1?.content[0].subContent[1].title}`,
     description:
-      "A successful SEO campaign can lead to a substantial increase in organic search traffic. Depending on the starting point and the level of optimization, businesses may see traffic increases ranging from 20% to 200% or more within the first year of implementing SEO strategies.",
+    `${section1?.content[0].subContent[1].description}`,
     icon: <ChartUpIcon />,
   },
   {
-    name: "Conversion Rate Improvements",
+    name:`${section1?.content[0].subContent[2].title}`,
     description:
-      "Improvements in website optimization and targeting can lead to higher conversion rates. Even modest improvements in conversion rates, such as 1% to 3%, can translate into significant revenue gains over time.",
+    `${section1?.content[0].subContent[2].description}`,
     icon: <VerifiedIcon />,
   },
   {
-    name: "Revenue Growth",
+    name:`${section1?.content[0].subContent[3].title}`,
     description:
-      "Businesses that invest in SEO often experience steady revenue growth over time. While it's difficult to provide exact figures, revenue increases of 10% to 50% or more within the first year of implementing SEO strategies are not uncommon for businesses in competitive industries.",
+    `${section1?.content[0].subContent[3].description}`,
     icon: <ChartLineIcon />,
   },
 ];
 
 const localBusinessSeo = [
   {
-    name: "Brick-and-mortar",
+    name: `${section2?.content.subContent[0].title}`,
     description:
-      "Any business with a physical location, like restaurants, retail stores, salons, gyms, or automotives. People searching for these services will almost always be looking for options nearest to their location. Local SEO helps them find your business!",
+      `${section2?.content.subContent[0].description}`,
     icon: <BrickIcon />,
   },
   {
-    name: "Home service providers",
+    name: `${section2?.content.subContent[1].title}`,
     description:
-      "People don't want to wait hours for a plumber who lives across town. Plumbers, electricians, cleaners, and other home service providers depend on local SEO to show up in searches for people in their area.",
+      `${section2?.content.subContent[1].description}`,
     icon: <HomeIcon />,
   },
   {
-    name: "Medical professionals",
+    name: `${section2?.content.subContent[2].title}`,
     description:
-      "When someone needs a dentist or doctor or a therapist, they typically want someone convenient. Local SEO helps dentists, doctors, therapists, and other medical providers like MED SPAs attract patients in their area.",
+      `${section2?.content.subContent[2].description}`,
     icon: <MedicalBagIcon />,
   },
   {
-    name: "Professional service providers",
+    name: `${section2?.content.subContent[3].title}`,
     description:
-      "Personal Injury Lawyers, accountants, realtors, and other local professionals all rely on getting clients in their area. Local SEO helps them show up in searches for people needing their services.",
+      `${section2?.content.subContent[3].description}`,
     icon: <ServiceIcon />,
   },
 ];
 
 const howLocalSeoWorks = [
   {
-    name: "Keyword Research for Local Searches",
+    name: `${section3?.content.subContent[0].title}`,
     description:
-      "With a 900% surge in 'near me' searches, precise and high value keyword research by 4th Estate results in businesses ranking up higher in local search results. They help drive a significant increase in website traffic from local customers and a higher conversion rate.",
+      `${section3?.content.subContent[0].description}`,
     icon: <SearchZoomIn />,
   },
   {
-    name: "Google My Business Optimization",
+    name: `${section3?.content.subContent[1].title}`,
     description:
-      "LA locals rely on Google Maps and search results for business information. 4th Estate offers expert optimization to boost your online visibility on Google Maps and search results. Our team of professionals ensures that potential customers can easily find your business information, such as hours of operation, contact details, and customer reviews.",
+      `${section3?.content.subContent[1].description}`,
     icon: <MapIcon />,
   },
   {
-    name: "Website On-Page SEO for Local Businesses",
+    name: `${section3?.content.subContent[2].title}`,
     description:
-      "Optimize your website's content and structure for local search algorithms, improving your search engine rankings and local presence. 4th Estate's on-page SEO strategies range from image optimization to internal content linking, title tags, and meta descriptions.",
+      `${section3?.content.subContent[2].description}`,
     icon: <PublicIcon />,
   },
   {
-    name: "Local Citation Building",
+    name: `${section3?.content.subContent[3].title}`,
     description:
-      "Listings on local business directories like Yelp, Angie's List, Yellow Pages, and Google My Business significantly impact consumer decisions, with around 70% of users trusting online reviews and ratings. 4th Estate's authoritative citations increase visibility, promoting a rise in customer trust and loyalty, which is essential for building a strong brand presence.",
+      `${section3?.content.subContent[3].description}`,
     icon: <StoreIcon />,
   },
   {
-    name: "Link Building For Local SEO",
+    name: `${section3?.content.subContent[4].title}`,
     description:
-      "Links pass SEO power and authority from one website to another. Getting high quality links from niche relevant as well as local city websites helps rank high on Google. It is also a great way of promoting your business and generating referral traffic. At 4th Estate, we go beyond that and do high quality press releases.",
+      `${section3?.content.subContent[4].description}`,
     icon: <LinkIcon />,
   },
   {
-    name: "Online Reputation Management",
+    name: `${section3?.content.subContent[5].title}`,
     description:
-      "As most LA consumers trust online reviews, effective reputation management by 4th Estate ensures a positive brand image among local customers. Our expert team monitors and responds to customer reviews, builds trust, and attracts more business with a strong online reputation management strategy.",
+      `${section3?.content.subContent[5].description}`,
     icon: <TabReviewIcon />,
   },
 ];
 
 const seoSolutionForYourBusiness = [
   {
-    name: "Keyword Research for Local Searches",
+    name: `${section5?.content.subContent[0].title}`,
     description:
-      "We find the words and phrases people in LA search for online and then strategically incorporate those terms into your website content. It will improve your ranking in search results. The higher you rank, the more likely people find your business.",
+      `${section5?.content.subContent[0].description}`,
     icon: <OptimzeIcon />,
   },
   {
-    name: "On-Page SEO Optimization for Ecommerce Websites",
+    name: `${section5?.content.subContent[1].title}`,
     description:
-      "We optimize product descriptions, images, titles, and other website elements. It makes it easier for search engines to understand your offerings and show them to the right customers.",
+      `${section5?.content.subContent[1].description}`,
     icon: <FillIcon />,
   },
   {
-    name: "Technical SEO Audit & Implementation",
+    name: `${section5?.content.subContent[2].title}`,
     description:
-      "We'll identify technical issues preventing search engines from effectively crawling and indexing your site. We'll then help you fix those issues to ensure your website runs smoothly for search engines and visitors.",
+      `${section5?.content.subContent[2].description}`,
     icon: <SeoFolderIcon />,
   },
   {
-    name: "Content Marketing Strategies Tailored for Ecommerce",
+    name: `${section5?.content.subContent[3].title}`,
     description:
-      "It's not just about selling – it's about informing and engaging. We'll help you create valuable content like blog posts, product descriptions, and social media content that attracts potential customers. Also, the goal is to educate them about your products and ultimately persuade them to buy.",
+      `${section5?.content.subContent[3].description}`,
     icon: <MarketingFieldIcon />,
   },
   {
-    name: "Local SEO Strategies for Los Angeles Businesses",
+    name: `${section5?.content.subContent[4].title}`,
     description:
-      "Since you're located in LA, we'll help you leverage local SEO tactics to get your business noticed by potential customers searching for products or services in your area. This might involve optimizing your Google My Business listing, building local citations, and creating content that targets local keywords.",
+      `${section5?.content.subContent[4].description}`,
     icon: <BusinessIcon />,
   },
   {
-    name: "Dominate Search Engine Results",
+    name: `${section5?.content.subContent[5].title}`,
     description:
-      "Our expertise helps you achieve top rankings on search engine results pages (SERPs) for searches relevant to your products and target audience in LA. This prime real estate translates into more clicks, more website visitors, and, ultimately, more sales.",
+      `${section5?.content.subContent[5].description}`,
     icon: <SearchFillIcon />,
   },
 ];
 
 const seoAduitProcess = [
   {
-    name: "The Opportunity Analysis",
+    name: `${section4?.content.subContent[0].title}`,
     description:
-      "Our team manually uses SEO tools like Ahrefs, Moz, Semrush, and many others to search for high-volume keywords that are less competitive for your website. We ensure that the keywords are relevant to your target audience, their search intent meets what your website provides, and they have an excellent overall trend so that their search doesn’t get specific. We analyze competitors' keywords, content, backlinks, and rankings to refine your SEO strategy effectively.",
+      `${section4?.content.subContent[0].description}`,
     icon: <ChartSquareIcon />,
   },
   {
-    name: "Website SEO Audit",
+    name: `${section4?.content.subContent[1].title}`,
     description:
-      "We analyze your website's on-page SEO factors like meta tags, headings, content, URL structure, internal linking, and site speed. By fixing these issues, we help your site rank higher in search engine results. Our team audits content quality, keywords, meta details, titles, and tone. We create high-quality content with integrated keywords, leading to better engagement and Google rankings. We analyze your backlinks for quality, relevance, and diversity to optimize your profile for improved rankings.",
+      `${section4?.content.subContent[1].description}`,
     icon: <TransactionOrderIcon />,
   },
   {
-    name: "GMB Audit",
+    name: `${section4?.content.subContent[2].title}`,
     description:
-      "4th estate SEO experts also include the GMB Audit in which they make sure your Google My Business (GMB) listing is fully optimized for local search. This means we optimize your business info, verify your location, manage customer reviews, and use GMB features to boost your online visibility and attract local customers. We review and maintain consistent NAP info across online directories, improving local search rankings and online reputation.",
+      `${section4?.content.subContent[2].description}`,
     icon: <AuditReportIcon />,
   },
   {
-    name: "The Strategy & Action Plan",
+    name: `${section4?.content.subContent[3].title}`,
     description:
-      "We identify and fix technical issues like crawling errors, broken links, duplicate content, and site speed through our technical SEO audit, making your website faster, SEO-optimized, and mobile-friendly. On-Page Optimization: Optimize tags, content, links for visibility. Content Development: Create quality pages, blogs for traffic. Link Building: Acquire high-authority links for rankings. Detailed SEO Plan: Goals, tasks, traffic predictions for improvement.",
+      `${section4?.content.subContent[3].description}`,
     icon: <WorkHistoryIcon />,
   },
 ];
 
 const benefitOfSeo = [
   {
-    name: "Identifying Technical Issues",
+    name: `${section6?.content.subContent[0].title}`,
     description:
-      "SEO Audit allows you to determine the technical errors of your websites, including mobile friendliness, page loading speed, broken links, and crawl errors.",
+      `${section6?.content.subContent[0].description}`,
     icon: <IssueSolidIcon />,
   },
   {
-    name: "Improving Website Performance",
+    name: `${section6?.content.subContent[1].title}`,
     description:
-      "When you catch the errors, you address and solve them, which results in fast performance and more leads and conversion rates.",
+      `${section6?.content.subContent[1].description}`,
     icon: <SignalIcon />,
   },
   {
-    name: "Ensuring Website Compliance",
+    name: `${section6?.content.subContent[2].title}`,
     description:
-      "SEO audits ensure your website complies with search engine guidelines and best practices, reducing the risk of penalties and ranking drops.",
+      `${section6?.content.subContent[2].description}`,
     icon: <NotesTickIcon />,
   },
   {
-    name: "Identifying On-Page SEO Opportunities",
+    name: `${section6?.content.subContent[3].title}`,
     description:
-      "The SEO audit also helps you find what’s wrong with the title tags, meta description, content, header, and page design.",
+      `${section6?.content.subContent[3].description}`,
     icon: <SeoIcon />,
   },
   {
-    name: "Competitive Analysis",
+    name: `${section6?.content.subContent[4].title}`,
     description:
-      "You get a good insight into your competitors, what they’re good at, and what they’re lacking so you can hit the spot and beat them.",
+      `${section6?.content.subContent[4].description}`,
     icon: <ChartBoldIcon />,
   },
   {
-    name: "Enhancing User Experience",
+    name: `${section6?.content.subContent[5].title}`,
     description:
-      "The SEO audit also helps improve the user experience by making the website mobile-friendly and improving its designs, navigation, and website speed.",
+      `${section6?.content.subContent[5].description}`,
     icon: <UserIcon />,
   },
 ];
 
-export default function SeoPage() {
-  //   const { seoPageData } = useSeoPage();
-  //   if (!seoPageData || !seoPageData.content || seoPageData.content.length == 0) {
-  //     return <Preloader />;
-  //   }
 
   return (
     <Fragment>
       <HeroLayout
-        backgroundImage="/images/services_bg.png"
+        backgroundImage={`${banner?.content[0].background_image.url}`}
         className="grid place-content-center  h-full pt-[2.2rem] md:pt-0 "
         full={true}
       >
         <h1 className="text-2xl md:text-7xl xl:text-[6rem] text-[40px] font-baskerville pt-32 md:pt-0	 md:leading-relaxed leading-[1.2] capitalize ">
-          Drive more traffic, leads, and sales to your website
+        {banner?.content[0].title}
         </h1>
         <BookACallBtn/>    
        </HeroLayout>
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] py-[1.5rem]  text-center lg:py-[4rem] animate-fade-up ">
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          Business Growth With SEO
+          {section1?.content[0].title}
         </h2>
         <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%]  ">
-          Businesses see significant returns on investment from SEO over time.
-          Here are some rough stats backed by DATA:
+        {section1?.content[0].description}
         </p>
       </Wrapper>
 
@@ -288,12 +317,10 @@ export default function SeoPage() {
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up ">
         <h2 className="text-center text-2xl text-[40px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          Local Businesses That Absolutely Need local SEO in LA, CA
+          {section2?.content.title}
         </h2>
         <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] ">
-          As a leading SEO agency in LA, we have worked and delivered results
-          for various clients across different industries and neighborhoods in
-          Los Angeles, such as Beverly Hills, Venice Beach, and Downtown LA.
+        {section2?.content.description}
         </p>
       </Wrapper>
 
@@ -310,7 +337,7 @@ export default function SeoPage() {
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[4.25rem] text-center pt-[2.43rem] lg:pt-[4rem] animate-fade-up  ">
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[10.275rem]  ">
-          How Our Local SEO Process Work
+         {section3?.content.title}
         </h2>
       </Wrapper>
 
@@ -334,7 +361,7 @@ export default function SeoPage() {
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[2.875rem] animate-fade-up ">
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          Los Angeles E-commerce SEO Solutions for Your Business
+          {section5?.content.title}
         </h2>
       </Wrapper>
 
@@ -351,14 +378,10 @@ export default function SeoPage() {
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up ">
         <h2 className="md:text-center text-left text-2xl text-[35px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[130%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[11.275rem] ">
-          4th Estate LA-Based SEO Audit Process
+        {section4?.content.title}
         </h2>
         <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] lg:px-[3.875rem] xl:px-[7.875rem] text-left md:text-center">
-          We delegate 2 highly experienced SEO experts for your site who have
-          analyzed thousands of websites in their careers. There are over 50 SEO
-          factors that they make your website go through to audit it and then
-          keep noticing the results.  This is how our  4th Estate SEO audit
-          works.
+        {section4?.content.description}
         </p>
       </Wrapper>
 
@@ -375,7 +398,7 @@ export default function SeoPage() {
 
       <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[4.25rem] text-center pt-[2.43rem] lg:pt-[4rem] animate-fade-up ">
         <h2 className="text-center text-2xl text-[40px] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal xl:px-[4.275rem]  ">
-          Benefits of Getting SEO Audit Services For Your Website
+        {section6?.content.title}
         </h2>
       </Wrapper>
 
@@ -397,9 +420,8 @@ export default function SeoPage() {
         </Wrapper>
       </Wrapper>
 
-      <Faq />
+      <Faq items={(section7!.content.faq)}/>
       <SectionCard />
-      <BrandBoost />
       <Footer />
     </Fragment>
   );

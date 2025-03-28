@@ -1,3 +1,4 @@
+"use client"
 import HeroLayout from "../../components/hero_section";
 import SectionCard from "../../components/card_section";
 import Image from "next/image";
@@ -20,76 +21,101 @@ import {
 } from "@/icons";
 import Link from "next/link";
 import BookACallBtn from "@/app/components/BookACallBtn";
+import { useSocialsPage } from "@/app/context/socialPageContext";
+import Preloader from "@/app/components/preloader";
+import { BannerSection, FaqData } from "@/app/types";
+import { transformFaqData } from "../helper_fn";
 // import { useSocialsPage } from "../../context/socialPageContext";
 // import Preloader from "@/app/components/preloader";
 
-export const metadata: Metadata = {
-  title: "Social Media",
-};
+// export const metadata: Metadata = {
+//   title: "Social Media",
+// };
 
+export default function SocialMediaPage() {
+    const { socialsPageData } = useSocialsPage();
+    if (
+      !socialsPageData ||
+      !socialsPageData.content ||
+      socialsPageData.content.length == 0
+    ) {
+      return <Preloader />;
+    }
+  const banner: BannerSection | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "banner"
+  );  
+  const section1: SocialSection1 | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "section1"
+  );  
+  const section2: SocialSection2 | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "section2"
+  );  
+  const section3: SocialSection3 | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "section3"
+  );  
+  const section4: SocialSection4 | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "section4"
+  );  
+  const section5: FaqData | undefined = socialsPageData?.content?.find(
+    (item: any) => item.type === "section5"
+  );  
+
+  
 const socialMediaServices = [
   {
-    name: "Increased Brand Awareness",
+    name: `${section1?.content[0].subContent[0].title}`,
     description:
-      "Social media is the best way to increase your business awareness. Billions of people use it on a daily basis. By creating content on social media and engaging with your target audience, you make your business's media presence that helps your business get recognized.",
+      `${section1?.content[0].subContent[0].description}`,
     icon: <AddBusinessIcon />,
   },
   {
-    name: "Targeted Advertising",
+    name: `${section1?.content[0].subContent[1].title}`,
     description:
-      "Social media apps like Instagram, Facebook, and YouTube give targeted advertising options. With this advertising, your business ads or promotional videos are shown only to your target audience, increasing the chances of higher profitability.",
+      `${section1?.content[0].subContent[1].description}`,
     icon: <BrandAwarenessIcon />,
   },
   {
-    name: "Customer Engagement",
+    name: `${section1?.content[0].subContent[2].title}`,
     description:
-      "On social media, you get to engage with your target audience in real time through comments, messages, and inquiries. This makes your business trustworthy for the customers.",
+      `${section1?.content[0].subContent[2].description}`,
     icon: <ChatIcon />,
   },
   {
-    name: "Cost-Effectiveness",
+    name: `${section1?.content[0].subContent[3].title}`,
     description:
-      "Compared to traditional advertising, social media marketing is way cheaper. Also, you get lots of free marketing tools on social media that you can use to get your business recognized.",
+      `${section1?.content[0].subContent[3].description}`,
     icon: <MoneyIcon />,
   },
 ];
 
 const differentSocialMedia = [
   {
-    name: "Facebook Advertising",
+    name: `${section3?.content.subContent[0].title}`,
+    description:
+    `${section3?.content.subContent[0].description}`,
     icon: <FacebookIcon />,
-    description:
-      "Facebook is one of the best social media platforms for advertising your business and getting more sales. We at 4th Estate run social media campaigns for you on Facebook with great copywriting, high-quality attractive images, and even videos that get people to land on your business.",
   },
   {
-    name: "Instagram Marketing",
+    name: `${section3?.content.subContent[1].title}`,
+    description:
+    `${section3?.content.subContent[1].description}`,
     icon: <InstagramIcon />,
-    description:
-      "Instagram is the second largest social media platform after Facebook, where we can advertise your business. Our dedicated social media team is experienced in Instagram marketing and running the most profitable ads.",
   },
   {
-    name: "Tiktok Marketing",
+    name: `${section3?.content.subContent[2].title}`,
+    description:
+    `${section3?.content.subContent[2].description}`,
     icon: <TiktokIcon />,
-    description:
-      "With such a vast user base, TikTok can be a goldmine for business if you market your business correctly. We understand TikTok users' interests and needs and create our ads accordingly. Our team creates high-quality content with our ads that keep the users engaged and convert.",
   },
   {
-    name: "Influencer Marketing",
-    icon: <SpeakerIcon />,
+    name: `${section3?.content.subContent[3].title}`,
     description:
-      "Influencer marketing leverages the credibility and reach of social media personalities to endorse products or services, fostering trust among their followers. Influencers can efficiently connect brands with specific demographics, gaining social proof and enhancing their online presence at a relatively low cost .",
+    `${section3?.content.subContent[3].description}`,
+    icon: <SpeakerIcon />,
   },
 ];
 
-export default function SocialMediaPage() {
-  //   const { socialsPageData } = useSocialsPage();
-  //   if (
-  //     !socialsPageData ||
-  //     !socialsPageData.content ||
-  //     socialsPageData.content.length == 0
-  //   ) {
-  //     return <Preloader />;
-  //   }
+const descriptionSplited = section4?.content.description.split(';').slice(1)
 
   return (
     <Fragment>
@@ -99,22 +125,17 @@ export default function SocialMediaPage() {
         full={true}
       >
         <h1 className="text-2xl text-[40px] md:text-6xl xl:text-[5rem] font-baskerville leading-[1.2em] capitalize md:pt-0 pt-32">
-          Los Angeles's Most Result-Oriented Social Media Agency
+          {banner?.content[0].title}
         </h1>
        <BookACallBtn/>
       </HeroLayout>
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[7rem] text-center ">
         <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          Our Social Media Services For LA & Beyond
+         {section1?.content[0].title}
         </h3>
         <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
-          There are 4.95 billion social media users, and a big chunk of those
-          users are probably your business’s target audience. Social media
-          marketing ensures that your business reaches that chunk so that your
-          business can go to new heights. Let’s look at some of the other
-          benefits to make it easier for you to understand why social media
-          marketing is the best fit for your business. 
+        {section1?.content[0].description}
         </p>
       </Wrapper>
 
@@ -140,9 +161,9 @@ export default function SocialMediaPage() {
 
       <section className="bg-[#0C2F4D]  md:px-8">
         <SectionCard
-          title="Social Media Management"
-          imageUrl="social_groups.png"
-          description="Managing social media of the business is crucial for its success and we’ve got you covered with that. We have a dedicated social media management team that is skilled in managing all types of social media accounts, including Pinterest, Instagram, Facebook, Twitter, Snapchat, TikTok, and many more.  When you connect with us, we manage all of your social media accounts, create content on them, and keep them active so that they can generate more sales for you. "
+          title={`${section2?.content.title}`}
+          imageUrl={`${section2?.content.image}`}
+          description={`${section2?.content.description}`}
           showBtn={false}
           marginStyle="md:m-0 m-0"
         />
@@ -150,15 +171,10 @@ export default function SocialMediaPage() {
 
       <Wrapper className="w-full items-center flex justify-center flex-col py-[1.875rem] lg:py-[4rem] animate-fade-up lg:px-[7rem] text-center ">
         <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
-          Our Social Media Services For LA & Beyond
+          {section3?.content.title}
         </h3>
         <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
-          If you want traffic and sales immediately on your business, then 4th
-          Estate also offers PPC marketing services. You have to tell the
-          keyword that you want to show up on the top of the results in Google,
-          and we’ll make that happen for you with PPC marketing.4thEstate offers
-          you all types of social media marketing services. Let us walk you
-          through each of the services that we provide. 
+           {section3?.content.description}
         </p>
       </Wrapper>
 
@@ -185,21 +201,13 @@ export default function SocialMediaPage() {
       <Wrapper className="grid grid-cols-1 xl:grid-cols-[1fr_37rem] justify-between  items-center gap-[1.5rem] xl:gap-[1.875rem] xl:pt-[5.875rem] py-[2.1rem] ">
         <figcaption>
           <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-2xl text-[45px] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
-            LA's Top-Tier Social Media Marketing Agency 4th Estate
+            {section4?.content.title}
           </h3>
           <p className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] md:mb-0 mb-2 ">
-            There are hundreds of social media agencies in Los Angeles. What
-            makes us stand out?
+            {section4?.content.description.split(';')[0]}
           </p>
           <ul className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px]  ">
-            {[
-              "Most Result-Oriented",
-              "Experienced team",
-              "Data-driven strategies",
-              "Dedicated account managers",
-              "We’re Transparent",
-              "5 Star Ratings",
-            ].map((item, index) => (
+            {descriptionSplited?.map((item, index) => (
               <li
                 key={index}
                 className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%]  "
@@ -218,9 +226,8 @@ export default function SocialMediaPage() {
           />
         </div>
       </Wrapper>
-      <Faq />
+      <Faq items={section5!.content.faq}/>
       <SectionCard />
-      <BrandBoost />
       <Footer />
     </Fragment>
   );

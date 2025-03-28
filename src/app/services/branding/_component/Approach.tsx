@@ -4,30 +4,33 @@ import MedalIcon from "@/app/icons/medal";
 import TrustIcon from "@/app/icons/trust";
 import UserStar from "@/app/icons/userStar";
 
-export default function Approach() {
+interface ApproachProps{
+  data:BrandingSection1;
+}
+const Approach:React.FC<ApproachProps>=({data})=> {
   const ourApproach = [
     {
-      name: "Cuts through the noise",
+      name: `${data?.content[0].subContent[0].title}`,
       description:
-        "With countless businesses grabbing online attention, high-quality content cuts through the clutter and positions your brand as a thought leader.",
+       `${data?.content[0].subContent[0].description}`,
       icon: <MedalIcon />,
     },
     {
-      name: "Builds trust and credibility",
+      name: `${data?.content[0].subContent[1].title}`,
       description:
-        "By consistently providing valuable content, you educate and engage potential customers, building trust and credibility in your brand.",
+       `${data?.content[0].subContent[1].description}`,
       icon: <TrustIcon />,
     },
     {
-      name: "Boosts SEO",
+      name: `${data?.content[0].subContent[2].title}`,
       description:
-        "Search engines love fresh, informative content. Content marketing helps you rank higher in search results, driving organic traffic to your website.",
+       `${data?.content[0].subContent[2].description}`,
       icon: <BoostIcon />,
     },
     {
-      name: "Targeted lead generation",
+      name: `${data?.content[0].subContent[3].title}`,
       description:
-        "Content allows you to target specific customer segments with relevant content, attracting qualified leads genuinely interested in your offerings.",
+       `${data?.content[0].subContent[3].description}`,
       icon: <UserStar />,
     },
   ];
@@ -36,13 +39,10 @@ export default function Approach() {
     <div className="items-center text-center animate-fade-up">
       <div className="w-full items-center flex justify-center flex-col">
         <h1 className="text-center text-4xl md:text-6xl font-baskerville max-w-[900px] leading-relaxed">
-          Our Approach
+          {data?.content[0].title}
         </h1>
         <p className="text-base max-w-4xl font-geist text-[#66717B] mb-4 md:leading-relaxed mt-5 leading-loose">
-          In today’s digital world, attention is currency. Content marketing is
-          creating valuable and informative content that attracts your target
-          audience, establishes your brand as an authority, and ultimately
-          drives sales. Here’s why it’s crucial:
+        {data?.content[0].description}
         </p>
       </div>
       <div className="mt-5">
@@ -60,3 +60,4 @@ export default function Approach() {
     </div>
   );
 }
+export default Approach;
