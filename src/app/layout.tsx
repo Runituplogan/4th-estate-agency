@@ -35,9 +35,7 @@ export const metadata: Metadata = {
     default: "4E Agency",
   },
   description: "An Agency That Gets Your Brand What it Deserves",
-  icons:{
-    icon:"/favicon.png"
-  }
+
 };
 
 export default function RootLayout({
