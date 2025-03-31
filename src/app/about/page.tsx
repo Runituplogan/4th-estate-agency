@@ -10,6 +10,7 @@ import Wrapper from "../components/wrapper";
 import Team from "./_components/Team";
 import Achievements from "./_components/achievements";
 import { BannerSection } from "../types";
+import { motion } from "framer-motion";
 export default function AboutPage() {
   const { aboutPageData } = useAboutPage();
 
@@ -38,51 +39,99 @@ export default function AboutPage() {
   return (
     <div>
       <div className="flex flex-col gap-y-10 md:gap-y-[5.5rem]">
-      <HeroLayout backgroundImage={`${banner?.content[0].background_image.url}`}>
-        <h1 className="text-3xl md:text-7xl  font-baskerville">{banner?.content[0].title}</h1>
-      </HeroLayout>
+        {/* Hero Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -50 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1 }}
+        >
+          <HeroLayout backgroundImage={`${banner?.content[0].background_image.url}`}>
+            <motion.h1 
+              initial={{ opacity: 0, scale: 0.9 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ duration: 0.8 }}
+              className="text-3xl md:text-7xl font-baskerville"
+            >
+              {banner?.content[0].title}
+            </motion.h1>
+          </HeroLayout>
+        </motion.div>
 
-      <Wrapper className="flex justify-between flex-col gap-y-[1.2rem] md:gap-y-0 md:flex-row">
-        <h1 className="text-3xl md:text-5xl font-baskerville animate-fade-right flex-1">
-          One Mantra:
-          <br />
-          Value Over Volume
-        </h1>
-        <p className=" mx-auto leading-relaxed md:max-w-[400px]">
-          Our mission is to provide competence, exceptional service, and lasting
-          performance that drive measurable results through strategic innovation
-          and client-focused solutions.
-        </p>
-      </Wrapper>
-      <Wrapper className="animate-fade-up">
-        <h1 className="text-4xl mb-2 md:mb-[3rem] md:text-5xl font-baskerville text-center">
-          {section1?.content[0].title}
-        </h1>
-        <div className="flex gap-x-[14rem] flex-col-reverse md:flex-row justify-around items-center ">
-          <div className="w-full md:w-1/2">
-            <div className=" leading-9 font-geist my-2 animate-fade-right">
-              <div className="mb-[1rem]">
-                {aboutFounderText![0]}.
+        {/* One Mantra Section */}
+        <Wrapper className="flex justify-between flex-col gap-y-[1.2rem] md:gap-y-0 md:flex-row">
+          <motion.h1
+            className="text-3xl md:text-5xl font-baskerville flex-1"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            One Mantra:
+            <br />
+            Value Over Volume
+          </motion.h1>
+          <motion.p
+            className="mx-auto leading-relaxed md:max-w-[400px]"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          >
+            Our mission is to provide competence, exceptional service, and lasting
+            performance that drive measurable results through strategic innovation
+            and client-focused solutions.
+          </motion.p>
+        </Wrapper>
+
+        {/* Founder Section */}
+        <Wrapper>
+          <motion.h1
+            className="text-4xl mb-2 md:mb-[3rem] md:text-5xl font-baskerville text-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {section1?.content[0].title}
+          </motion.h1>
+          <div className="flex gap-x-[14rem] flex-col-reverse md:flex-row justify-around items-center">
+            <motion.div 
+              className="w-full md:w-1/2"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <div className="leading-9 font-geist my-2">
+                {aboutFounderText!.map((text, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="mb-[1rem]"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.3 }}
+                  >
+                    {text}.
+                  </motion.div>
+                ))}
               </div>
-              <div className="mb-[1rem]">
-              {aboutFounderText![1]}.
-              </div>
-              {aboutFounderText![2]}.
-            </div>
+            </motion.div>
+            <motion.div 
+              className="h-fit w-full md:w-1/2"
+              initial={{ x: 100, opacity: 0, scale: 0.9 }}
+              whileInView={{ x: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <Image
+                src={`${section1?.content[0].image}`}
+                alt="founder image"
+                width={400}
+                height={300}
+                className="w-full h-full"
+              />
+            </motion.div>
           </div>
-          <div className="h-fit w-full animate-fade-left md:w-1/2">
-            <Image
-              src={`${section1?.content[0].image}`}
-              alt="founder image"
-              width={400}
-              height={300}
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-      </Wrapper>
-      <Team data={section2!}/>
-      <Achievements data={section3!}/>
+        </Wrapper>
+
+        {/* Team and Achievements */}
+        <Team data={section2!}/>
+        <Achievements data={section3!}/>
       </div>
       <Footer />
     </div>

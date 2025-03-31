@@ -19,6 +19,7 @@ import {
 import Link from "next/link";
 import Wrapper from "./wrapper";
 import { Section1, Section2 } from "../types";
+import { motion } from "framer-motion";
 
 interface ExpertiseCardProps {
   icon: JSX.Element;
@@ -34,7 +35,13 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({
   route,
 }) => {
   return (
-    <div className="w-full bg-[#E0E0E0] p-6 rounded-xl shadow-md flex flex-col justify-between md:w-1/3">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 2, ease: "easeOut" }}
+      className="w-full bg-[#E0E0E0] p-6 rounded-xl shadow-md flex flex-col justify-between md:w-1/3"
+    >
       <div className="flex items-center gap-3 text-[#2F4858] justify-between">
         <div className="mb-3 w-[4px]">{icon}</div>
         <div className="rounded-full bg-[#FBF0E5] p-2">
@@ -44,11 +51,8 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({
         </div>
       </div>
       <h3 className="text-lg font-semibold font-baskerville">{title}</h3>
-      <p className="text-gray-600 text-md leading-relaxed mt-2">
-        {description}
-      </p>
-      <div className="flex justify-end mt-4"></div>
-    </div>
+      <p className="text-gray-600 text-md leading-relaxed mt-2">{description}</p>
+    </motion.div>
   );
 };
 
@@ -58,7 +62,13 @@ interface DigitalBrandExpertiseProps{
 const DigitalBrandExpertise:React.FC<DigitalBrandExpertiseProps>=({data}) =>{
   return (
     <section className=" animate-fade-up">
-      <div className="text-center mb-10 px-4">
+        <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mb-10 px-4"
+      >
       <h2 className="text-[32px] leading-[1.2] md:text-7xl font-serif mb-3">
         {/* Digital Brand <br className="md:hidden inline"/> Expertise */}
         {data?.content[0].title}
@@ -66,9 +76,15 @@ const DigitalBrandExpertise:React.FC<DigitalBrandExpertiseProps>=({data}) =>{
       <p className="text-gray-700 mt-4 leading-[1.6] md:max-w-3xl mx-auto text-base md:text-md max-w-[414px]">
          {data?.content[0].description}
       </p>
-    </div>
+    </motion.div>
       <Wrapper>
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5 animate-fade-right">
+      <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, staggerChildren: 0.2 }}
+          className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-5"
+        >
           <ExpertiseCard
             icon={<BrandIcon />}
             title={`${data?.content[0].subContent[0].title}`}
@@ -87,8 +103,14 @@ const DigitalBrandExpertise:React.FC<DigitalBrandExpertiseProps>=({data}) =>{
             description={`${data?.content[0].subContent[2].description}`}
             route="/services/paid-media"
           />
-        </div>
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 animate-fade-left">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, staggerChildren: 0.2, delay: 0.2 }}
+          className="flex flex-col md:flex-row justify-center gap-4 md:gap-6"
+        >
           <ExpertiseCard
             icon={<PressIcon />}
             title={`${data?.content[0].subContent[3].title}`}
@@ -107,7 +129,7 @@ const DigitalBrandExpertise:React.FC<DigitalBrandExpertiseProps>=({data}) =>{
             title={`${data?.content[0].subContent[5].title}`}
             description={`${data?.content[0].subContent[5].description}`}
           />
-        </div>
+        </motion.div>
       </Wrapper>
     </section>
   );
