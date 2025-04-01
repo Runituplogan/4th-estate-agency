@@ -25,6 +25,7 @@ import BookACallBtn from "@/app/components/BookACallBtn";
 import { usePPCPage } from "@/app/context/ppcPageContext";
 import Preloader from "@/app/components/preloader";
 import { BannerSection, FaqData } from "@/app/types";
+import { motion } from "framer-motion";
 
 
 
@@ -131,70 +132,134 @@ export default function PaidMediaPage() {
         </h1>
       <BookACallBtn/>
       </HeroLayout>
-
-      <Wrapper className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[9.875rem] animate-fade-up ">
+      <Wrapper >
+      <motion.div 
+      initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[9.875rem] animate-fade-up "
+        >
+        
         <h2 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[140%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
         {section1?.content[0].title}
         </h2>
 
-        <p className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] xl:px-[3.475rem] ">
+        <motion.p  
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }} 
+          className="text-[#66717B] text-[0.875rem] leading-[1.875rem]  md:text-[1.25rem] tracking-[-0.03%] md:leading-[2.25rem] md:tracking-[-0.2%] xl:px-[3.475rem] ">
         {section1?.content[0].description}
-        </p>
+        </motion.p>
+      </motion.div>
       </Wrapper>
-
-      <Wrapper className="grid  md:grid-cols-2 gap-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
+   
+      <Wrapper >
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+            },
+          }}
+          viewport={{ once: false, amount: 0.3 }} 
+          className="grid  md:grid-cols-2 gap-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
         {whyPaidMedia.map((item, index) => (
-          <ServiceCard
-            key={index}
-            description={item.description}
-            name={item.name}
-            icon={item.icon}
-          />
+           <ServiceCard
+             key={index}
+             index={index}
+             description={item.description}
+             name={item.name}
+             icon={item.icon}
+           />
+         
         ))}
+        </motion.div>
       </Wrapper>
+    
 
-      <Wrapper className="items-center flex flex-col lg:py-[4rem] text-center gap-[2.1rem]  ">
+      <Wrapper>
+        <motion.div className="items-center flex flex-col lg:py-[4rem] text-center gap-[2.1rem]"
+         initial="hidden"
+         whileInView="visible"
+         viewport={{ once: false, amount: 0.3 }} // Re-triggers animation when in view
+         variants={{
+           hidden: { opacity: 0 },
+           visible: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.2 } },
+         }}
+        >
+       
         <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]  lg:px-[3.125rem] tracking-[-0.3%] capitalize text-center text-2xl text-[35px] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
         {section2?.content.title}
         </h3>
         <p className="text-left text-[#66717B] md:hidden block">{section2?.content.description.split(';')[0]}</p>
         <figure className="grid lg:grid-cols-[1fr_40rem] justify-between  items-center gap-[3.875rem] ">
-          <ul className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px] lg:gap-[8px] pb-[2rem]  ">
-            {[
-              
-              `${section2?.content.description.split(';')[0]}`,
-              `${section2?.content.description.split(';')[1]}`,
-              `${section2?.content.description.split(';')[2]}`,
-              `${section2?.content.description.split(';')[3]}`,
-              `${section2?.content.description.split(';')[4]}`,
-              `${section2?.content.description.split(';')[5]}`,
-            ].map((item, index) => (
-              <li
+          <motion.ul 
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            viewport={{ once: false, amount: 0.3 }}
+          className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px] lg:gap-[8px] pb-[2rem]  ">
+            {section2?.content.description.split(';').filter((item) => item.trim() !== "").map((item, index) => (
+              <motion.li
+              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
                 key={index}
                 className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%]  "
               >
                 {item}
-              </li>
+              </motion.li>
             ))}
-          </ul>
-          <div className="relative h-[31.75rem]  rounded-[12.13px] overflow-hidden hidden md:block  ">
+          </motion.ul>
+          <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}           
+          className="relative h-[31.75rem]  rounded-[12.13px] overflow-hidden hidden md:block  ">
             <Image
               src={section2?.content?.image!}
               alt={`${section2?.content.image}`}
               fill
               className="object-cover object-center"
             />
-          </div>
+          </motion.div>
         </figure>
+        </motion.div>
       </Wrapper>
 
       <section className="bg-white py-[1.875rem] lg:py-[4rem] animate-fade-up ">
-        <Wrapper className="flex flex-col  gap-[1.5rem]">
-          <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
+        <Wrapper>
+        <motion.div  className="flex flex-col  gap-[1.5rem]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }} // Re-triggers animation when in view
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, staggerChildren: 0.3 } },
+          }}>
+            <motion.div   
+            className="flex flex-col justify-center items-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}>
+             <h3 className="text-center text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] xl:text-[5.62rem] font-baskerville  xl:leading-[120%] capitalize tracking-[-0.3%] text-[#1B1B1B] font-normal  ">
            {section3?.content.title}
-          </h3>
+             </h3>
+            </motion.div>
 
-          <div className="bg-white w-full rounded grid md:grid-cols-2 gap-[1.375rem]  ">
+          <motion.div 
+          className="bg-white w-full rounded grid md:grid-cols-2 gap-[1.375rem]  ">
             {paidMediaManagementServices.map((item, index) => (
               <article className="flex flex-col gap-[0.5rem]" key={index}>
                 <i className="size-[2.5rem] lg:size-[4.25rem] overflow-hidden flex items-center justify-center ">
@@ -209,46 +274,64 @@ export default function PaidMediaPage() {
                 </p>
               </article>
             ))}
-          </div>
+          </motion.div>
+        </motion.div>
+         
         </Wrapper>
       </section>
-      <Wrapper className="grid grid-cols-1 xl:grid-cols-[1fr_37rem] justify-between  items-center gap-[1.5rem] xl:gap-[3.875rem] xl:pt-[5.875rem] py-[2.1rem] ">
+      <Wrapper >
+        <motion.div   
+        className="grid grid-cols-1 xl:grid-cols-[1fr_37rem] justify-between  items-center gap-[1.5rem] xl:gap-[3.875rem] xl:pt-[5.875rem] py-[2.1rem] " 
+         initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }} // Re-triggers animation when in view
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.2 } },
+      }}>
         <figcaption>
+          
           <h3 className=" xl:text-[4rem] font-baskerville xl:leading-[140%]   tracking-[-0.3%] capitalize  text-[2.62rem] leading-[2.62rem] md:text-5xl md:leading-[4rem] ">
             {section4?.content.title}
           </h3>
           <p className="font-geist text-[0.875rem] md:mb-0 mb-3 md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%] text-[#66717B] pt-[1.5rem] ">
           {section4?.content.description.split(';')[0]}
           </p>
-          <ul className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px]  ">
-            {[
-              `${section4?.content.description.split(';')[1]}`,
-              `${section4?.content.description.split(';')[2]}`,
-              `${section4?.content.description.split(';')[3]}`,
-              `${section4?.content.description.split(';')[4]}`,
-              `${section4?.content.description.split(';')[5]}`,
-              `${section4?.content.description.split(';')[6]}`,
-             `${section4?.content.description.split(';')[7]}`,
-              `${section4?.content.description.split(';')[8]}`,
-             `${section4?.content.description.split(';')[9]}`,
-            ].map((item, index) => (
-              <li
+          <motion.ul 
+           initial="hidden"
+           whileInView="visible"
+           variants={{
+             hidden: { opacity: 0 },
+             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+           }}
+           viewport={{ once: false, amount: 0.3 }}
+          className="list-disc px-[1rem] text-[#66717B] leading-relaxed md:text-base text-xs text-left font-geist flex flex-col gap-[2px]  ">
+            {section4?.content.description.split(';').slice(1).filter((item) => item.trim() !== "").map((item, index) => (
+              <motion.li
+              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
                 key={index}
                 className="font-geist text-[0.875rem] md:text-[1.25rem] md:leading-[2.25rem] lg:tracking-[-0.2%] leading-[1.875rem] tracking-[-0.3%]  "
               >
                 {item}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </figcaption>
-        <div className="relative w-full h-[24.5rem] lg:h-[32rem]  xl:h-full overflow-hidden rounded-[0.75rem] ">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+        className="relative w-full h-[24.5rem] lg:h-[32rem]  xl:h-full overflow-hidden rounded-[0.75rem] ">
           <Image
             src={`${section4?.content.image}`}
             alt={`${section4?.content.image}`}
             fill
             className="object-cover object-center"
           />
-        </div>
+        </motion.div>
+      </motion.div>
       </Wrapper>
       <Faq items={section!.content.faq} />
       <SectionCard />

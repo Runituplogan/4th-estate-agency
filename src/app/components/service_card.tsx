@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import { JSX } from "react";
 
 interface ServicesCardProps {
+  index?:number,
   icon: JSX.Element;
   name: string;
   description: string;
@@ -12,9 +14,17 @@ const ServiceCard: React.FC<ServicesCardProps> = ({
   name,
   description,
   bgColor = "bg-white",
+  index =0
 }) => {
   return (
-    <div
+    <motion.div
+    key={index}
+    variants={{
+      hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+      visible: { opacity: 1, x: 0 },
+    }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    whileHover={{ scale: 1.05 }}
       className={`${bgColor} text-left py-[2rem] px-[2.5rem] w-full  flex flex-col gap-[8px]  rounded-[8px] `}
     >
       <i className="flex justify-center items-center size-[2.5rem] lg:size-[4.25rem] ">
@@ -27,7 +37,7 @@ const ServiceCard: React.FC<ServicesCardProps> = ({
       <p className=" text-[0.875rem] leading-[1.5rem] md:text-sm md:leading-[1.5rem] align-middle tracking-[-0.3%] text-[#66717B] font-manrope ">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

@@ -70,7 +70,7 @@ const ContentFormat:React.FC<ContentFormatProps>=({data})=> {
           }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {contentFormatDescription.slice(1).map((item, index) => (
+          {contentFormatDescription.slice(1).filter((item) => item.trim() !== "").map((item, index) => (
             <motion.li 
               key={index}
               variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}

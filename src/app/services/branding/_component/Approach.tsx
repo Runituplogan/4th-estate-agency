@@ -84,21 +84,15 @@ const Approach:React.FC<ApproachProps>=({data})=> {
           viewport={{ once: false, amount: 0.3 }}
         >
           {ourApproach.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-            >
+         
               <ServiceCard 
+                key={index}
+                index={index}
                 description={item.description}
                 name={item.name}
                 icon={item.icon}
               />
-            </motion.div>
+         
           ))}
         </motion.div>
       </motion.div>
