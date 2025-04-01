@@ -126,11 +126,11 @@ export default function ContactUs(){
                 </div>
                 <div className="animate-fade-left">
                     <h3 className="text-base font-bold">{section1?.content.map.title}</h3>
-                    <div className="md:flex items-center gap-3 md:gap-0 hidden">
+                    {/* <div className="md:flex items-center gap-3 md:gap-0 hidden">
                     <MapPin className="md:w-4 md:h-4 text-gray-400 w-8 h-8" />
                     <p className="text-base text-[#66717B] my-2 md:mb-0 ">{section1?.content.map.address} - {section1?.content.map.timezone}</p>
-                    </div>
-                    <p className="md:hidden block text-[#66717B]">
+                    </div> */}
+                    <p className=" text-[#66717B] space-x-3 py-3">
                       <MapPin className="w-4 h-4 text-gray-400 inline" />
                       <span>{section1?.content.map.address} - {section1?.content.map.timezone}</span>
                     </p>

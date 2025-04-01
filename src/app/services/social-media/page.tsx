@@ -217,7 +217,7 @@ const descriptionSplited = section4?.content.description.split(';').slice(1)
 
       <Wrapper
         as="ul"
-        className="bg-white w-full  grid md:grid-cols-2 gap-[1.375rem]  py-[1.875rem] lg:py-[4rem] animate-fade-up  rounded-[8px] "
+        className="bg-white w-full  grid md:grid-cols-2 gap-[40px]  py-[1.875rem] lg:py-[4rem] animate-fade-up  rounded-[8px] "
       >
         {differentSocialMedia.map((item, index) => (
           <motion.article 

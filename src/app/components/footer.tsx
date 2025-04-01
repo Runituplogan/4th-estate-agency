@@ -35,7 +35,7 @@ export default function Footer() {
     );
     console.log(banner,"heyo")
   return (
-    <>
+    <div>
     <BrandBoost data={banner!}/>
     <footer className="bg-[#F7EFE5] text-gray-800 px-3 md:px-6 py-20">
       <div className="max-w-7xl mx-auto flex justify-around flex-col md:flex-row gap-12">
@@ -97,8 +97,25 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-2">
               <LocationIcon />
-              {section4?.content.description[2].name}
-            </li>
+              {(() => {
+            const text = section4?.content.description[2].name || "";
+            const parts = text.split(",");
+            
+            if (parts.length < 3) {
+              // If there are fewer than 3 parts, return the text as is
+              return text;
+            }
+
+            // Join back the first two parts, keeping the comma, then add a break before the rest
+            return (
+              <>
+                {parts.slice(0, 2).join(",")},{" "}
+                <br />
+                {parts.slice(2).join(",")}
+              </>
+            );
+          })()}
+           </li>
           </ul>
         </div>
         </div>
@@ -122,12 +139,29 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-2">
               <LocationIcon />
-              <span>{section4?.content.description[2].name}</span>
+              <span>        {(() => {
+            const text = section4?.content.description[2].name || "";
+            const parts = text.split(",");
+            
+            if (parts.length < 3) {
+              // If there are fewer than 3 parts, return the text as is
+              return text;
+            }
+
+            // Join back the first two parts, keeping the comma, then add a break before the rest
+            return (
+              <>
+                {parts.slice(0, 2).join(",")},{" "}
+                <br />
+                {parts.slice(2).join(",")}
+              </>
+            );
+          })()}</span>
             </li>
           </ul>
         </div>
       </div>
     </footer>
-    </>
+    </div>
   );
 }

@@ -98,7 +98,7 @@ const Team:React.FC<TeamProps> = ({data}) => {
                   viewport={{ once: true }}
                   className="w-full"
                 >
-                  <div className="w-full h-[400px] overflow-hidden rounded-lg shadow-md">
+                  <div className="w-full h-[400px] overflow-hidden">
                     <Image
                       src={item.imagePath}
                       alt={item.name}

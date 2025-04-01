@@ -122,7 +122,7 @@ export default function ServicePage() {
             {serviceType.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-white w-full h-full p-4 items-center shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white w-full h-full p-4 items-center rounded-lg hover:shadow-sm transition-shadow duration-300"
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: index * 0.2, duration: 0.8, ease: "easeOut" }}
@@ -137,7 +137,7 @@ export default function ServicePage() {
                   className="w-full rounded-md"
                 />
                 <h2 className="text-2xl font-baskerville py-2">{item.name}</h2>
-                <p className="max-w-[250px] font-geist text-xs leading-relaxed text-[#66717B]">
+                <p className="max-w-[400px] font-geist text-sm leading-relaxed text-[#66717B]">
                   {item.description}
                 </p>
                 <Link href={item.link}>
@@ -154,8 +154,8 @@ export default function ServicePage() {
             ))}
           </motion.div>
         </Wrapper>
-      </div>
       <Footer />
+      </div>
     </div>
   );
 }

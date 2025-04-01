@@ -34,7 +34,7 @@ export default function AboutPage() {
   const section3:AboutSection3  | undefined = aboutPageData?.content?.find(
     (item: any) => item.type === "section3"
   );
-  const aboutFounderText = section1?.content[0].description.split('.');
+  const aboutFounderText = section1?.content[0].description.split(';');
 
   return (
     <div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="leading-9 font-geist my-2">
-                {aboutFounderText!.map((text, index) => (
+                {aboutFounderText!.filter((item) => item.trim() !== "").map((text, index) => (
                   <motion.div 
                     key={index} 
                     className="mb-[1rem]"
@@ -107,7 +107,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.3 }}
                   >
-                    {text}.
+                    {text}
                   </motion.div>
                 ))}
               </div>
@@ -132,8 +132,8 @@ export default function AboutPage() {
         {/* Team and Achievements */}
         <Team data={section2!}/>
         <Achievements data={section3!}/>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

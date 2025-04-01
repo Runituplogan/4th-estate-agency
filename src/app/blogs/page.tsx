@@ -96,9 +96,8 @@ export default function BlogPage() {
             </div>
           </Wrapper>
         </div>
-      </div>
-
-      <Footer />
+        <Footer />
+      </div>    
     </div>
   );
 }

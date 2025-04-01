@@ -446,14 +446,16 @@ const benefitOfSeo = [
         </motion.h2>
       </Wrapper>
 
-      <Wrapper className="grid  md:grid-cols-2 gap-y-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
+      <Wrapper className="grid  md:grid-cols-2  gap-y-[1.25rem]  w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
         {seoSolutionForYourBusiness.map((item, index) => (
+          <>
           <ServiceCard
             key={index}
             description={item.description}
             name={item.name}
             icon={item.icon}
           />
+          </>
         ))}
       </Wrapper>
 
@@ -517,7 +519,7 @@ const benefitOfSeo = [
       </Wrapper>
 
       <Wrapper className="">
-        <Wrapper className="bg-white w-full rounded grid py-[1.875rem] lg:py-[4rem]  md:grid-cols-2 gap-8 place-items-center animate-fade-up lg:px-[2.5rem] ">
+        <Wrapper className="bg-white w-full rounded grid py-[1.875rem] lg:py-[4rem]  md:grid-cols-2 gap-12 place-items-center animate-fade-up lg:px-[2.5rem] ">
 
           {benefitOfSeo.map((item, index) => (
              <motion.article 
