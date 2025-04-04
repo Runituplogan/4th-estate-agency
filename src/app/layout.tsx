@@ -35,7 +35,34 @@ export const metadata: Metadata = {
     default: "4E Agency",
   },
   description: "An Agency That Gets Your Brand What it Deserves",
-
+  keywords: ["4E Agency", "Webste", "Social Media", "SEO", "Press", "Branding"],
+  themeColor: "#ffffff",
+  twitter: {
+    title: "4E Agency",
+    description: "An Agency That Gets Your Brand What it Deserves",
+    site: "@4E_Agency",
+    creator: "@4E_Agency",
+    images: {
+      url: "./favicons/favicon-32x32.png",
+      alt: "4E Agency",
+    },
+  },
+  openGraph: {
+    title: "4E Agency",
+    description: "An Agency That Gets Your Brand What it Deserves",
+    url: "https://www.4thestateagency.com",
+    siteName: "Schoolinka",
+    images: [
+      {
+        url: "./favicons/favicon-32x32.png",
+        alt: "4EAgency",
+      },
+    ],
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.4thestateagency.com",
+  },
 };
 
 export default function RootLayout({
@@ -60,9 +87,13 @@ export default function RootLayout({
                           <WebDevelopmentPageProvider>
                             <BrandingPageProvider>
                               <FooterPageProvider>
-                              {children}
+                                {children}
                               </FooterPageProvider>
-                              <ToastContainer autoClose={2000} hideProgressBar theme="colored" />
+                              <ToastContainer
+                                autoClose={2000}
+                                hideProgressBar
+                                theme="colored"
+                              />
                             </BrandingPageProvider>
                           </WebDevelopmentPageProvider>
                         </SocialsPageProvider>
