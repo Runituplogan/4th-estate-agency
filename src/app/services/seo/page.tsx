@@ -445,20 +445,32 @@ const benefitOfSeo = [
           {section5?.content.title}
         </motion.h2>
       </Wrapper>
-
-      <Wrapper className="grid  md:grid-cols-2  gap-y-[1.25rem]  w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up">
+        <Wrapper>
+        <motion.div 
+                 className="grid  md:grid-cols-2 gap-[1.25rem] w-full  pb-[3.25rem] lg:pb-[1.5rem] animate-fade-up"
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+                    },
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
         {seoSolutionForYourBusiness.map((item, index) => (
-          <>
+          
           <ServiceCard
             key={index}
             description={item.description}
             name={item.name}
             icon={item.icon}
           />
-          </>
         ))}
-      </Wrapper>
-
+        </motion.div>
+        </Wrapper>
       <Wrapper >
         <motion.div
         className="items-center flex justify-center flex-col gap-[1.25rem] px-[2rem] pb-[1.5rem] lg:pb-[6.25rem] text-center pt-[2.43rem] lg:pt-[3.875rem] animate-fade-up "

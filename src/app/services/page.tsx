@@ -137,7 +137,7 @@ export default function ServicePage() {
                   className="w-full rounded-md"
                 />
                 <h2 className="text-2xl font-baskerville py-2">{item.name}</h2>
-                <p className="max-w-[400px] font-geist text-sm leading-relaxed text-[#66717B]">
+                <p className="font-geist text-sm leading-relaxed text-[#66717B]">
                   {item.description}
                 </p>
                 <Link href={item.link}>
