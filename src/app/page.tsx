@@ -16,6 +16,7 @@ import Wrapper from "./components/wrapper";
 import { GoogleIcon } from "./icons/googleIcon";
 import { OneStar } from "./icons/oneStart";
 import { BannerSection, Section1, Section2, Section3 } from "./types";
+import VideoSlider from "./components/video_slider";
 export default function Home() {
   const { homePageData } = useHomePage();
   if (!homePageData || !homePageData.content || homePageData.content.length == 0){
@@ -112,7 +113,9 @@ export default function Home() {
           textColor={"white"}
         />
       </Wrapper>
-
+       <div className="md:mx-[40px] mx-[10px]">
+        <VideoSlider/>
+      </div >
       <DigitalBrandExpertise data={section2!}/>
       <OurPartners data={section3!} />
       <BlogPosts />
