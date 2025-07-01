@@ -123,7 +123,7 @@ const imageData: ImageData[] = [
                         <div
                             className={`
                                 rounded-2xl overflow-hidden shadow-sm transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl
-                                w-full h-[480px]
+                                md:w-full w-[380px] h-[480px]
                             `}
                         >
                             <img src={image.url} alt={image.title} className="w-full h-full object-cover" />
