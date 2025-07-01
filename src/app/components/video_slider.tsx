@@ -108,7 +108,7 @@ const videoData: VideoData[] = [
             initial="hidden"
             animate="visible"
           >
-            Our Work
+           Our Video Work
           </motion.h2>
           {/* Navigation Buttons */}
           <div className="flex space-x-3">

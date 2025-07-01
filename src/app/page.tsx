@@ -17,6 +17,7 @@ import { GoogleIcon } from "./icons/googleIcon";
 import { OneStar } from "./icons/oneStart";
 import { BannerSection, Section1, Section2, Section3 } from "./types";
 import VideoSlider from "./components/video_slider";
+import ImageSlider from "./components/image_slider";
 export default function Home() {
   const { homePageData } = useHomePage();
   if (!homePageData || !homePageData.content || homePageData.content.length == 0){
@@ -118,6 +119,9 @@ export default function Home() {
       </div >
       <DigitalBrandExpertise data={section2!}/>
       <OurPartners data={section3!} />
+      <div className="md:mx-[40px] mx-[10px]">
+        <ImageSlider/>
+      </div >
       <BlogPosts />
       </div>
       <Footer />
