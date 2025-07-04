@@ -20,6 +20,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
  const ImageSlider = () => {
   const [playingVideoId, setPlayingVideoId] = useState<number | null>(null);
   const swiperRef = useRef<SwiperCore | null>(null);
+  const swiperRefV2 = useRef<SwiperCore | null>(null);
 
   // Effect to load Swiper CSS dynamically
   useEffect(() => {
@@ -72,7 +73,8 @@ const imageData: ImageData[] = [
   };
 
   return (
-    <div className=" w-full">
+    <>
+     <div className=" w-full hidden md:block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -87,7 +89,7 @@ const imageData: ImageData[] = [
           {/* Navigation Buttons */}
           <div className="flex space-x-3">
                <motion.button
-              onClick={() => swiperRef.current?.slidePrev()}
+              onClick={() => swiperRefV2.current?.slidePrev()}
               className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -96,7 +98,7 @@ const imageData: ImageData[] = [
             </motion.button>
            
            <motion.button
-              onClick={() => swiperRef.current?.slideNext()}
+              onClick={() => swiperRefV2.current?.slideNext()}
               className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -109,13 +111,12 @@ const imageData: ImageData[] = [
         {/* Swiper Slider */}
         <Swiper
           onSwiper={(swiper) => {
-            swiperRef.current = swiper;
+            swiperRefV2.current = swiper;
           }}
-          onSlideChange={handleSlideChange}
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={'auto'}
-          className="!pb-12" // Add padding-bottom for the titles
+          className="!pb-12" 
         >
            {imageData.map((image) => (
                 <SwiperSlide key={image.id} className="!w-auto">
@@ -135,7 +136,73 @@ const imageData: ImageData[] = [
         </Swiper>
       </div>
     </div>
+    <div className="w-full mt-16 md:hidden block">
+        {/* Header using your custom structure */}
+        <div className="flex justify-between items-center mb-[10px] mx-[10px]">
+            <motion.h2 className="text-3xl md:text-6xl text-center md:text-left">
+                Our Static Work
+            </motion.h2>
+            <div className="flex space-x-3">
+                <motion.button
+                    onClick={() => swiperRef.current?.slidePrev()}
+                    className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
+                >
+                    <ArrowLeft className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
+                </motion.button>
+                <motion.button
+                    onClick={() => swiperRef.current?.slideNext()}
+                    className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
+                >
+                    <ArrowRight className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
+                </motion.button>
+            </div>
+        </div>
+
+        {/* Swiper Slider */}
+        <Swiper
+            onSwiper={(swiper) => { swiperRef.current = swiper; }}
+            modules={[Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            className="!pb-12"
+        >
+            {imageData.map((image) => (
+                // FIXED: Removed !w-auto to allow slide to be full width
+                <SwiperSlide key={image.id}>
+                    <div className="group">
+                        {/* Container for the image */}
+                        <div
+                            className={`
+                                rounded-2xl overflow-hidden shadow-sm 
+                                w-full h-[60vh] max-h-[500px] px-2
+                                relative
+                            `}
+                        >
+                            {/* Blurred background image */}
+                            <img
+                                src={image.url}
+                                alt=""
+                                aria-hidden="true"
+                                className="absolute inset-0 w-full h-full object-cover blur-lg scale-110"
+                                style={{ zIndex: 0, filter: 'blur(24px) brightness(0.85)' }}
+                            />
+                            {/* Foreground image */}
+                            <img
+                                src={image.url}
+                                alt={image.title}
+                                className="relative w-full h-full object-contain z-10"
+                                style={{}}
+                            />
+                        </div>
+                    </div>
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    </div>
+    </>
+   
   );
+
 };
 
 
