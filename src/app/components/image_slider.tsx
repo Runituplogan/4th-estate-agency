@@ -50,8 +50,9 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // More portrait than landscape images, as requested.
 const imageData: ImageData[] = [
+  { id: 18, url: '/images/image_sliders/image18.jpg', title: 'Mountain Range', orientation: 'landscape' },
+  { id: 8, url: '/images/image_sliders/image8.PNG', title: 'Desert Dunes', orientation: 'portrait' },
   { id: 2, url: '/images/image_sliders/image2.jpg', title: 'Mountain Range', orientation: 'landscape' },
-    { id: 8, url: '/images/image_sliders/image8.PNG', title: 'Desert Dunes', orientation: 'portrait' },
      { id: 14, url: '/images/image_sliders/image14.png', title: 'Desert Dunes', orientation: 'portrait' },
   { id: 5, url: '/images/image_sliders/image5.jpg', title: 'Ocean Waves', orientation: 'landscape' },
   { id: 6, url: '/images/image_sliders/image6.jpg', title: 'Forest Path', orientation: 'portrait' },
@@ -74,68 +75,72 @@ const imageData: ImageData[] = [
 
   return (
     <>
-     <div className=" w-full hidden md:block">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="flex justify-between items-center mb-[10px]">
-            <motion.h2 
-            className="text-3xl md:text-6xl font-baskerville  text-center md:text-left"
-            initial="hidden"
-            animate="visible"
-          >
-            Our Static Work
-          </motion.h2>
-          {/* Navigation Buttons */}
-          <div className="flex space-x-3">
-               <motion.button
-              onClick={() => swiperRefV2.current?.slidePrev()}
-              className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ArrowLeft className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
-            </motion.button>
-           
-           <motion.button
-              onClick={() => swiperRefV2.current?.slideNext()}
-              className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ArrowRight className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
-            </motion.button>
-          </div>
-        </div>
-
-        {/* Swiper Slider */}
-        <Swiper
-          onSwiper={(swiper) => {
-            swiperRefV2.current = swiper;
-          }}
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={'auto'}
-          className="!pb-12" 
+    <div className="w-full hidden md:block">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <div className="flex justify-between items-center mb-[10px]">
+      <motion.h2
+        className="text-3xl md:text-6xl font-baskerville text-center md:text-left"
+        initial="hidden"
+        animate="visible"
+      >
+        Our Static Work
+      </motion.h2>
+      {/* Navigation Buttons */}
+      <div className="flex space-x-3">
+        <motion.button
+          onClick={() => swiperRefV2.current?.slidePrev()}
+          className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
-           {imageData.map((image) => (
-                <SwiperSlide key={image.id} className="!w-auto">
-                    <div className="group">
-                        <div
-                            className={`
-                                rounded-2xl overflow-hidden shadow-sm transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl
-                                md:w-full w-[380px] h-[480px]
-                            `}
-                        >
-                            <img src={image.url} alt={image.title} className="w-full h-full object-cover" />
-                        </div>
-                     
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+          <ArrowLeft className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
+        </motion.button>
+        <motion.button
+          onClick={() => swiperRefV2.current?.slideNext()}
+          className="p-3 rounded-full bg-transparent border-[#777777] border-[1px] hover:border-none hover:bg-[#DCD1C5] transition"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <ArrowRight className="w-6 h-6 text-[#777777] hover:text-[#0C2F4D]" />
+        </motion.button>
       </div>
     </div>
+
+    {/* Swiper Slider */}
+    <Swiper
+      onSwiper={(swiper) => {
+        swiperRefV2.current = swiper;
+      }}
+      modules={[Navigation]}
+      spaceBetween={30}
+      slidesPerView={'auto'}
+      className="!pb-12"
+    >
+      {imageData.map((image) => (
+        <SwiperSlide key={image.id} className="!w-[380px]">
+          <div className="group">
+            <div
+              className="
+                rounded-2xl overflow-hidden shadow-sm transition-transform duration-300 ease-in-out group-hover:scale-105
+                w-full h-[480px] relative
+              "
+            >
+               <img
+              src={image.url}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover blur-lg scale-110"
+              style={{ zIndex: 0, filter: 'blur(24px) brightness(0.85)' }}
+                            />
+              <img src={image.url} alt={image.title} className="relative w-full h-full object-contain  z-10" />
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</div>
     <div className="w-full mt-16 md:hidden block">
         {/* Header using your custom structure */}
         <div className="flex justify-between items-center mb-[10px] mx-[10px]">
