@@ -46,7 +46,7 @@ const Navbar = () => {
       route: "/services/press",
     },
     {
-      title: "SEO/GEO",
+      title: "SEO/ GSO",
       route: "/services/seo",
     },
     {
