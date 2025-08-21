@@ -83,10 +83,16 @@ const PlayIcon = () => (
 const videoData: VideoData[] = [
   // Example using generic placeholder videos. 
   // For your project, upload your video files to a CDN or hosting service.
+    { id: 11, posterUrl: '/images/thumbnails/5.png', videoUrl: '/videos/5.mp4', title: 'Peter Jones' },
   { id: 3, posterUrl: '/images/thumbnails/3.jpg', videoUrl: '/videos/Gabby.mp4', title: 'John Doe' },
   { id: 2, posterUrl: '/images/thumbnails/2.jpg', videoUrl: '/videos/Lamb_reel.mp4', title: 'Manuel Cortes' },
   { id: 1, posterUrl: '/images/thumbnails/1.jpg', videoUrl: '/videos/3.mp4', title: 'Andrea Hanks' },
   { id: 5, posterUrl: '/images/thumbnails/5.jpg', videoUrl: '/videos/1.mp4', title: 'Peter Jones' },
+  { id: 10, posterUrl: '/images/thumbnails/4.0.png', videoUrl: '/videos/4.mp4', title: 'Peter Jones' },
+
+  { id: 12, posterUrl: '/images/thumbnails/6.0.png', videoUrl: '/videos/6.mp4', title: 'Peter Jones' },
+  { id: 13, posterUrl: '/images/thumbnails/7.0.png', videoUrl: '/videos/7.mp4', title: 'Peter Jones' },
+  { id: 14, posterUrl: '/images/thumbnails/8.0.png', videoUrl: '/videos/8.mp4', title: 'Peter Jones' },
   { id: 4, posterUrl: '/images/thumbnails/4.jpg', videoUrl: '/videos/hrsc.mp4', title: 'Jane Smith' },
 ];
   const handlePlay = (id: number) => {

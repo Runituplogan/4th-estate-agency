@@ -50,10 +50,11 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // More portrait than landscape images, as requested.
 const imageData: ImageData[] = [
+       { id: 14, url: '/images/image_sliders/image14.png', title: 'Desert Dunes', orientation: 'portrait' },
   { id: 18, url: '/images/image_sliders/image18.jpg', title: 'Mountain Range', orientation: 'landscape' },
   { id: 8, url: '/images/image_sliders/image8.PNG', title: 'Desert Dunes', orientation: 'portrait' },
   { id: 2, url: '/images/image_sliders/image2.jpg', title: 'Mountain Range', orientation: 'landscape' },
-     { id: 14, url: '/images/image_sliders/image14.png', title: 'Desert Dunes', orientation: 'portrait' },
+
   { id: 5, url: '/images/image_sliders/image5.jpg', title: 'Ocean Waves', orientation: 'landscape' },
   { id: 6, url: '/images/image_sliders/image6.jpg', title: 'Forest Path', orientation: 'portrait' },
   { id: 1, url: '/images/image_sliders/image1.jpg', title: 'Serene View', orientation: 'portrait' },
@@ -62,10 +63,12 @@ const imageData: ImageData[] = [
     { id: 10, url: '/images/image_sliders/image10.PNG', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 11, url: '/images/image_sliders/image11.PNG', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 12, url: '/images/image_sliders/image12.PNG', title: 'Desert Dunes', orientation: 'portrait' },
-    // { id: 13, url: '/images/image_sliders/image13.PNG', title: 'Desert Dunes', orientation: 'portrait' },
-   
-    // { id: 15, url: '/images/image_sliders/image15.jpg', title: 'Desert Dunes', orientation: 'portrait' },
-    // { id: 16, url: '/images/image_sliders/image16.jpg', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 100, url: '/images/image_sliders/image15.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 101, url: '/images/image_sliders/image16.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 102, url: '/images/image_sliders/image17.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 103, url: '/images/image_sliders/image18.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 104, url: '/images/image_sliders/image19.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 105, url: '/images/image_sliders/image20.png', title: 'Desert Dunes', orientation: 'portrait' },
 ];
 
 
