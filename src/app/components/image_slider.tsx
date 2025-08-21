@@ -64,9 +64,9 @@ const imageData: ImageData[] = [
     { id: 11, url: '/images/image_sliders/image11.PNG', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 12, url: '/images/image_sliders/image12.PNG', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 100, url: '/images/image_sliders/image15.png', title: 'Desert Dunes', orientation: 'portrait' },
-    { id: 101, url: '/images/image_sliders/image16.png', title: 'Desert Dunes', orientation: 'portrait' },
-    { id: 102, url: '/images/image_sliders/image17.png', title: 'Desert Dunes', orientation: 'portrait' },
-    { id: 103, url: '/images/image_sliders/image18.png', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 101, url: '/images/image_sliders/image16.PNG', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 102, url: '/images/image_sliders/image17.PNG', title: 'Desert Dunes', orientation: 'portrait' },
+    { id: 103, url: '/images/image_sliders/image18.PNG', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 104, url: '/images/image_sliders/image19.png', title: 'Desert Dunes', orientation: 'portrait' },
     { id: 105, url: '/images/image_sliders/image20.png', title: 'Desert Dunes', orientation: 'portrait' },
 ];
