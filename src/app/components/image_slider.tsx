@@ -50,6 +50,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // More portrait than landscape images, as requested.
 const imageData: ImageData[] = [
+       { id: 14, url: '/images/image_sliders/image22.png', title: 'Desert Dunes', orientation: 'portrait' },
        { id: 14, url: '/images/image_sliders/image14.png', title: 'Desert Dunes', orientation: 'portrait' },
   { id: 18, url: '/images/image_sliders/image18.jpg', title: 'Mountain Range', orientation: 'landscape' },
   { id: 8, url: '/images/image_sliders/image8.PNG', title: 'Desert Dunes', orientation: 'portrait' },
