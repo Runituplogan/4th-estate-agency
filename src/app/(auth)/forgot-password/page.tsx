@@ -19,8 +19,9 @@ const ForgotPasswordPage = () => {
   type ForgotPasswordFormValues = z.infer<typeof ForgotPasswordSchema>;
   const form = useForm<ForgotPasswordFormValues>({
     resolver: zodResolver(ForgotPasswordSchema),
+    mode: 'onChange',
     defaultValues: {
-      email: "",
+      email: '',
     },
   });
 

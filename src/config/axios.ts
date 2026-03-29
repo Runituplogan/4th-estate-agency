@@ -53,9 +53,9 @@ const clearAndRedirect = () => {
   document.cookie = "isAuthenticated=; path=/; max-age=0";
   if (
     typeof window !== "undefined" &&
-    !window.location.pathname.includes("/login")
+    !window.location.pathname.includes("/")
   ) {
-    window.location.replace("/login");
+    window.location.replace("/");
   }
 };
 

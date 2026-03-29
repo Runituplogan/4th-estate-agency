@@ -94,7 +94,7 @@ export default function Home() {
             </Link>
           </Wrapper>
         </HeroLayout>
-        <Wrapper className="flex flex-col w-full justify-between md:flex-row gap-4 lg:gap-6 bg-[#F8F1E8] animate-fade-down">
+        <Wrapper className="flex flex-col w-full justify-between md:flex-row gap-4 lg:gap-6 animate-fade-down">
           <Card
             title={`${section1?.content[0].title}`}
             description={`${section1?.content[0].description}`}

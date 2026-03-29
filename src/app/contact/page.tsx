@@ -81,63 +81,116 @@ export default function ContactUs(){
     
     //       console.log("contact Page",contactPageData)
     return (
-        <div>
-            <HeroLayout backgroundImage={`${banner?.content[0].background_image.url}`}>
-                <h1 className="text-3xl md:text-8xl  font-baskerville">{banner?.content[0].title}</h1>
-            </HeroLayout>
-            <div className="flex flex-col md:flex-row md:m-16 m-5 justify-center md:space-x-20 items-center animate-fade-up">
-                <div className="animate-fade-right md:mb-0 mb-10">
-                    <div>
-                        <h1 className="font-baskerville md:text-5xl text-4xl md:mt-0 mt-3  max-w-[400px] pb-7">{section1?.content.title}</h1>
-                        <p className="text-base text-[#66717B] pb-4">{section1?.content.description}</p>
-                        
-                    </div>
-                    <form onSubmit={sendEstimationRequest}>
-                    <div className="flex flex-col md:flex-row gap-6 my-2  w-full">
-                        <div>
-                        <InputForm 
-                            label={`${section1?.content.form[0].label}`}
-                            name="firstName"  // Pass correct name
-                            placeholder={`${section1?.content.form[0].placeholder}`}
-                            value={formData.firstName} 
-                            onChange={handleChange} 
-                        />
-                        </div>
-                        <div>
-                       <InputForm  label={`${section1?.content.form[1].label}`} placeholder={`${section1?.content.form[1].placeholder}`} value={formData.lastName} onChange={handleChange} name="lastName"/> 
-                        </div>
-                    </div>
-                    <div className="">
-                    <InputForm  label={`${section1?.content.form[2].label}`} placeholder={`${section1?.content.form[2].placeholder}`} value={formData.email} onChange={handleChange} name="email"/>
-                    </div>
-                    <div className="my-2">
-                        <InputForm  label={`${section1?.content.form[3].label}`} placeholder={`${section1?.content.form[3].placeholder}`}  value={formData.phoneNumber} onChange={handleChange} name="phoneNumber"/>
-                    </div>
-                    <div>
+      <div>
+        <HeroLayout
+          backgroundImage={`${banner?.content[0].background_image.url}`}
+        >
+          <h1 className="text-3xl md:text-8xl  font-baskerville">
+            {banner?.content[0].title}
+          </h1>
+        </HeroLayout>
+        <div className="flex flex-col md:flex-row md:m-16 m-5 justify-center md:space-x-20 items-center animate-fade-up">
+          <div className="animate-fade-right md:mb-0 mb-10">
+            <div>
+              <h1 className="font-baskerville md:text-5xl text-4xl md:mt-0 mt-3  max-w-[400px] pb-7">
+                {section1?.content.title}
+              </h1>
+              <p className="text-base text-[#66717B] pb-4">
+                {section1?.content.description}
+              </p>
+            </div>
+            <form onSubmit={sendEstimationRequest}>
+              <div className="flex flex-col md:flex-row gap-6 my-2  w-full">
+                <div>
+                  <InputForm
+                    label={`${section1?.content.form[0].label}`}
+                    name="firstName" // Pass correct name
+                    placeholder={`${section1?.content.form[0].placeholder}`}
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <InputForm
+                    label={`${section1?.content.form[1].label}`}
+                    placeholder={`${section1?.content.form[1].placeholder}`}
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    name="lastName"
+                  />
+                </div>
+              </div>
+              <div className="">
+                <InputForm
+                  label={`${section1?.content.form[2].label}`}
+                  placeholder={`${section1?.content.form[2].placeholder}`}
+                  value={formData.email}
+                  onChange={handleChange}
+                  name="email"
+                />
+              </div>
+              <div className="my-2">
+                <InputForm
+                  label={`${section1?.content.form[3].label}`}
+                  placeholder={`${section1?.content.form[3].placeholder}`}
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  name="phoneNumber"
+                />
+              </div>
+              {/* <div>
                         <h3 className="text-sm text-[#66717B]">{section1?.content.form[4].label}</h3>
                         <textarea placeholder={`${section1?.content.form[4].placeholder}`} className="w-full rounded p-2" value={formData.message} onChange={handleChange} name="message"/>
-                    </div>
-                    <div className="flex my-2 gap-2">
-                        <input type="radio" className="grey"/>
-                        <p className="text-md">{section1?.content.form[5].label}</p>
-                    </div>
-                    <button className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full " type="submit" >{loading ? "Loading...":`${section1?.content.form[6].label}`}</button>
-                    </form>
-                </div>
-                <div className="animate-fade-left">
-                    <h3 className="text-base font-bold">{section1?.content.map.title}</h3>
-                    {/* <div className="md:flex items-center gap-3 md:gap-0 hidden">
+                    </div> */}
+              <div>
+                <h3 className="text-sm text-[#5f666c] mb-2">
+                  {section1?.content.form[4].label}
+                </h3>
+                <textarea
+                  placeholder={`${section1?.content.form[4].placeholder}`}
+                  className="w-full rounded-md p-3 border border-gray-600 placeholder:text-gray-600 focus:outline-none focus:border-[#385065] transition-colors resize-none min-h-[120px]"
+                  value={formData.message}
+                  onChange={handleChange}
+                  name="message"
+                />
+              </div>
+              <div className="flex my-2 gap-2">
+                <input type="radio" className="grey" />
+                <p className="text-md">{section1?.content.form[5].label}</p>
+              </div>
+              <button
+                className="mt-6 px-6 py-3 bg-[#385065] text-white rounded-lg mb-3 md:mb-0 w-full "
+                type="submit"
+              >
+                {loading ? 'Loading...' : `${section1?.content.form[6].label}`}
+              </button>
+            </form>
+          </div>
+          <div className="animate-fade-left">
+            <h3 className="text-base font-bold">
+              {section1?.content.map.title}
+            </h3>
+            {/* <div className="md:flex items-center gap-3 md:gap-0 hidden">
                     <MapPin className="md:w-4 md:h-4 text-gray-400 w-8 h-8" />
                     <p className="text-base text-[#66717B] my-2 md:mb-0 ">{section1?.content.map.address} - {section1?.content.map.timezone}</p>
                     </div> */}
-                    <p className=" text-[#66717B] space-x-3 py-3">
-                      <MapPin className="w-4 h-4 text-gray-400 inline" />
-                      <span>{section1?.content.map.address} - {section1?.content.map.timezone}</span>
-                    </p>
-                 <Image src={`${section1?.content.map.image}`} alt="Location Image" height={500} width={600} className="md:my-0 my-6"/>
-                </div>
-            </div>
-            <Footer/>
+            <p className=" text-[#66717B] space-x-3 py-3">
+              <MapPin className="w-4 h-4 text-gray-400 inline" />
+              <span>
+                {section1?.content.map.address} -{' '}
+                {section1?.content.map.timezone}
+              </span>
+            </p>
+            <Image
+              src={`${section1?.content.map.image}`}
+              alt="Location Image"
+              height={500}
+              width={600}
+              className="md:my-0 my-6"
+            />
+          </div>
         </div>
-    )
+        <Footer />
+      </div>
+    );
 }

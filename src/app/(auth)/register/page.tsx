@@ -1,5 +1,5 @@
-"use client";
-import React, { useState } from "react";
+'use client';
+import React, { useState } from 'react';
 import {
   ArrowRight,
   BookText,
@@ -8,12 +8,12 @@ import {
   Eye,
   EyeClosed,
   Loader2,
-} from "lucide-react";
-import useAuth from "@/hooks/useAuth";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+} from 'lucide-react';
+import useAuth from '@/hooks/useAuth';
+import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Controller, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -24,55 +24,71 @@ const RegisterPage = () => {
 
   const registerSchema = z
     .object({
-      firstName: z.string().min(1, { message: "First name is required" }),
-      secondName: z.string().min(1, { message: "Last name is required" }),
-      email: z.email({ message: "Invalid email" }).trim(),
+      firstName: z
+        .string()
+        .min(1, { message: 'First name is required' })
+        .min(2, { message: 'First name must be at least 2 characters' })
+        .max(50, { message: 'First name must be less than 50 characters' })
+        .regex(/^[a-zA-Z\s'-]+$/, {
+          message: 'First name can only contain letters',
+        }),
+
+      secondName: z
+        .string()
+        .min(1, { message: 'Last name is required' })
+        .min(2, { message: 'Last name must be at least 2 characters' })
+        .max(50, { message: 'Last name must be less than 50 characters' })
+        .regex(/^[a-zA-Z\s'-]+$/, {
+          message: 'Last name can only contain letters',
+        }),
+      email: z.email({ message: 'Invalid email' }).trim(),
       password: z
         .string()
-        .min(8, { message: "Password is required, at least 8 characters" })
-        .max(100, { message: "Password must be less than 100 characters" })
+        .min(8, { message: 'Password is required, at least 8 characters' })
+        .max(100, { message: 'Password must be less than 100 characters' })
         .regex(/[A-Z]/, {
-          message: "Password must contain at least one uppercase letter",
+          message: 'Password must contain at least one uppercase letter',
         })
         .regex(/[0-9]/, {
-          message: "Password must contain at least one digit",
+          message: 'Password must contain at least one digit',
         })
         .regex(/[@$!%*?&#]/, {
           message:
-            "Password must contain at least one special character (@, $, !, %, *, ?, &, #)",
+            'Password must contain at least one special character (@, $, !, %, *, ?, &, #)',
         }),
       confirmPassword: z
         .string()
-        .min(1, { message: "Confirm Password is required" }),
+        .min(1, { message: 'Confirm Password is required' }),
     })
     .refine((data) => data.password === data.confirmPassword, {
-      path: ["confirmPassword"],
+      path: ['confirmPassword'],
       message: "Passwords don't match",
     });
 
   type RegisterFormValues = z.infer<typeof registerSchema>;
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerSchema),
+    mode: 'all',
     defaultValues: {
-      firstName: "",
-      secondName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      firstName: '',
+      secondName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
     },
   });
 
   const isLoading = signUpMutation.isPending;
   const onSubmit = async (data: RegisterFormValues) => {
-    console.log("Form submitted:", data);
+    console.log('Form submitted:', data);
     try {
       const mutationResult = await signUpMutation.mutateAsync(data);
-      localStorage.setItem("email", data.email);
+      localStorage.setItem('email', data.email);
 
       form.reset();
-      router.push("/email-activation");
+      router.push('/email-activation');
     } catch (err) {
-      console.error("Registration error:", err);
+      console.error('Registration error:', err);
     }
   };
 
@@ -114,7 +130,7 @@ const RegisterPage = () => {
                 <input
                   type="text"
                   placeholder="Enter your first name"
-                  {...register("firstName")}
+                  {...register('firstName')}
                   className="w-full mt-1 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
                 />
                 {errors.firstName && (
@@ -130,7 +146,7 @@ const RegisterPage = () => {
                 <input
                   type="text"
                   placeholder="Enter your last name"
-                  {...register("secondName")}
+                  {...register('secondName')}
                   className="w-full mt-1 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
                 />
                 {errors.secondName && (
@@ -148,7 +164,7 @@ const RegisterPage = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                {...register("email")}
+                {...register('email')}
                 className="w-full mt-1 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
               />
               {errors.email && (
@@ -164,9 +180,9 @@ const RegisterPage = () => {
               </label>
               <div className="relative">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   placeholder="Enter your password"
-                  {...register("password")}
+                  {...register('password')}
                   className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-black"
                 />
                 <button
@@ -190,9 +206,9 @@ const RegisterPage = () => {
               </label>
               <div className="relative">
                 <input
-                  type={showConfirmPassword ? "text" : "password"}
+                  type={showConfirmPassword ? 'text' : 'password'}
                   placeholder="Confirm your password"
-                  {...register("confirmPassword")}
+                  {...register('confirmPassword')}
                   className="w-full border rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-black"
                 />
                 <button
@@ -213,7 +229,7 @@ const RegisterPage = () => {
                 </p>
               )}
             </div>
-            <p className="text-xs text-[#525866] font-medium">
+            {/* <p className="text-xs text-[#525866] font-medium">
               By submitting this form, you are agreeing to our{" "}
               <a href="#" className="font-semibold underline">
                 Terms & Service
@@ -223,7 +239,7 @@ const RegisterPage = () => {
                 Privacy Policy
               </a>
               .
-            </p>
+            </p> */}
 
             <button
               type="submit"

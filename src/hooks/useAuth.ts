@@ -208,13 +208,13 @@ const useAuth = () => {
       clearAuth();
       localStorage.clear();
       document.cookie = "isAuthenticated=; path=/; max-age=0";
-      router.replace("/login");
+      router.replace("/");
     },
     onSuccess: (data: LogoutResponse) => {
       clearAuth();
       localStorage.clear();
       document.cookie = "isAuthenticated=; path=/; max-age=0";
-      router.replace("/login");
+      router.replace("/");
     },
   });
 

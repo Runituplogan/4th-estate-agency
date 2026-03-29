@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   ArrowRight,
   BookText,
@@ -7,15 +7,15 @@ import {
   HeartHandshake,
   Loader2,
   Star,
-} from "lucide-react";
-import Link from "next/link";
-import React, { useState } from "react";
-import useAuth from "@/hooks/useAuth";
-import { useRouter } from "next/navigation";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoginResponse } from "@/service/authService";
+} from 'lucide-react';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import useAuth from '@/hooks/useAuth';
+import { useRouter } from 'next/navigation';
+import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Controller, useForm } from 'react-hook-form';
+import { LoginResponse } from '@/service/authService';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -25,20 +25,21 @@ const LoginPage = () => {
   const LoginSchema = z.object({
     email: z
       .email({
-        message: "Invalid email address",
+        message: 'Invalid email',
       })
       .trim(),
     password: z.string().min(8, {
-      message: "Password is required",
+      message: 'Password is required',
     }),
   });
 
   type LoginFormValues = z.infer<typeof LoginSchema>;
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(LoginSchema),
+    mode: 'all',
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
   });
 
@@ -46,8 +47,8 @@ const LoginPage = () => {
   const onSubmit = async (data: LoginFormValues) => {
     loginMutation.mutate(data, {
       onSuccess: (data: LoginResponse) => {
-        if (data.status === "Success") {
-          router.push("/order-content");
+        if (data.status === 'Success') {
+          router.push('/order-content');
         }
       },
     });
@@ -83,7 +84,7 @@ const LoginPage = () => {
               <input
                 type="email"
                 placeholder="m@example.com"
-                {...form.register("email")}
+                {...form.register('email')}
                 className="w-full mt-1 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
               />
               {form.formState.errors.email && (
@@ -99,9 +100,9 @@ const LoginPage = () => {
               </label>
               <div className="relative mt-1">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   placeholder="Enter your password"
-                  {...form.register("password")}
+                  {...form.register('password')}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black pr-12"
                 />
                 <button
@@ -121,7 +122,7 @@ const LoginPage = () => {
 
             <div className="flex justify-end">
               <Link
-                href={"/forgot-password"}
+                href={'/forgot-password'}
                 className="text-base text-[#525866] cursor-pointer"
               >
                 Forgot password?

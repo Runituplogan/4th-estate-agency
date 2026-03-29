@@ -37,7 +37,7 @@ export default function Footer() {
   return (
     <div>
     <BrandBoost data={banner!}/>
-    <footer className="bg-[#F7EFE5] text-gray-800 px-3 md:px-6 py-20">
+    <footer className="text-gray-800 px-3 md:px-6 py-20">
       <div className="max-w-7xl mx-auto flex justify-around flex-col md:flex-row gap-12">
         <div>
         <Image src={LogoImage} alt="Logo" width={100} height={100} />
